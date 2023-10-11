@@ -334,7 +334,11 @@ def run(graph, node_dict, gpb, args):
     model = create_model(layer_size, args)
     model.cuda()
 
-    ctx.reducer.init(model)
+    tensor_dtype = torch.float32
+    if args.dtype and args.dtype == 'float16':
+        tensor_dtype = torch.float16
+
+    ctx.reducer.init(model, dtype=tensor_dtype)
 
     for i, (name, param) in enumerate(model.named_parameters()):
         param.register_hook(reduce_hook(param, name, args.n_train))
@@ -347,7 +351,7 @@ def run(graph, node_dict, gpb, args):
     recv_size = get_recv_size(node_dict, args.sampling_rate)
 
     ctx.buffer.init_buffer(in_graph.num_nodes(), ratio, send_size, recv_size, layer_size[:args.n_layers - args.n_linear],
-                           use_pp=args.use_pp, backend=args.backend)
+                           use_pp=args.use_pp, backend=args.backend, dtype=tensor_dtype)
 
     node_dict['out_deg'] = collect_out_degree(node_dict, boundary)
     if args.use_pp:

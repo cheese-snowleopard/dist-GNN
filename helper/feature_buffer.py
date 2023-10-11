@@ -33,7 +33,7 @@ class Buffer(object):
                 tot += s
                 self._pr.append(tot)
 
-    def init_buffer(self, num_in, ratio, f_send_shape, f_recv_shape, layer_size, use_pp=False, backend='gloo'):
+    def init_buffer(self, num_in, ratio, f_send_shape, f_recv_shape, layer_size, use_pp=False, backend='gloo', dtype=torch.float32):
         if use_pp is False:
             raise NotImplementedError
         rank, size = dist.get_rank(), dist.get_world_size()
@@ -54,10 +54,10 @@ class Buffer(object):
                 else:
                     s1 = torch.Size([f_send_shape[j], self._layer_size[1]])
                     s2 = torch.Size([f_recv_shape[j], self._layer_size[1]])
-                    tmp1.append(torch.zeros(s1, pin_memory=True))
-                    tmp2.append(torch.zeros(s2, pin_memory=True))
-                    tmp3.append(torch.zeros(s2, pin_memory=True))
-                    tmp4.append(torch.zeros(s1, pin_memory=True))
+                    tmp1.append(torch.zeros(s1, pin_memory=True, dtype=dtype))
+                    tmp2.append(torch.zeros(s2, pin_memory=True, dtype=dtype))
+                    tmp3.append(torch.zeros(s2, pin_memory=True, dtype=dtype))
+                    tmp4.append(torch.zeros(s1, pin_memory=True, dtype=dtype))
             self._feat_cpu = tmp1
             self._f_recv_cpu = tmp3
             self._grad_cpu = tmp2
@@ -73,8 +73,8 @@ class Buffer(object):
             else:
                 s1 = torch.Size([f_recv_shape[j], self._layer_size[1]])
                 s2 = torch.Size([f_send_shape[j], self._layer_size[1]])
-                tmp1.append(torch.zeros(s1, device='cuda'))
-                tmp2.append(torch.zeros(s2, device='cuda'))
+                tmp1.append(torch.zeros(s1, device='cuda', dtype=dtype))
+                tmp2.append(torch.zeros(s2, device='cuda', dtype=dtype))
         self._f_recv = tmp1
         if self._backend == 'mpi':
             self._b_recv = tmp2

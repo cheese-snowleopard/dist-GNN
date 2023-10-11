@@ -59,4 +59,5 @@ def create_parser():
     parser.add_argument('--no-eval', action='store_false', dest='eval',
                         help="disable evaluation")
     parser.set_defaults(eval=True)
+    parser.add_argument("--dtype", type=str, default='float32', help="data type of tensor")
     return parser.parse_args()

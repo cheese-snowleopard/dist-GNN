@@ -14,12 +14,12 @@ class Reducer(object):
         self._handles = []
         self._stream = None
 
-    def init(self, model):
+    def init(self, model, dtype=torch.float32):
         cnt = 0
         for i, (name, param) in enumerate(model.named_parameters()):
             cnt += 1
             if dist.get_backend() == 'gloo':
-                self._data_cpu[name] = torch.zeros_like(param.data, pin_memory=True, device='cpu')
+                self._data_cpu[name] = torch.zeros_like(param.data, pin_memory=True, device='cpu', dtype=dtype)
             self._group[name] = dist.new_group()
         if dist.get_backend() == 'gloo':
             self._pool = ThreadPool(processes=cnt)

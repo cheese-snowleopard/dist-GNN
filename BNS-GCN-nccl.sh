@@ -1,10 +1,10 @@
 #!/bin/sh
 
 #SBATCH --job-name=BNS-GCN-test
-#SBATCH --output=BNS-GCN-test.txt
+#SBATCH --output=output/BNS-GCN-gloo.txt
 #SBATCH --partition=GPU
 #SBATCH --nodes=1
-#SBATCH --time=00:10:00
+#SBATCH --time=01:00:00
 #SBATCH --gres=gpu:8
 #SBATCH --ntasks-per-node=8
 
