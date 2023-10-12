@@ -4,7 +4,7 @@
 #SBATCH --output=output/FP32-p=0.1-partition=5.txt
 #SBATCH --partition=GPU
 #SBATCH --nodes=1
-#SBATCH --time=01:00:00
+#SBATCH --time=05:00:00
 #SBATCH --gres=gpu:8
 #SBATCH --ntasks-per-node=8
 
@@ -13,16 +13,27 @@ source /ocean/projects/asc200010p/hliul/miniconda3/etc/profile.d/conda.sh
 
 conda activate BNS-GCN
 
-python main.py \
-  --dataset ogbn-products \
-  --dropout 0.3 \
-  --lr 0.003 \
-  --n-partitions 5 \
-  --n-epochs 1000 \
-  --model graphsage \
-  --sampling-rate 0.1 \
-  --n-layers 3 \
-  --n-hidden 128 \
-  --log-every 10 \
-  --use-pp \
-  --backend gloo
+mkdir results
+for N_PARTITIONS in 2 4 8
+do
+  for SAMPLING_RATE in 0.10 0.01
+  do
+    echo -e "\033[1mclean python processes\033[0m"
+    sleep 1s && pkill -9 python3 && pkill -9 python && sleep 1s
+    echo -e "\033[1m${N_PARTITIONS} partitions, ${SAMPLING_RATE} sampling rate\033[0m"
+    python main.py \
+      --dataset reddit \
+      --dropout 0.5 \
+      --lr 0.01 \
+      --n-partitions ${N_PARTITIONS} \
+      --n-epochs 3000 \
+      --model graphsage \
+      --sampling-rate ${SAMPLING_RATE} \
+      --n-layers 4 \
+      --n-hidden 256 \
+      --log-every 10 \
+      --inductive \
+      --use-pp \
+      |& tee results/reddit_n${N_PARTITIONS}_p${SAMPLING_RATE}_fp32.txt
+  done
+done

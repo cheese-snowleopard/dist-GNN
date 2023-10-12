@@ -387,67 +387,67 @@ def run(graph, node_dict, gpb, args):
 
     del graph
     del node_dict
-    with profile(activities=[torch.profiler.ProfilerActivity.CPU, torch.profiler.ProfilerActivity.CUDA], record_shapes=True) as prof:
-        with record_function("model_inference"):
-            for epoch in range(args.n_epochs):
+    # with profile(activities=[torch.profiler.ProfilerActivity.CPU, torch.profiler.ProfilerActivity.CUDA], record_shapes=True) as prof:
+    #     with record_function("model_inference"):
+    for epoch in range(args.n_epochs):
 
-                t0 = time.time()
-                selected = select_node(boundary, send_size)
-                one_hops = data_transfer(selected, recv_shape, tag=TransferTag.NODE, dtype=torch.long)
-                ctx.buffer.set_selected(selected)
+        t0 = time.time()
+        selected = select_node(boundary, send_size)
+        one_hops = data_transfer(selected, recv_shape, tag=TransferTag.NODE, dtype=torch.long)
+        ctx.buffer.set_selected(selected)
 
-                g = construct_graph(in_graph, out_graph, pos, one_hops)
+        g = construct_graph(in_graph, out_graph, pos, one_hops)
 
-                model.train()
+        model.train()
 
-                if args.model == 'gcn':
-                    out_norm_ = construct_out_norm(g.num_nodes('_V'), out_norm, pos, one_hops)
-                    logits = model(g, feat, in_norm, out_norm_)
-                elif args.model == 'graphsage':
-                    logits = model(g, feat, in_norm)
-                elif args.model == 'gat':
-                    logits = model(g, construct_feat(g.num_nodes('_V'), feat, pos, one_hops))
-                else:
-                    raise NotImplementedError
+        if args.model == 'gcn':
+            out_norm_ = construct_out_norm(g.num_nodes('_V'), out_norm, pos, one_hops)
+            logits = model(g, feat, in_norm, out_norm_)
+        elif args.model == 'graphsage':
+            logits = model(g, feat, in_norm)
+        elif args.model == 'gat':
+            logits = model(g, construct_feat(g.num_nodes('_V'), feat, pos, one_hops))
+        else:
+            raise NotImplementedError
 
-                loss = loss_fcn(logits[train_mask], labels[train_mask])
-                optimizer.zero_grad(set_to_none=True)
-                loss.backward()
+        loss = loss_fcn(logits[train_mask], labels[train_mask])
+        optimizer.zero_grad(set_to_none=True)
+        loss.backward()
 
-                pre_reduce = time.time()
-                ctx.reducer.synchronize()
-                reduce_time = time.time() - pre_reduce
-                optimizer.step()
+        pre_reduce = time.time()
+        ctx.reducer.synchronize()
+        reduce_time = time.time() - pre_reduce
+        optimizer.step()
 
-                if epoch >= 5:
-                    train_dur.append(time.time() - t0)
-                    comm_dur.append(comm_timer.tot_time())
-                    reduce_dur.append(reduce_time)
+        if epoch >= 5:
+            train_dur.append(time.time() - t0)
+            comm_dur.append(comm_timer.tot_time())
+            reduce_dur.append(reduce_time)
 
-                if (epoch + 1) % args.log_every == 0:
-                    print(
-                        "Process {:03d} | Epoch {:05d} | Time(s) {:.4f} | Comm(s) {:.4f} | Reduce(s) {:.4f} | Loss {:.4f}".format(
-                            rank, epoch, np.mean(train_dur), np.mean(comm_dur), np.mean(reduce_dur), loss.item() / part_train))
+        if (epoch + 1) % args.log_every == 0:
+            print(
+                "Process {:03d} | Epoch {:05d} | Time(s) {:.4f} | Comm(s) {:.4f} | Reduce(s) {:.4f} | Loss {:.4f}".format(
+                    rank, epoch, np.mean(train_dur), np.mean(comm_dur), np.mean(reduce_dur), loss.item() / part_train))
 
-                comm_timer.clear()
+        comm_timer.clear()
 
-                if args.eval and rank == 0 and (epoch + 1) % args.log_every == 0:
-                    torch.save(model.state_dict(), 'checkpoint/%s_p%.2f_%d.pth.tar' % (args.graph_name, args.sampling_rate, epoch))
-                    if thread is not None:
-                        model_copy, val_acc = thread.get()
-                        if val_acc > best_acc:
-                            best_acc = val_acc
-                            best_model = model_copy
-                    model.eval()
-                    model.cpu()
-                    if not args.inductive:
-                        thread = pool.apply_async(evaluate_trans, args=('Epoch %05d' % epoch, copy.deepcopy(model),
-                                                                        val_g, result_file_name))
-                    else:
-                        thread = pool.apply_async(evaluate_induc, args=('Epoch %05d' % epoch, copy.deepcopy(model),
-                                                                        val_g, 'val', result_file_name))
-                    model.cuda(rank)
-    print(prof.key_averages().table(sort_by="cuda_time_total"))
+        if args.eval and rank == 0 and (epoch + 1) % args.log_every == 0:
+            torch.save(model.state_dict(), 'checkpoint/%s_p%.2f_%d.pth.tar' % (args.graph_name, args.sampling_rate, epoch))
+            if thread is not None:
+                model_copy, val_acc = thread.get()
+                if val_acc > best_acc:
+                    best_acc = val_acc
+                    best_model = model_copy
+            model.eval()
+            model.cpu()
+            if not args.inductive:
+                thread = pool.apply_async(evaluate_trans, args=('Epoch %05d' % epoch, copy.deepcopy(model),
+                                                                val_g, result_file_name))
+            else:
+                thread = pool.apply_async(evaluate_induc, args=('Epoch %05d' % epoch, copy.deepcopy(model),
+                                                                val_g, 'val', result_file_name))
+            model.cuda(rank)
+    # print(prof.key_averages().table(sort_by="cuda_time_total"))
     # prof.export_chrome_trace("/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/trace_result.json")
     print_memory("memory stats")
 

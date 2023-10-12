@@ -1,0 +1,3 @@
+mkdir: cannot create directory 'results': File exists
+/var/spool/slurm/d/job19770228/slurm_script: line 38: syntax error near unexpected token `|&'
+/var/spool/slurm/d/job19770228/slurm_script: line 38: `      |& tee results/reddit_n${N_PARTITIONS}_p${SAMPLING_RATE}_fp16.txt'
