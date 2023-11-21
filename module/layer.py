@@ -56,10 +56,10 @@ class GraphSAGELayer(nn.Module):
         super(GraphSAGELayer, self).__init__()
         self.use_pp = use_pp
         if self.use_pp:
-            self.linear = nn.Linear(2 * in_feats, out_feats, bias=bias)
+            self.linear = nn.Linear(2 * in_feats, out_feats, bias=bias, device='cuda')
         else:
-            self.linear1 = nn.Linear(in_feats, out_feats, bias=bias)
-            self.linear2 = nn.Linear(in_feats, out_feats, bias=bias)
+            self.linear1 = nn.Linear(in_feats, out_feats, bias=bias, device='cuda')
+            self.linear2 = nn.Linear(in_feats, out_feats, bias=bias, device='cuda')
         self.reset_parameters()
 
     def reset_parameters(self):
@@ -97,7 +97,7 @@ class GraphSAGELayer(nn.Module):
                                  fn.sum(msg='m', out='h'))
                 ah = graph.ndata.pop('h') / degs
                 if self.use_pp:
-                    feat = self.linear(torch.cat((feat, ah), dim=1))
+                    feat = self.linear(torch.cat((feat.to(device='cuda'), ah.to(device='cuda')), dim=1))
                 else:
-                    feat = self.linear1(feat) + self.linear2(ah)
+                    feat = self.linear1(feat.to(device='cuda')) + self.linear2(ah.to(device='cuda'))
         return feat

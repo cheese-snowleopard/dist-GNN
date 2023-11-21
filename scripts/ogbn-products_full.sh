@@ -14,7 +14,7 @@ do
       --n-epochs 500 \
       --model graphsage \
       --sampling-rate ${SAMPLING_RATE} \
-      --n-layers 3 \
+      --n-layers 4 \
       --n-hidden 128 \
       --log-every 10 \
       --use-pp \

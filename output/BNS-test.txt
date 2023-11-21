@@ -1,0 +1,63 @@
+Namespace(backend='gloo', data_path='./dataset/', dataset='reddit', dropout=0.5, dtype='float16', eval=True, fix_seed=False, graph_name='reddit-2-metis-vol-induc', half=True, heads=1, inductive=True, log_every=10, lr=0.01, master_addr='127.0.0.1', model='graphsage', n_class=41, n_epochs=10, n_feat=602, n_hidden=256, n_layers=4, n_linear=0, n_partitions=2, n_train=153431, node_rank=0, norm='layer', partition_method='metis', partition_obj='vol', parts_per_node=10, port=18118, sampling_rate=0.1, seed=160943977, skip_partition=False, use_pp=True, weight_decay=0)
+init_process started
+loading partitions
+init_process finished
+rank: 1 of size: 2
+Process 1 has 138841 nodes, 25883302 edges 78950 inner nodes, and 20374286 inner edges.
+Process 1 start training
+p2p comm dtype: torch.float16
+p2p comm dtype: torch.float16
+p2p comm dtype: torch.float16
+p2p comm dtype: torch.float16
+p2p comm dtype: torch.float16
+p2p comm dtype: torch.float16
+init_process started
+loading partitions
+init_process finished
+rank: 0 of size: 2
+Process 0 has 116723 nodes, 32063905 edges 74481 inner nodes, and 26554889 inner edges.
+Process 0 start training
+p2p comm dtype: torch.float16
+p2p comm dtype: torch.float16
+p2p comm dtype: torch.float16
+p2p comm dtype: torch.float16
+p2p comm dtype: torch.float16
+p2p comm dtype: torch.float16
+/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
+  dgl_warning(
+Process Process-2:
+Traceback (most recent call last):
+  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/ocean/projects/asc200010p/hliul/workspace/d-BNS-GCN/train.py", line 574, in init_processes
+    run(g, node_dict, gpb, args)
+  File "/ocean/projects/asc200010p/hliul/workspace/d-BNS-GCN/train.py", line 479, in run
+    scaler.step(optimizer)
+  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/torch/cuda/amp/grad_scaler.py", line 334, in step
+    self.unscale_(optimizer)
+  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/torch/cuda/amp/grad_scaler.py", line 279, in unscale_
+    optimizer_state["found_inf_per_device"] = self._unscale_grads_(optimizer, inv_scale, found_inf, False)
+  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/torch/cuda/amp/grad_scaler.py", line 207, in _unscale_grads_
+    raise ValueError("Attempting to unscale FP16 gradients.")
+ValueError: Attempting to unscale FP16 gradients.
+/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
+  dgl_warning(
+Process Process-1:
+Traceback (most recent call last):
+  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/ocean/projects/asc200010p/hliul/workspace/d-BNS-GCN/train.py", line 574, in init_processes
+    run(g, node_dict, gpb, args)
+  File "/ocean/projects/asc200010p/hliul/workspace/d-BNS-GCN/train.py", line 479, in run
+    scaler.step(optimizer)
+  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/torch/cuda/amp/grad_scaler.py", line 334, in step
+    self.unscale_(optimizer)
+  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/torch/cuda/amp/grad_scaler.py", line 279, in unscale_
+    optimizer_state["found_inf_per_device"] = self._unscale_grads_(optimizer, inv_scale, found_inf, False)
+  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/torch/cuda/amp/grad_scaler.py", line 207, in _unscale_grads_
+    raise ValueError("Attempting to unscale FP16 gradients.")
+ValueError: Attempting to unscale FP16 gradients.

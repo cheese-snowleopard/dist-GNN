@@ -1,6 +1,52 @@
 WARNING:root:The OGB package is out of date. Your version is 1.3.5, while the latest version is 1.3.6.
-Namespace(backend='nccl', data_path='./dataset/', dataset='reddit', dropout=0.5, eval=True, fix_seed=False, graph_name='reddit-4-metis-vol-induc', heads=1, inductive=True, log_every=10, lr=0.01, master_addr='127.0.0.1', model='graphsage', n_class=41, n_epochs=10, n_feat=602, n_hidden=256, n_layers=4, n_linear=0, n_partitions=4, n_train=153431, node_rank=0, norm='layer', partition_method='metis', partition_obj='vol', parts_per_node=10, port=18118, sampling_rate=0.1, seed=291295712, skip_partition=False, use_pp=True, weight_decay=0)
+Namespace(backend='nccl', data_path='./dataset/', dataset='reddit', dropout=0.5, dtype='float32', eval=True, fix_seed=False, graph_name='reddit-2-metis-vol-induc', heads=1, inductive=True, log_every=10, lr=0.01, master_addr='127.0.0.1', model='graphsage', n_class=41, n_epochs=10, n_feat=602, n_hidden=256, n_layers=4, n_linear=0, n_partitions=2, n_train=153431, node_rank=0, norm='layer', partition_method='metis', partition_obj='vol', parts_per_node=10, port=18118, sampling_rate=0.1, seed=289275914, skip_partition=False, use_pp=True, weight_decay=0)
+WARNING:root:The OGB package is out of date. Your version is 1.3.5, while the latest version is 1.3.6.
+WARNING:root:The OGB package is out of date. Your version is 1.3.5, while the latest version is 1.3.6.
+init_process started
+loading partitions
+init_process finished
+rank: 0 of size: 2
+Process 0 has 116723 nodes, 32063905 edges 74481 inner nodes, and 26554889 inner edges.
+/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
+  dgl_warning(
+Process Process-1:
 Traceback (most recent call last):
-  File "main.py", line 75, in <module>
-    raise ValueError
-ValueError
+  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/train.py", line 480, in init_processes
+    run(g, node_dict, gpb, args)
+  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/train.py", line 355, in run
+    node_dict['out_deg'] = collect_out_degree(node_dict, boundary)
+  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/train.py", line 166, in collect_out_degree
+    recv_out_deg = data_transfer(send_info, recv_shape, tag=TransferTag.DEG, dtype=torch.long)
+  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/helper/utils.py", line 196, in data_transfer
+    req = dist.isend(msg[right], dst=right, tag=tag)
+  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/torch/distributed/distributed_c10d.py", line 897, in isend
+    return default_pg.send([tensor], dst, tag)
+RuntimeError: Tensors must be CUDA and dense
+init_process started
+loading partitions
+init_process finished
+rank: 1 of size: 2
+Process 1 has 138841 nodes, 25883302 edges 78950 inner nodes, and 20374286 inner edges.
+/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
+  dgl_warning(
+Process Process-2:
+Traceback (most recent call last):
+  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/train.py", line 480, in init_processes
+    run(g, node_dict, gpb, args)
+  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/train.py", line 355, in run
+    node_dict['out_deg'] = collect_out_degree(node_dict, boundary)
+  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/train.py", line 166, in collect_out_degree
+    recv_out_deg = data_transfer(send_info, recv_shape, tag=TransferTag.DEG, dtype=torch.long)
+  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/helper/utils.py", line 196, in data_transfer
+    req = dist.isend(msg[right], dst=right, tag=tag)
+  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/torch/distributed/distributed_c10d.py", line 897, in isend
+    return default_pg.send([tensor], dst, tag)
+RuntimeError: Tensors must be CUDA and dense

@@ -1,8 +1,8 @@
 mkdir: cannot create directory 'results': File exists
 [1mclean python processes[0m
-[1m2 partitions, 0.20 sampling rate[0m
+[1m2 partitions, 0.10 sampling rate[0m
 WARNING:root:The OGB package is out of date. Your version is 1.3.5, while the latest version is 1.3.6.
-Namespace(backend='gloo', data_path='./dataset/', dataset='reddit', dropout=0.5, dtype='float16', eval=True, fix_seed=False, graph_name='reddit-2-metis-vol-induc', heads=1, inductive=True, log_every=10, lr=0.01, master_addr='127.0.0.1', model='graphsage', n_class=41, n_epochs=3000, n_feat=602, n_hidden=256, n_layers=4, n_linear=0, n_partitions=2, n_train=153431, node_rank=0, norm='layer', partition_method='metis', partition_obj='vol', parts_per_node=10, port=18118, sampling_rate=0.2, seed=779096242, skip_partition=False, use_pp=True, weight_decay=0)
+Namespace(backend='gloo', data_path='./dataset/', dataset='reddit', dropout=0.5, dtype='float16', eval=True, fix_seed=False, graph_name='reddit-2-metis-vol-induc', heads=1, inductive=True, log_every=10, lr=0.01, master_addr='127.0.0.1', model='graphsage', n_class=41, n_epochs=3000, n_feat=602, n_hidden=256, n_layers=4, n_linear=0, n_partitions=2, n_train=153431, node_rank=0, norm='layer', partition_method='metis', partition_obj='vol', parts_per_node=10, port=18118, sampling_rate=0.1, seed=1122241761, skip_partition=False, use_pp=True, weight_decay=0)
 WARNING:root:The OGB package is out of date. Your version is 1.3.5, while the latest version is 1.3.6.
 WARNING:root:The OGB package is out of date. Your version is 1.3.5, while the latest version is 1.3.6.
 init_process started
@@ -11,8 +11,8 @@ init_process finished
 rank: 0 of size: 2
 Process 0 has 116723 nodes, 32063905 edges 74481 inner nodes, and 26554889 inner edges.
 Process 0 start training
-Process 000 | Epoch 00009 | Time(s) 0.1209 | Comm(s) 0.0818 | Reduce(s) 0.0041 | Loss nan
-Process 000 | Epoch 00019 | Time(s) 0.1252 | Comm(s) 0.0849 | Reduce(s) 0.0032 | Loss nan
+Process 000 | Epoch 00009 | Time(s) 0.1128 | Comm(s) 0.0765 | Reduce(s) 0.0028 | Loss nan
+Process 000 | Epoch 00019 | Time(s) 0.1136 | Comm(s) 0.0762 | Reduce(s) 0.0030 | Loss nan
 /ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
   dgl_warning(
 Process Process-1:
@@ -52,8 +52,8 @@ init_process finished
 rank: 1 of size: 2
 Process 1 has 138841 nodes, 25883302 edges 78950 inner nodes, and 20374286 inner edges.
 Process 1 start training
-Process 001 | Epoch 00009 | Time(s) 0.1209 | Comm(s) 0.0837 | Reduce(s) 0.0035 | Loss nan
-Process 001 | Epoch 00019 | Time(s) 0.1267 | Comm(s) 0.0889 | Reduce(s) 0.0031 | Loss nan
+Process 001 | Epoch 00009 | Time(s) 0.1128 | Comm(s) 0.0795 | Reduce(s) 0.0032 | Loss nan
+Process 001 | Epoch 00019 | Time(s) 0.1146 | Comm(s) 0.0797 | Reduce(s) 0.0030 | Loss nan
 /ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
   dgl_warning(
 Process Process-2:
@@ -70,11 +70,11 @@ Traceback (most recent call last):
     dist.recv(res[left], src=left, tag=tag)
   File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/torch/distributed/distributed_c10d.py", line 1002, in recv
     pg.recv([tensor], src, tag).wait()
-RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.10.254]:25271
+RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.11.10]:10663
 [1mclean python processes[0m
-[1m2 partitions, 0.02 sampling rate[0m
+[1m2 partitions, 0.01 sampling rate[0m
 WARNING:root:The OGB package is out of date. Your version is 1.3.5, while the latest version is 1.3.6.
-Namespace(backend='gloo', data_path='./dataset/', dataset='reddit', dropout=0.5, dtype='float16', eval=True, fix_seed=False, graph_name='reddit-2-metis-vol-induc', heads=1, inductive=True, log_every=10, lr=0.01, master_addr='127.0.0.1', model='graphsage', n_class=41, n_epochs=3000, n_feat=602, n_hidden=256, n_layers=4, n_linear=0, n_partitions=2, n_train=153431, node_rank=0, norm='layer', partition_method='metis', partition_obj='vol', parts_per_node=10, port=18118, sampling_rate=0.02, seed=162155714, skip_partition=False, use_pp=True, weight_decay=0)
+Namespace(backend='gloo', data_path='./dataset/', dataset='reddit', dropout=0.5, dtype='float16', eval=True, fix_seed=False, graph_name='reddit-2-metis-vol-induc', heads=1, inductive=True, log_every=10, lr=0.01, master_addr='127.0.0.1', model='graphsage', n_class=41, n_epochs=3000, n_feat=602, n_hidden=256, n_layers=4, n_linear=0, n_partitions=2, n_train=153431, node_rank=0, norm='layer', partition_method='metis', partition_obj='vol', parts_per_node=10, port=18118, sampling_rate=0.01, seed=1680199906, skip_partition=False, use_pp=True, weight_decay=0)
 WARNING:root:The OGB package is out of date. Your version is 1.3.5, while the latest version is 1.3.6.
 WARNING:root:The OGB package is out of date. Your version is 1.3.5, while the latest version is 1.3.6.
 init_process started
@@ -83,8 +83,8 @@ init_process finished
 rank: 0 of size: 2
 Process 0 has 116723 nodes, 32063905 edges 74481 inner nodes, and 26554889 inner edges.
 Process 0 start training
-Process 000 | Epoch 00009 | Time(s) 0.1046 | Comm(s) 0.0701 | Reduce(s) 0.0036 | Loss nan
-Process 000 | Epoch 00019 | Time(s) 0.1076 | Comm(s) 0.0700 | Reduce(s) 0.0032 | Loss nan
+Process 000 | Epoch 00009 | Time(s) 0.1041 | Comm(s) 0.0696 | Reduce(s) 0.0035 | Loss nan
+Process 000 | Epoch 00019 | Time(s) 0.1047 | Comm(s) 0.0689 | Reduce(s) 0.0035 | Loss nan
 /ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
   dgl_warning(
 Process Process-1:
@@ -124,8 +124,8 @@ init_process finished
 rank: 1 of size: 2
 Process 1 has 138841 nodes, 25883302 edges 78950 inner nodes, and 20374286 inner edges.
 Process 1 start training
-Process 001 | Epoch 00009 | Time(s) 0.1046 | Comm(s) 0.0727 | Reduce(s) 0.0030 | Loss nan
-Process 001 | Epoch 00019 | Time(s) 0.1084 | Comm(s) 0.0755 | Reduce(s) 0.0031 | Loss nan
+Process 001 | Epoch 00009 | Time(s) 0.1041 | Comm(s) 0.0722 | Reduce(s) 0.0030 | Loss nan
+Process 001 | Epoch 00019 | Time(s) 0.1055 | Comm(s) 0.0716 | Reduce(s) 0.0031 | Loss nan
 /ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
   dgl_warning(
 Process Process-2:
@@ -142,11 +142,11 @@ Traceback (most recent call last):
     dist.recv(res[left], src=left, tag=tag)
   File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/torch/distributed/distributed_c10d.py", line 1002, in recv
     pg.recv([tensor], src, tag).wait()
-RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.10.254]:43945
+RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.11.10]:26013
 [1mclean python processes[0m
-[1m4 partitions, 0.20 sampling rate[0m
+[1m4 partitions, 0.10 sampling rate[0m
 WARNING:root:The OGB package is out of date. Your version is 1.3.5, while the latest version is 1.3.6.
-Namespace(backend='gloo', data_path='./dataset/', dataset='reddit', dropout=0.5, dtype='float16', eval=True, fix_seed=False, graph_name='reddit-4-metis-vol-induc', heads=1, inductive=True, log_every=10, lr=0.01, master_addr='127.0.0.1', model='graphsage', n_class=41, n_epochs=3000, n_feat=602, n_hidden=256, n_layers=4, n_linear=0, n_partitions=4, n_train=153431, node_rank=0, norm='layer', partition_method='metis', partition_obj='vol', parts_per_node=10, port=18118, sampling_rate=0.2, seed=470681580, skip_partition=False, use_pp=True, weight_decay=0)
+Namespace(backend='gloo', data_path='./dataset/', dataset='reddit', dropout=0.5, dtype='float16', eval=True, fix_seed=False, graph_name='reddit-4-metis-vol-induc', heads=1, inductive=True, log_every=10, lr=0.01, master_addr='127.0.0.1', model='graphsage', n_class=41, n_epochs=3000, n_feat=602, n_hidden=256, n_layers=4, n_linear=0, n_partitions=4, n_train=153431, node_rank=0, norm='layer', partition_method='metis', partition_obj='vol', parts_per_node=10, port=18118, sampling_rate=0.1, seed=1752395416, skip_partition=False, use_pp=True, weight_decay=0)
 WARNING:root:The OGB package is out of date. Your version is 1.3.5, while the latest version is 1.3.6.
 WARNING:root:The OGB package is out of date. Your version is 1.3.5, while the latest version is 1.3.6.
 WARNING:root:The OGB package is out of date. Your version is 1.3.5, while the latest version is 1.3.6.
@@ -157,8 +157,8 @@ init_process finished
 rank: 0 of size: 4
 Process 0 has 91816 nodes, 13802448 edges 37248 inner nodes, and 10719922 inner edges.
 Process 0 start training
-Process 000 | Epoch 00009 | Time(s) 0.0876 | Comm(s) 0.0569 | Reduce(s) 0.0061 | Loss nan
-Process 000 | Epoch 00019 | Time(s) 0.0897 | Comm(s) 0.0582 | Reduce(s) 0.0063 | Loss nan
+Process 000 | Epoch 00009 | Time(s) 0.0767 | Comm(s) 0.0475 | Reduce(s) 0.0061 | Loss nan
+Process 000 | Epoch 00019 | Time(s) 0.0763 | Comm(s) 0.0470 | Reduce(s) 0.0052 | Loss nan
 /ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
   dgl_warning(
 Process Process-1:
@@ -195,59 +195,11 @@ RuntimeError: "addmm_impl_cpu_" not implemented for 'Half'
 init_process started
 loading partitions
 init_process finished
-rank: 3 of size: 4
-Process 3 has 105707 nodes, 22756398 edges 39510 inner nodes, and 13874296 inner edges.
-Process 3 start training
-Process 003 | Epoch 00009 | Time(s) 0.0877 | Comm(s) 0.0565 | Reduce(s) 0.0038 | Loss nan
-Process 003 | Epoch 00019 | Time(s) 0.0904 | Comm(s) 0.0586 | Reduce(s) 0.0036 | Loss nan
-/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
-  dgl_warning(
-Process Process-4:
-Traceback (most recent call last):
-  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
-    self.run()
-  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/train.py", line 480, in init_processes
-    run(g, node_dict, gpb, args)
-  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/train.py", line 396, in run
-    one_hops = data_transfer(selected, recv_shape, tag=TransferTag.NODE, dtype=torch.long)
-  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/helper/utils.py", line 199, in data_transfer
-    req.wait()
-RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.10.254]:29371
-init_process started
-loading partitions
-init_process finished
-rank: 1 of size: 4
-Process 1 has 130029 nodes, 14718669 edges 39435 inner nodes, and 7617629 inner edges.
-Process 1 start training
-Process 001 | Epoch 00009 | Time(s) 0.0877 | Comm(s) 0.0599 | Reduce(s) 0.0052 | Loss nan
-Process 001 | Epoch 00019 | Time(s) 0.0904 | Comm(s) 0.0617 | Reduce(s) 0.0053 | Loss nan
-/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
-  dgl_warning(
-Process Process-2:
-Traceback (most recent call last):
-  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
-    self.run()
-  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/train.py", line 480, in init_processes
-    run(g, node_dict, gpb, args)
-  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/train.py", line 396, in run
-    one_hops = data_transfer(selected, recv_shape, tag=TransferTag.NODE, dtype=torch.long)
-  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/helper/utils.py", line 197, in data_transfer
-    dist.recv(res[left], src=left, tag=tag)
-  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/torch/distributed/distributed_c10d.py", line 1002, in recv
-    pg.recv([tensor], src, tag).wait()
-RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.10.254]:2475
-init_process started
-loading partitions
-init_process finished
 rank: 2 of size: 4
 Process 2 has 95301 nodes, 13143266 edges 37238 inner nodes, and 8243754 inner edges.
 Process 2 start training
-Process 002 | Epoch 00009 | Time(s) 0.0876 | Comm(s) 0.0605 | Reduce(s) 0.0043 | Loss nan
-Process 002 | Epoch 00019 | Time(s) 0.0904 | Comm(s) 0.0615 | Reduce(s) 0.0041 | Loss nan
+Process 002 | Epoch 00009 | Time(s) 0.0768 | Comm(s) 0.0503 | Reduce(s) 0.0052 | Loss nan
+Process 002 | Epoch 00019 | Time(s) 0.0770 | Comm(s) 0.0505 | Reduce(s) 0.0040 | Loss nan
 /ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
   dgl_warning(
 Process Process-3:
@@ -264,11 +216,59 @@ Traceback (most recent call last):
     dist.recv(res[left], src=left, tag=tag)
   File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/torch/distributed/distributed_c10d.py", line 1002, in recv
     pg.recv([tensor], src, tag).wait()
-RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.10.254]:50602
+RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.11.10]:50378
+init_process started
+loading partitions
+init_process finished
+rank: 1 of size: 4
+Process 1 has 130029 nodes, 14718669 edges 39435 inner nodes, and 7617629 inner edges.
+Process 1 start training
+Process 001 | Epoch 00009 | Time(s) 0.0767 | Comm(s) 0.0491 | Reduce(s) 0.0055 | Loss nan
+Process 001 | Epoch 00019 | Time(s) 0.0770 | Comm(s) 0.0494 | Reduce(s) 0.0045 | Loss nan
+/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
+  dgl_warning(
+Process Process-2:
+Traceback (most recent call last):
+  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/train.py", line 480, in init_processes
+    run(g, node_dict, gpb, args)
+  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/train.py", line 396, in run
+    one_hops = data_transfer(selected, recv_shape, tag=TransferTag.NODE, dtype=torch.long)
+  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/helper/utils.py", line 197, in data_transfer
+    dist.recv(res[left], src=left, tag=tag)
+  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/torch/distributed/distributed_c10d.py", line 1002, in recv
+    pg.recv([tensor], src, tag).wait()
+RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.11.10]:35735
+init_process started
+loading partitions
+init_process finished
+rank: 3 of size: 4
+Process 3 has 105707 nodes, 22756398 edges 39510 inner nodes, and 13874296 inner edges.
+Process 3 start training
+Process 003 | Epoch 00009 | Time(s) 0.0770 | Comm(s) 0.0470 | Reduce(s) 0.0038 | Loss nan
+Process 003 | Epoch 00019 | Time(s) 0.0770 | Comm(s) 0.0463 | Reduce(s) 0.0033 | Loss nan
+/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
+  dgl_warning(
+Process Process-4:
+Traceback (most recent call last):
+  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/train.py", line 480, in init_processes
+    run(g, node_dict, gpb, args)
+  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/train.py", line 396, in run
+    one_hops = data_transfer(selected, recv_shape, tag=TransferTag.NODE, dtype=torch.long)
+  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/helper/utils.py", line 199, in data_transfer
+    req.wait()
+RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.11.10]:8834
 [1mclean python processes[0m
-[1m4 partitions, 0.02 sampling rate[0m
+[1m4 partitions, 0.01 sampling rate[0m
 WARNING:root:The OGB package is out of date. Your version is 1.3.5, while the latest version is 1.3.6.
-Namespace(backend='gloo', data_path='./dataset/', dataset='reddit', dropout=0.5, dtype='float16', eval=True, fix_seed=False, graph_name='reddit-4-metis-vol-induc', heads=1, inductive=True, log_every=10, lr=0.01, master_addr='127.0.0.1', model='graphsage', n_class=41, n_epochs=3000, n_feat=602, n_hidden=256, n_layers=4, n_linear=0, n_partitions=4, n_train=153431, node_rank=0, norm='layer', partition_method='metis', partition_obj='vol', parts_per_node=10, port=18118, sampling_rate=0.02, seed=1139073302, skip_partition=False, use_pp=True, weight_decay=0)
+Namespace(backend='gloo', data_path='./dataset/', dataset='reddit', dropout=0.5, dtype='float16', eval=True, fix_seed=False, graph_name='reddit-4-metis-vol-induc', heads=1, inductive=True, log_every=10, lr=0.01, master_addr='127.0.0.1', model='graphsage', n_class=41, n_epochs=3000, n_feat=602, n_hidden=256, n_layers=4, n_linear=0, n_partitions=4, n_train=153431, node_rank=0, norm='layer', partition_method='metis', partition_obj='vol', parts_per_node=10, port=18118, sampling_rate=0.01, seed=2028203126, skip_partition=False, use_pp=True, weight_decay=0)
 WARNING:root:The OGB package is out of date. Your version is 1.3.5, while the latest version is 1.3.6.
 WARNING:root:The OGB package is out of date. Your version is 1.3.5, while the latest version is 1.3.6.
 WARNING:root:The OGB package is out of date. Your version is 1.3.5, while the latest version is 1.3.6.
@@ -279,8 +279,8 @@ init_process finished
 rank: 0 of size: 4
 Process 0 has 91816 nodes, 13802448 edges 37248 inner nodes, and 10719922 inner edges.
 Process 0 start training
-Process 000 | Epoch 00009 | Time(s) 0.0662 | Comm(s) 0.0374 | Reduce(s) 0.0050 | Loss nan
-Process 000 | Epoch 00019 | Time(s) 0.0669 | Comm(s) 0.0373 | Reduce(s) 0.0060 | Loss nan
+Process 000 | Epoch 00009 | Time(s) 0.0618 | Comm(s) 0.0342 | Reduce(s) 0.0045 | Loss nan
+Process 000 | Epoch 00019 | Time(s) 0.0624 | Comm(s) 0.0341 | Reduce(s) 0.0042 | Loss nan
 /ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
   dgl_warning(
 Process Process-1:
@@ -317,59 +317,11 @@ RuntimeError: "addmm_impl_cpu_" not implemented for 'Half'
 init_process started
 loading partitions
 init_process finished
-rank: 3 of size: 4
-Process 3 has 105707 nodes, 22756398 edges 39510 inner nodes, and 13874296 inner edges.
-Process 3 start training
-Process 003 | Epoch 00009 | Time(s) 0.0661 | Comm(s) 0.0366 | Reduce(s) 0.0046 | Loss nan
-Process 003 | Epoch 00019 | Time(s) 0.0688 | Comm(s) 0.0362 | Reduce(s) 0.0056 | Loss nan
-/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
-  dgl_warning(
-Process Process-4:
-Traceback (most recent call last):
-  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
-    self.run()
-  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/train.py", line 480, in init_processes
-    run(g, node_dict, gpb, args)
-  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/train.py", line 396, in run
-    one_hops = data_transfer(selected, recv_shape, tag=TransferTag.NODE, dtype=torch.long)
-  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/helper/utils.py", line 199, in data_transfer
-    req.wait()
-RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.10.254]:25521
-init_process started
-loading partitions
-init_process finished
-rank: 2 of size: 4
-Process 2 has 95301 nodes, 13143266 edges 37238 inner nodes, and 8243754 inner edges.
-Process 2 start training
-Process 002 | Epoch 00009 | Time(s) 0.0662 | Comm(s) 0.0396 | Reduce(s) 0.0049 | Loss nan
-Process 002 | Epoch 00019 | Time(s) 0.0688 | Comm(s) 0.0384 | Reduce(s) 0.0059 | Loss nan
-/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
-  dgl_warning(
-Process Process-3:
-Traceback (most recent call last):
-  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
-    self.run()
-  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/train.py", line 480, in init_processes
-    run(g, node_dict, gpb, args)
-  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/train.py", line 396, in run
-    one_hops = data_transfer(selected, recv_shape, tag=TransferTag.NODE, dtype=torch.long)
-  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/helper/utils.py", line 197, in data_transfer
-    dist.recv(res[left], src=left, tag=tag)
-  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/torch/distributed/distributed_c10d.py", line 1002, in recv
-    pg.recv([tensor], src, tag).wait()
-RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.10.254]:32173
-init_process started
-loading partitions
-init_process finished
 rank: 1 of size: 4
 Process 1 has 130029 nodes, 14718669 edges 39435 inner nodes, and 7617629 inner edges.
 Process 1 start training
-Process 001 | Epoch 00009 | Time(s) 0.0662 | Comm(s) 0.0392 | Reduce(s) 0.0048 | Loss nan
-Process 001 | Epoch 00019 | Time(s) 0.0688 | Comm(s) 0.0385 | Reduce(s) 0.0059 | Loss nan
+Process 001 | Epoch 00009 | Time(s) 0.0619 | Comm(s) 0.0358 | Reduce(s) 0.0046 | Loss nan
+Process 001 | Epoch 00019 | Time(s) 0.0634 | Comm(s) 0.0362 | Reduce(s) 0.0043 | Loss nan
 /ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
   dgl_warning(
 Process Process-2:
@@ -386,11 +338,59 @@ Traceback (most recent call last):
     dist.recv(res[left], src=left, tag=tag)
   File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/torch/distributed/distributed_c10d.py", line 1002, in recv
     pg.recv([tensor], src, tag).wait()
-RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.10.254]:3298
+RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.11.10]:26243
+init_process started
+loading partitions
+init_process finished
+rank: 2 of size: 4
+Process 2 has 95301 nodes, 13143266 edges 37238 inner nodes, and 8243754 inner edges.
+Process 2 start training
+Process 002 | Epoch 00009 | Time(s) 0.0618 | Comm(s) 0.0363 | Reduce(s) 0.0041 | Loss nan
+Process 002 | Epoch 00019 | Time(s) 0.0634 | Comm(s) 0.0362 | Reduce(s) 0.0040 | Loss nan
+/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
+  dgl_warning(
+Process Process-3:
+Traceback (most recent call last):
+  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/train.py", line 480, in init_processes
+    run(g, node_dict, gpb, args)
+  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/train.py", line 396, in run
+    one_hops = data_transfer(selected, recv_shape, tag=TransferTag.NODE, dtype=torch.long)
+  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/helper/utils.py", line 197, in data_transfer
+    dist.recv(res[left], src=left, tag=tag)
+  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/torch/distributed/distributed_c10d.py", line 1002, in recv
+    pg.recv([tensor], src, tag).wait()
+RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.11.10]:27348
+init_process started
+loading partitions
+init_process finished
+rank: 3 of size: 4
+Process 3 has 105707 nodes, 22756398 edges 39510 inner nodes, and 13874296 inner edges.
+Process 3 start training
+Process 003 | Epoch 00009 | Time(s) 0.0618 | Comm(s) 0.0344 | Reduce(s) 0.0041 | Loss nan
+Process 003 | Epoch 00019 | Time(s) 0.0634 | Comm(s) 0.0344 | Reduce(s) 0.0040 | Loss nan
+/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
+  dgl_warning(
+Process Process-4:
+Traceback (most recent call last):
+  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/train.py", line 480, in init_processes
+    run(g, node_dict, gpb, args)
+  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/train.py", line 396, in run
+    one_hops = data_transfer(selected, recv_shape, tag=TransferTag.NODE, dtype=torch.long)
+  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/helper/utils.py", line 199, in data_transfer
+    req.wait()
+RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.11.10]:1453
 [1mclean python processes[0m
-[1m8 partitions, 0.20 sampling rate[0m
+[1m8 partitions, 0.10 sampling rate[0m
 WARNING:root:The OGB package is out of date. Your version is 1.3.5, while the latest version is 1.3.6.
-Namespace(backend='gloo', data_path='./dataset/', dataset='reddit', dropout=0.5, dtype='float16', eval=True, fix_seed=False, graph_name='reddit-8-metis-vol-induc', heads=1, inductive=True, log_every=10, lr=0.01, master_addr='127.0.0.1', model='graphsage', n_class=41, n_epochs=3000, n_feat=602, n_hidden=256, n_layers=4, n_linear=0, n_partitions=8, n_train=153431, node_rank=0, norm='layer', partition_method='metis', partition_obj='vol', parts_per_node=10, port=18118, sampling_rate=0.2, seed=621382452, skip_partition=False, use_pp=True, weight_decay=0)
+Namespace(backend='gloo', data_path='./dataset/', dataset='reddit', dropout=0.5, dtype='float16', eval=True, fix_seed=False, graph_name='reddit-8-metis-vol-induc', heads=1, inductive=True, log_every=10, lr=0.01, master_addr='127.0.0.1', model='graphsage', n_class=41, n_epochs=3000, n_feat=602, n_hidden=256, n_layers=4, n_linear=0, n_partitions=8, n_train=153431, node_rank=0, norm='layer', partition_method='metis', partition_obj='vol', parts_per_node=10, port=18118, sampling_rate=0.1, seed=2003907120, skip_partition=False, use_pp=True, weight_decay=0)
 WARNING:root:The OGB package is out of date. Your version is 1.3.5, while the latest version is 1.3.6.
 WARNING:root:The OGB package is out of date. Your version is 1.3.5, while the latest version is 1.3.6.
 WARNING:root:The OGB package is out of date. Your version is 1.3.5, while the latest version is 1.3.6.
@@ -405,8 +405,8 @@ init_process finished
 rank: 0 of size: 8
 Process 0 has 38386 nodes, 3915008 edges 18770 inner nodes, and 3052676 inner edges.
 Process 0 start training
-Process 000 | Epoch 00009 | Time(s) 0.0762 | Comm(s) 0.0443 | Reduce(s) 0.0075 | Loss nan
-Process 000 | Epoch 00019 | Time(s) 0.0781 | Comm(s) 0.0456 | Reduce(s) 0.0076 | Loss nan
+Process 000 | Epoch 00009 | Time(s) 0.0635 | Comm(s) 0.0328 | Reduce(s) 0.0073 | Loss nan
+Process 000 | Epoch 00019 | Time(s) 0.0644 | Comm(s) 0.0345 | Reduce(s) 0.0063 | Loss nan
 /ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
   dgl_warning(
 Process Process-1:
@@ -446,8 +446,8 @@ init_process finished
 rank: 7 of size: 8
 Process 7 has 107929 nodes, 11847701 edges 19755 inner nodes, and 4441021 inner edges.
 Process 7 start training
-Process 007 | Epoch 00009 | Time(s) 0.0762 | Comm(s) 0.0442 | Reduce(s) 0.0065 | Loss nan
-Process 007 | Epoch 00019 | Time(s) 0.0788 | Comm(s) 0.0452 | Reduce(s) 0.0068 | Loss nan
+Process 007 | Epoch 00009 | Time(s) 0.0635 | Comm(s) 0.0344 | Reduce(s) 0.0059 | Loss nan
+Process 007 | Epoch 00019 | Time(s) 0.0652 | Comm(s) 0.0345 | Reduce(s) 0.0059 | Loss nan
 /ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
   dgl_warning(
 Process Process-8:
@@ -462,40 +462,15 @@ Traceback (most recent call last):
     one_hops = data_transfer(selected, recv_shape, tag=TransferTag.NODE, dtype=torch.long)
   File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/helper/utils.py", line 199, in data_transfer
     req.wait()
-RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.10.254]:33942
-init_process started
-loading partitions
-init_process finished
-rank: 2 of size: 8
-Process 2 has 76746 nodes, 6361042 edges 18884 inner nodes, and 4366698 inner edges.
-Process 2 start training
-Process 002 | Epoch 00009 | Time(s) 0.0762 | Comm(s) 0.0448 | Reduce(s) 0.0063 | Loss nan
-Process 002 | Epoch 00019 | Time(s) 0.0788 | Comm(s) 0.0455 | Reduce(s) 0.0063 | Loss nan
-/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
-  dgl_warning(
-Process Process-3:
-Traceback (most recent call last):
-  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
-    self.run()
-  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/train.py", line 480, in init_processes
-    run(g, node_dict, gpb, args)
-  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/train.py", line 396, in run
-    one_hops = data_transfer(selected, recv_shape, tag=TransferTag.NODE, dtype=torch.long)
-  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/helper/utils.py", line 197, in data_transfer
-    dist.recv(res[left], src=left, tag=tag)
-  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/torch/distributed/distributed_c10d.py", line 1002, in recv
-    pg.recv([tensor], src, tag).wait()
-RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.10.254]:9112
+RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.11.10]:19869
 init_process started
 loading partitions
 init_process finished
 rank: 1 of size: 8
 Process 1 has 51974 nodes, 5968728 edges 18626 inner nodes, and 4032990 inner edges.
 Process 1 start training
-Process 001 | Epoch 00009 | Time(s) 0.0762 | Comm(s) 0.0433 | Reduce(s) 0.0071 | Loss nan
-Process 001 | Epoch 00019 | Time(s) 0.0788 | Comm(s) 0.0453 | Reduce(s) 0.0068 | Loss nan
+Process 001 | Epoch 00009 | Time(s) 0.0634 | Comm(s) 0.0331 | Reduce(s) 0.0072 | Loss nan
+Process 001 | Epoch 00019 | Time(s) 0.0651 | Comm(s) 0.0340 | Reduce(s) 0.0062 | Loss nan
 /ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
   dgl_warning(
 Process Process-2:
@@ -512,15 +487,40 @@ Traceback (most recent call last):
     dist.recv(res[left], src=left, tag=tag)
   File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/torch/distributed/distributed_c10d.py", line 1002, in recv
     pg.recv([tensor], src, tag).wait()
-RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.10.254]:17056
+RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.11.10]:16787
+init_process started
+loading partitions
+init_process finished
+rank: 2 of size: 8
+Process 2 has 76746 nodes, 6361042 edges 18884 inner nodes, and 4366698 inner edges.
+Process 2 start training
+Process 002 | Epoch 00009 | Time(s) 0.0634 | Comm(s) 0.0330 | Reduce(s) 0.0068 | Loss nan
+Process 002 | Epoch 00019 | Time(s) 0.0652 | Comm(s) 0.0338 | Reduce(s) 0.0059 | Loss nan
+/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
+  dgl_warning(
+Process Process-3:
+Traceback (most recent call last):
+  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/train.py", line 480, in init_processes
+    run(g, node_dict, gpb, args)
+  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/train.py", line 396, in run
+    one_hops = data_transfer(selected, recv_shape, tag=TransferTag.NODE, dtype=torch.long)
+  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/helper/utils.py", line 197, in data_transfer
+    dist.recv(res[left], src=left, tag=tag)
+  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/torch/distributed/distributed_c10d.py", line 1002, in recv
+    pg.recv([tensor], src, tag).wait()
+RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.11.10]:56467
 init_process started
 loading partitions
 init_process finished
 rank: 6 of size: 8
 Process 6 has 111140 nodes, 15603347 edges 19749 inner nodes, and 7918247 inner edges.
 Process 6 start training
-Process 006 | Epoch 00009 | Time(s) 0.0761 | Comm(s) 0.0452 | Reduce(s) 0.0044 | Loss nan
-Process 006 | Epoch 00019 | Time(s) 0.0788 | Comm(s) 0.0458 | Reduce(s) 0.0044 | Loss nan
+Process 006 | Epoch 00009 | Time(s) 0.0635 | Comm(s) 0.0321 | Reduce(s) 0.0055 | Loss nan
+Process 006 | Epoch 00019 | Time(s) 0.0652 | Comm(s) 0.0328 | Reduce(s) 0.0048 | Loss nan
 /ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
   dgl_warning(
 Process Process-7:
@@ -535,15 +535,38 @@ Traceback (most recent call last):
     one_hops = data_transfer(selected, recv_shape, tag=TransferTag.NODE, dtype=torch.long)
   File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/helper/utils.py", line 199, in data_transfer
     req.wait()
-RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.10.254]:34722
+RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.11.10]:20881
+init_process started
+loading partitions
+init_process finished
+rank: 5 of size: 8
+Process 5 has 97504 nodes, 9547435 edges 19749 inner nodes, and 4563055 inner edges.
+Process 5 start training
+Process 005 | Epoch 00009 | Time(s) 0.0634 | Comm(s) 0.0316 | Reduce(s) 0.0054 | Loss nan
+Process 005 | Epoch 00019 | Time(s) 0.0652 | Comm(s) 0.0338 | Reduce(s) 0.0047 | Loss nan
+/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
+  dgl_warning(
+Process Process-6:
+Traceback (most recent call last):
+  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/train.py", line 480, in init_processes
+    run(g, node_dict, gpb, args)
+  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/train.py", line 396, in run
+    one_hops = data_transfer(selected, recv_shape, tag=TransferTag.NODE, dtype=torch.long)
+  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/helper/utils.py", line 199, in data_transfer
+    req.wait()
+RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.11.10]:12467
 init_process started
 loading partitions
 init_process finished
 rank: 3 of size: 8
 Process 3 has 67022 nodes, 7443812 edges 18716 inner nodes, and 5222444 inner edges.
 Process 3 start training
-Process 003 | Epoch 00009 | Time(s) 0.0762 | Comm(s) 0.0445 | Reduce(s) 0.0062 | Loss nan
-Process 003 | Epoch 00019 | Time(s) 0.0788 | Comm(s) 0.0460 | Reduce(s) 0.0062 | Loss nan
+Process 003 | Epoch 00009 | Time(s) 0.0635 | Comm(s) 0.0338 | Reduce(s) 0.0063 | Loss nan
+Process 003 | Epoch 00019 | Time(s) 0.0652 | Comm(s) 0.0336 | Reduce(s) 0.0057 | Loss nan
 /ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
   dgl_warning(
 Process Process-4:
@@ -560,15 +583,15 @@ Traceback (most recent call last):
     dist.recv(res[left], src=left, tag=tag)
   File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/torch/distributed/distributed_c10d.py", line 1002, in recv
     pg.recv([tensor], src, tag).wait()
-RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.10.254]:30338
+RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.11.10]:53415
 init_process started
 loading partitions
 init_process finished
 rank: 4 of size: 8
 Process 4 has 69728 nodes, 6623584 edges 19182 inner nodes, and 3968594 inner edges.
 Process 4 start training
-Process 004 | Epoch 00009 | Time(s) 0.0762 | Comm(s) 0.0463 | Reduce(s) 0.0055 | Loss nan
-Process 004 | Epoch 00019 | Time(s) 0.0788 | Comm(s) 0.0472 | Reduce(s) 0.0055 | Loss nan
+Process 004 | Epoch 00009 | Time(s) 0.0634 | Comm(s) 0.0334 | Reduce(s) 0.0060 | Loss nan
+Process 004 | Epoch 00019 | Time(s) 0.0651 | Comm(s) 0.0345 | Reduce(s) 0.0053 | Loss nan
 /ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
   dgl_warning(
 Process Process-5:
@@ -585,34 +608,11 @@ Traceback (most recent call last):
     dist.recv(res[left], src=left, tag=tag)
   File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/torch/distributed/distributed_c10d.py", line 1002, in recv
     pg.recv([tensor], src, tag).wait()
-RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.10.254]:7070
-init_process started
-loading partitions
-init_process finished
-rank: 5 of size: 8
-Process 5 has 97504 nodes, 9547435 edges 19749 inner nodes, and 4563055 inner edges.
-Process 5 start training
-Process 005 | Epoch 00009 | Time(s) 0.0762 | Comm(s) 0.0463 | Reduce(s) 0.0045 | Loss nan
-Process 005 | Epoch 00019 | Time(s) 0.0788 | Comm(s) 0.0470 | Reduce(s) 0.0049 | Loss nan
-/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
-  dgl_warning(
-Process Process-6:
-Traceback (most recent call last):
-  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
-    self.run()
-  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/train.py", line 480, in init_processes
-    run(g, node_dict, gpb, args)
-  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/train.py", line 396, in run
-    one_hops = data_transfer(selected, recv_shape, tag=TransferTag.NODE, dtype=torch.long)
-  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/helper/utils.py", line 199, in data_transfer
-    req.wait()
-RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.10.254]:29087
+RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.11.10]:45483
 [1mclean python processes[0m
-[1m8 partitions, 0.02 sampling rate[0m
+[1m8 partitions, 0.01 sampling rate[0m
 WARNING:root:The OGB package is out of date. Your version is 1.3.5, while the latest version is 1.3.6.
-Namespace(backend='gloo', data_path='./dataset/', dataset='reddit', dropout=0.5, dtype='float16', eval=True, fix_seed=False, graph_name='reddit-8-metis-vol-induc', heads=1, inductive=True, log_every=10, lr=0.01, master_addr='127.0.0.1', model='graphsage', n_class=41, n_epochs=3000, n_feat=602, n_hidden=256, n_layers=4, n_linear=0, n_partitions=8, n_train=153431, node_rank=0, norm='layer', partition_method='metis', partition_obj='vol', parts_per_node=10, port=18118, sampling_rate=0.02, seed=709167613, skip_partition=False, use_pp=True, weight_decay=0)
+Namespace(backend='gloo', data_path='./dataset/', dataset='reddit', dropout=0.5, dtype='float16', eval=True, fix_seed=False, graph_name='reddit-8-metis-vol-induc', heads=1, inductive=True, log_every=10, lr=0.01, master_addr='127.0.0.1', model='graphsage', n_class=41, n_epochs=3000, n_feat=602, n_hidden=256, n_layers=4, n_linear=0, n_partitions=8, n_train=153431, node_rank=0, norm='layer', partition_method='metis', partition_obj='vol', parts_per_node=10, port=18118, sampling_rate=0.01, seed=909084492, skip_partition=False, use_pp=True, weight_decay=0)
 WARNING:root:The OGB package is out of date. Your version is 1.3.5, while the latest version is 1.3.6.
 WARNING:root:The OGB package is out of date. Your version is 1.3.5, while the latest version is 1.3.6.
 WARNING:root:The OGB package is out of date. Your version is 1.3.5, while the latest version is 1.3.6.
@@ -627,8 +627,8 @@ init_process finished
 rank: 0 of size: 8
 Process 0 has 38386 nodes, 3915008 edges 18770 inner nodes, and 3052676 inner edges.
 Process 0 start training
-Process 000 | Epoch 00009 | Time(s) 0.0567 | Comm(s) 0.0262 | Reduce(s) 0.0065 | Loss nan
-Process 000 | Epoch 00019 | Time(s) 0.0551 | Comm(s) 0.0248 | Reduce(s) 0.0061 | Loss nan
+Process 000 | Epoch 00009 | Time(s) 0.0566 | Comm(s) 0.0276 | Reduce(s) 0.0061 | Loss nan
+Process 000 | Epoch 00019 | Time(s) 0.0543 | Comm(s) 0.0249 | Reduce(s) 0.0054 | Loss nan
 /ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
   dgl_warning(
 Process Process-1:
@@ -665,34 +665,11 @@ RuntimeError: "addmm_impl_cpu_" not implemented for 'Half'
 init_process started
 loading partitions
 init_process finished
-rank: 6 of size: 8
-Process 6 has 111140 nodes, 15603347 edges 19749 inner nodes, and 7918247 inner edges.
-Process 6 start training
-Process 006 | Epoch 00009 | Time(s) 0.0569 | Comm(s) 0.0255 | Reduce(s) 0.0062 | Loss nan
-Process 006 | Epoch 00019 | Time(s) 0.0560 | Comm(s) 0.0243 | Reduce(s) 0.0052 | Loss nan
-/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
-  dgl_warning(
-Process Process-7:
-Traceback (most recent call last):
-  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
-    self.run()
-  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/train.py", line 480, in init_processes
-    run(g, node_dict, gpb, args)
-  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/train.py", line 396, in run
-    one_hops = data_transfer(selected, recv_shape, tag=TransferTag.NODE, dtype=torch.long)
-  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/helper/utils.py", line 199, in data_transfer
-    req.wait()
-RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.10.254]:35555
-init_process started
-loading partitions
-init_process finished
 rank: 7 of size: 8
 Process 7 has 107929 nodes, 11847701 edges 19755 inner nodes, and 4441021 inner edges.
 Process 7 start training
-Process 007 | Epoch 00009 | Time(s) 0.0568 | Comm(s) 0.0269 | Reduce(s) 0.0065 | Loss nan
-Process 007 | Epoch 00019 | Time(s) 0.0559 | Comm(s) 0.0254 | Reduce(s) 0.0062 | Loss nan
+Process 007 | Epoch 00009 | Time(s) 0.0567 | Comm(s) 0.0274 | Reduce(s) 0.0059 | Loss nan
+Process 007 | Epoch 00019 | Time(s) 0.0550 | Comm(s) 0.0249 | Reduce(s) 0.0053 | Loss nan
 /ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
   dgl_warning(
 Process Process-8:
@@ -707,15 +684,15 @@ Traceback (most recent call last):
     one_hops = data_transfer(selected, recv_shape, tag=TransferTag.NODE, dtype=torch.long)
   File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/helper/utils.py", line 199, in data_transfer
     req.wait()
-RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.10.254]:26340
+RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.11.10]:13721
 init_process started
 loading partitions
 init_process finished
 rank: 2 of size: 8
 Process 2 has 76746 nodes, 6361042 edges 18884 inner nodes, and 4366698 inner edges.
 Process 2 start training
-Process 002 | Epoch 00009 | Time(s) 0.0569 | Comm(s) 0.0264 | Reduce(s) 0.0057 | Loss nan
-Process 002 | Epoch 00019 | Time(s) 0.0559 | Comm(s) 0.0245 | Reduce(s) 0.0052 | Loss nan
+Process 002 | Epoch 00009 | Time(s) 0.0567 | Comm(s) 0.0271 | Reduce(s) 0.0058 | Loss nan
+Process 002 | Epoch 00019 | Time(s) 0.0550 | Comm(s) 0.0244 | Reduce(s) 0.0053 | Loss nan
 /ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
   dgl_warning(
 Process Process-3:
@@ -732,15 +709,15 @@ Traceback (most recent call last):
     dist.recv(res[left], src=left, tag=tag)
   File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/torch/distributed/distributed_c10d.py", line 1002, in recv
     pg.recv([tensor], src, tag).wait()
-RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.10.254]:49051
+RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.11.10]:4021
 init_process started
 loading partitions
 init_process finished
 rank: 1 of size: 8
 Process 1 has 51974 nodes, 5968728 edges 18626 inner nodes, and 4032990 inner edges.
 Process 1 start training
-Process 001 | Epoch 00009 | Time(s) 0.0567 | Comm(s) 0.0260 | Reduce(s) 0.0064 | Loss nan
-Process 001 | Epoch 00019 | Time(s) 0.0559 | Comm(s) 0.0247 | Reduce(s) 0.0060 | Loss nan
+Process 001 | Epoch 00009 | Time(s) 0.0567 | Comm(s) 0.0273 | Reduce(s) 0.0060 | Loss nan
+Process 001 | Epoch 00019 | Time(s) 0.0550 | Comm(s) 0.0248 | Reduce(s) 0.0054 | Loss nan
 /ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
   dgl_warning(
 Process Process-2:
@@ -757,15 +734,61 @@ Traceback (most recent call last):
     dist.recv(res[left], src=left, tag=tag)
   File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/torch/distributed/distributed_c10d.py", line 1002, in recv
     pg.recv([tensor], src, tag).wait()
-RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.10.254]:31364
+RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.11.10]:41159
+init_process started
+loading partitions
+init_process finished
+rank: 6 of size: 8
+Process 6 has 111140 nodes, 15603347 edges 19749 inner nodes, and 7918247 inner edges.
+Process 6 start training
+Process 006 | Epoch 00009 | Time(s) 0.0567 | Comm(s) 0.0260 | Reduce(s) 0.0058 | Loss nan
+Process 006 | Epoch 00019 | Time(s) 0.0550 | Comm(s) 0.0236 | Reduce(s) 0.0050 | Loss nan
+/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
+  dgl_warning(
+Process Process-7:
+Traceback (most recent call last):
+  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/train.py", line 480, in init_processes
+    run(g, node_dict, gpb, args)
+  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/train.py", line 396, in run
+    one_hops = data_transfer(selected, recv_shape, tag=TransferTag.NODE, dtype=torch.long)
+  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/helper/utils.py", line 199, in data_transfer
+    req.wait()
+RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.11.10]:56484
+init_process started
+loading partitions
+init_process finished
+rank: 5 of size: 8
+Process 5 has 97504 nodes, 9547435 edges 19749 inner nodes, and 4563055 inner edges.
+Process 5 start training
+Process 005 | Epoch 00009 | Time(s) 0.0568 | Comm(s) 0.0274 | Reduce(s) 0.0062 | Loss nan
+Process 005 | Epoch 00019 | Time(s) 0.0550 | Comm(s) 0.0253 | Reduce(s) 0.0054 | Loss nan
+/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
+  dgl_warning(
+Process Process-6:
+Traceback (most recent call last):
+  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/train.py", line 480, in init_processes
+    run(g, node_dict, gpb, args)
+  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/train.py", line 396, in run
+    one_hops = data_transfer(selected, recv_shape, tag=TransferTag.NODE, dtype=torch.long)
+  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/helper/utils.py", line 199, in data_transfer
+    req.wait()
+RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.11.10]:34703
 init_process started
 loading partitions
 init_process finished
 rank: 3 of size: 8
 Process 3 has 67022 nodes, 7443812 edges 18716 inner nodes, and 5222444 inner edges.
 Process 3 start training
-Process 003 | Epoch 00009 | Time(s) 0.0568 | Comm(s) 0.0249 | Reduce(s) 0.0076 | Loss nan
-Process 003 | Epoch 00019 | Time(s) 0.0559 | Comm(s) 0.0242 | Reduce(s) 0.0059 | Loss nan
+Process 003 | Epoch 00009 | Time(s) 0.0567 | Comm(s) 0.0261 | Reduce(s) 0.0061 | Loss nan
+Process 003 | Epoch 00019 | Time(s) 0.0550 | Comm(s) 0.0240 | Reduce(s) 0.0053 | Loss nan
 /ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
   dgl_warning(
 Process Process-4:
@@ -782,15 +805,15 @@ Traceback (most recent call last):
     dist.recv(res[left], src=left, tag=tag)
   File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/torch/distributed/distributed_c10d.py", line 1002, in recv
     pg.recv([tensor], src, tag).wait()
-RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.10.254]:35235
+RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.11.10]:22755
 init_process started
 loading partitions
 init_process finished
 rank: 4 of size: 8
 Process 4 has 69728 nodes, 6623584 edges 19182 inner nodes, and 3968594 inner edges.
 Process 4 start training
-Process 004 | Epoch 00009 | Time(s) 0.0568 | Comm(s) 0.0252 | Reduce(s) 0.0077 | Loss nan
-Process 004 | Epoch 00019 | Time(s) 0.0559 | Comm(s) 0.0247 | Reduce(s) 0.0060 | Loss nan
+Process 004 | Epoch 00009 | Time(s) 0.0567 | Comm(s) 0.0267 | Reduce(s) 0.0064 | Loss nan
+Process 004 | Epoch 00019 | Time(s) 0.0550 | Comm(s) 0.0244 | Reduce(s) 0.0054 | Loss nan
 /ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
   dgl_warning(
 Process Process-5:
@@ -807,27 +830,4 @@ Traceback (most recent call last):
     dist.recv(res[left], src=left, tag=tag)
   File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/torch/distributed/distributed_c10d.py", line 1002, in recv
     pg.recv([tensor], src, tag).wait()
-RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.10.254]:54448
-init_process started
-loading partitions
-init_process finished
-rank: 5 of size: 8
-Process 5 has 97504 nodes, 9547435 edges 19749 inner nodes, and 4563055 inner edges.
-Process 5 start training
-Process 005 | Epoch 00009 | Time(s) 0.0570 | Comm(s) 0.0253 | Reduce(s) 0.0061 | Loss nan
-Process 005 | Epoch 00019 | Time(s) 0.0560 | Comm(s) 0.0253 | Reduce(s) 0.0053 | Loss nan
-/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
-  dgl_warning(
-Process Process-6:
-Traceback (most recent call last):
-  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
-    self.run()
-  File "/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/train.py", line 480, in init_processes
-    run(g, node_dict, gpb, args)
-  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/train.py", line 396, in run
-    one_hops = data_transfer(selected, recv_shape, tag=TransferTag.NODE, dtype=torch.long)
-  File "/ocean/projects/asc200010p/hliul/workspace/BNS-GCN/helper/utils.py", line 199, in data_transfer
-    req.wait()
-RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.10.254]:26858
+RuntimeError: [/opt/conda/conda-bld/pytorch_1659484810403/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [10.8.11.10]:5541

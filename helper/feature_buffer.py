@@ -2,8 +2,6 @@ import torch
 from helper.timer.timer import *
 import queue
 
-print_flag = True
-
 class Buffer(object):
 
     def __init__(self):
@@ -42,6 +40,10 @@ class Buffer(object):
         self._layer_size = layer_size
         self._recv_shape = f_recv_shape
         self._ratio = ratio
+        self._dtype = dtype
+        device = 'cuda'
+        if dist.get_backend() == 'nccl':
+            device = torch.device(f'cuda:{rank}')
 
         if backend == 'gloo':
             tmp1, tmp2, tmp3, tmp4 = [], [], [], []
@@ -54,10 +56,24 @@ class Buffer(object):
                 else:
                     s1 = torch.Size([f_send_shape[j], self._layer_size[1]])
                     s2 = torch.Size([f_recv_shape[j], self._layer_size[1]])
-                    tmp1.append(torch.zeros(s1, pin_memory=True, dtype=dtype))
-                    tmp2.append(torch.zeros(s2, pin_memory=True, dtype=dtype))
-                    tmp3.append(torch.zeros(s2, pin_memory=True, dtype=dtype))
-                    tmp4.append(torch.zeros(s1, pin_memory=True, dtype=dtype))
+                    tensor1 = torch.zeros(s1, pin_memory=True)
+                    tensor2 = torch.zeros(s2, pin_memory=True)
+                    tensor3 = torch.zeros(s2, pin_memory=True)
+                    tensor4 = torch.zeros(s1, pin_memory=True)
+                    if self._dtype==torch.float16:
+                        tensor1 = tensor1.half()
+                        tensor2 = tensor2.half()
+                        tensor3 = tensor3.half()
+                        tensor4 = tensor4.half()
+                    elif self._dtype==torch.quint8:
+                        tensor1 = torch.quantize_per_tensor(tensor1, scale=1, zero_point=0, dtype=torch.quint8)
+                        tensor2 = torch.quantize_per_tensor(tensor2, scale=1, zero_point=0, dtype=torch.quint8)
+                        tensor3 = torch.quantize_per_tensor(tensor3, scale=1, zero_point=0, dtype=torch.quint8)
+                        tensor4 = torch.quantize_per_tensor(tensor4, scale=1, zero_point=0, dtype=torch.quint8)
+                    tmp1.append(tensor1)
+                    tmp2.append(tensor2)
+                    tmp3.append(tensor3)
+                    tmp4.append(tensor4)
             self._feat_cpu = tmp1
             self._f_recv_cpu = tmp3
             self._grad_cpu = tmp2
@@ -73,10 +89,18 @@ class Buffer(object):
             else:
                 s1 = torch.Size([f_recv_shape[j], self._layer_size[1]])
                 s2 = torch.Size([f_send_shape[j], self._layer_size[1]])
-                tmp1.append(torch.zeros(s1, device='cuda', dtype=dtype))
-                tmp2.append(torch.zeros(s2, device='cuda', dtype=dtype))
+                tensor1 = torch.zeros(s1)
+                tensor2 = torch.zeros(s2)
+                if self._dtype==torch.float16:
+                    tensor1 = tensor1.half()
+                    tensor2 = tensor2.half()
+                elif self._dtype==torch.quint8:
+                    tensor1 = torch.quantize_per_tensor(tensor1, scale=1, zero_point=0, dtype=torch.quint8)
+                    tensor2 = torch.quantize_per_tensor(tensor2, scale=1, zero_point=0, dtype=torch.quint8)
+                tmp1.append(tensor1.to(device=device))
+                tmp2.append(tensor2.to(device=device))
         self._f_recv = tmp1
-        if self._backend == 'mpi':
+        if self._backend == 'mpi' or self._backend == 'nccl':
             self._b_recv = tmp2
         self.__init_pl_pr()
 
@@ -91,25 +115,47 @@ class Buffer(object):
                 tmp.append(self._f_recv[i])
         return torch.cat(tmp)
 
+    def quantize(self, tensor):
+        min_val = tensor.min()
+        max_val = tensor.max()
+        q_min = 0
+        q_max = 255  # 8-bit quantization
+
+        scale = (max_val - min_val) / (q_max - q_min)
+        scale = float(scale.item()) if torch.is_tensor(scale) else float(scale)
+        q_zero_point = q_min - min_val / scale
+        # Quantize the tensor
+        quantized_tensor = torch.quantize_per_tensor(
+            tensor, scale, int(q_zero_point.item()), dtype=torch.quint8
+        )
+        return quantized_tensor
+
+    # Dequantize the tensor back to float
+    def dequantize(self, quantized_tensor):
+        return quantized_tensor.dequantize()
+
+
     def update(self, layer, feat):
+        if self._dtype==torch.float16:
+            feat = feat.half()
+        elif self._dtype==torch.quint8:
+            feat = self.quantize(feat)
+
         with comm_timer.timer(f'forward_{layer}'):
             self.__feat_transfer(feat)
-        res = self.__feat_concat(feat)
+            res = self.__feat_concat(feat)
         if res.requires_grad:
             res.register_hook(self.__grad_hook(layer))
+        
+        if self._dtype==torch.float16:
+            res = res.float()
+        if self._dtype==torch.quint8:
+            res = res.dequantize()
+        
         return res
 
     @torch.no_grad()
     def __gloo_all_to_all(self, send_gpu, send_cpu, recv_cpu, recv_gpu, forward=True):
-        global print_flag
-        if print_flag:
-            if send_gpu[0].dtype == torch.float16:
-                print("The tensor is FP16")
-            elif send_gpu[0].dtype == torch.float32:
-                print("The tensor is FP32")
-            else:
-                print(f"The tensor has a different data type: {send_gpu[0].dtype}")
-            print_flag = False  # set the flag to False after printing the message once
         rank, size = dist.get_rank(), dist.get_world_size()
         req = queue.Queue()
 
@@ -138,47 +184,37 @@ class Buffer(object):
                 send_gpu[self._selected[idx]] += recv_cpu[idx].cuda(non_blocking=True) / self._ratio[idx]
 
     @torch.no_grad()
-    def __gloo_all_to_all_quantize(self, send_gpu, send_cpu, recv_cpu, recv_gpu, forward=True):
-        def quantize(tensor):
-            min_val, max_val = tensor.min(), tensor.max()
-            # Scale and shift the data to [0, 255] range
-            tensor = 255 * (tensor - min_val) / (max_val - min_val)
-            # Cast the tensor to int8
-            return tensor.byte()
-
-        def dequantize(tensor, min_val, max_val):
-            # Convert the tensor back to float
-            tensor = tensor.float()
-            # Rescale and shift the tensor back to [min_val, max_val] range
-            tensor = tensor * (max_val - min_val) / 255 + min_val
-            return tensor
-
+    def __nccl_all_to_all(self, send_gpu, send_cpu, recv_cpu, recv_gpu, forward=True):
         rank, size = dist.get_rank(), dist.get_world_size()
-        req = queue.Queue()
 
         while not self._send_que.empty():
             r = self._send_que.get()
             r.wait()
 
-        for i in range(1, size):
-            left = (rank - i + size) % size
-            right = (rank + i) % size
-            r2 = dist.irecv(recv_cpu[left], src=left)
-            req.put((r2, left))
-            if forward:
-                send_cpu[right].copy_(send_gpu[self._selected[right]] / self._ratio[right])
+        for i in range(0, size):
+            if i==rank:
+                for j in range(0, size):
+                    if j == rank:
+                        continue
+                    r = None
+                    if forward:
+                        r = dist.isend(send_gpu[self._selected[j]] / self._ratio[j], dst=j)
+                    else:
+                        r = dist.isend(send_gpu[self._pl[j]:self._pr[j]], dst=j)
+                    self._send_que.put(r)
+                    while not self._send_que.empty():
+                        r = self._send_que.get()
+                        r.wait()
             else:
-                send_cpu[right].copy_(send_gpu[self._pl[right]:self._pr[right]])
-            r1 = dist.isend(send_cpu[right], dst=right)
-            self._send_que.put(r1)
-        while not req.empty():
-            r, idx = req.get()
-            # TODO: if not r.is_completed() run next r first (see issue #30723 of PyTorch)
-            r.wait()
-            if forward:
-                recv_gpu[idx].copy_(recv_cpu[idx], non_blocking=True)
-            else:
-                send_gpu[self._selected[idx]] += recv_cpu[idx].cuda(non_blocking=True) / self._ratio[idx]
+                dist.recv(recv_gpu[i], src=i)
+        dist.barrier()
+        
+        if not forward:
+            for i in range(0, size):
+                if i==rank:
+                    continue
+                send_gpu[self._selected[i]] += recv_gpu[i] / self._ratio[i]
+        
 
     @torch.no_grad()
     def __mpi_all_to_all(self, send, recv, forward=True):
@@ -209,6 +245,8 @@ class Buffer(object):
             self.__gloo_all_to_all(feat, self._feat_cpu, self._f_recv_cpu, self._f_recv, forward=True)
         elif self._backend == 'mpi':
             self.__mpi_all_to_all(feat, self._f_recv, forward=True)
+        elif self._backend == 'nccl':
+            self.__nccl_all_to_all(feat, self._feat_cpu, self._f_recv_cpu, self._f_recv, forward=True)
         else:
             raise NotImplementedError
 
@@ -230,5 +268,7 @@ class Buffer(object):
             self.__gloo_all_to_all(grad, self._grad_cpu, self._b_recv_cpu, None, forward=False)
         elif self._backend == 'mpi':
             self.__mpi_all_to_all(grad, self._b_recv, forward=False)
+        elif self._backend == 'nccl':
+            self.__nccl_all_to_all(grad, self._grad_cpu, None, self._b_recv, forward=False)
         else:
             raise NotImplementedError

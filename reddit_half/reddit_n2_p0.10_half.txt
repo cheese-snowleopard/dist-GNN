@@ -1,0 +1,922 @@
+Namespace(backend='gloo', data_path='./dataset/', dataset='reddit', dropout=0.5, dtype='float32', eval=True, fix_seed=False, graph_name='reddit-2-metis-vol-induc', half=True, heads=1, inductive=True, log_every=10, lr=0.01, master_addr='127.0.0.1', model='graphsage', n_class=41, n_epochs=3000, n_feat=602, n_hidden=256, n_layers=4, n_linear=0, n_partitions=2, n_train=153431, node_rank=0, norm='layer', partition_method='metis', partition_obj='vol', parts_per_node=10, port=13001, sampling_rate=0.1, seed=779906786, skip_partition=False, use_pp=True, weight_decay=0)
+init_process started
+loading partitions
+init_process finished
+rank: 0 of size: 2
+Process 0 has 116723 nodes, 32063905 edges 74481 inner nodes, and 26554889 inner edges.
+Process 0 start training
+Process 000 | Epoch 00009 | Time(s) 0.1398 | Comm(s) 0.0988 | Reduce(s) 0.0034 | Loss 2.8301
+Epoch 00009 | Accuracy 32.86%
+Process 000 | Epoch 00019 | Time(s) 0.1649 | Comm(s) 0.1146 | Reduce(s) 0.0034 | Loss 1.7875
+Epoch 00019 | Accuracy 61.73%
+Process 000 | Epoch 00029 | Time(s) 0.1648 | Comm(s) 0.1108 | Reduce(s) 0.0039 | Loss 1.1802
+Epoch 00029 | Accuracy 78.94%
+Process 000 | Epoch 00039 | Time(s) 0.1646 | Comm(s) 0.1077 | Reduce(s) 0.0041 | Loss 0.7076
+Epoch 00039 | Accuracy 89.32%
+Process 000 | Epoch 00049 | Time(s) 0.1645 | Comm(s) 0.1084 | Reduce(s) 0.0041 | Loss 0.4901
+Epoch 00049 | Accuracy 91.83%
+Process 000 | Epoch 00059 | Time(s) 0.1644 | Comm(s) 0.1078 | Reduce(s) 0.0040 | Loss 0.4156
+Epoch 00059 | Accuracy 92.69%
+Process 000 | Epoch 00069 | Time(s) 0.1643 | Comm(s) 0.1072 | Reduce(s) 0.0042 | Loss 0.3716
+Epoch 00069 | Accuracy 93.23%
+Process 000 | Epoch 00079 | Time(s) 0.1642 | Comm(s) 0.1066 | Reduce(s) 0.0042 | Loss 0.3473
+Epoch 00079 | Accuracy 93.63%
+Process 000 | Epoch 00089 | Time(s) 0.1641 | Comm(s) 0.1070 | Reduce(s) 0.0043 | Loss 0.3167
+Epoch 00089 | Accuracy 94.00%
+Process 000 | Epoch 00099 | Time(s) 0.1640 | Comm(s) 0.1068 | Reduce(s) 0.0043 | Loss 0.3020
+Epoch 00099 | Accuracy 94.27%
+Process 000 | Epoch 00109 | Time(s) 0.1640 | Comm(s) 0.1063 | Reduce(s) 0.0043 | Loss 0.2882
+Epoch 00109 | Accuracy 94.39%
+Process 000 | Epoch 00119 | Time(s) 0.1639 | Comm(s) 0.1065 | Reduce(s) 0.0043 | Loss 0.2702
+Epoch 00119 | Accuracy 94.57%
+Process 000 | Epoch 00129 | Time(s) 0.1641 | Comm(s) 0.1062 | Reduce(s) 0.0042 | Loss 0.2608
+Epoch 00129 | Accuracy 94.75%
+Process 000 | Epoch 00139 | Time(s) 0.1640 | Comm(s) 0.1064 | Reduce(s) 0.0042 | Loss 0.2538
+Epoch 00139 | Accuracy 94.94%
+Process 000 | Epoch 00149 | Time(s) 0.1639 | Comm(s) 0.1066 | Reduce(s) 0.0043 | Loss 0.2429
+Epoch 00149 | Accuracy 95.09%
+Process 000 | Epoch 00159 | Time(s) 0.1638 | Comm(s) 0.1062 | Reduce(s) 0.0042 | Loss 0.2376
+Epoch 00159 | Accuracy 95.18%
+Process 000 | Epoch 00169 | Time(s) 0.1639 | Comm(s) 0.1064 | Reduce(s) 0.0043 | Loss 0.2279
+Epoch 00169 | Accuracy 95.28%
+Process 000 | Epoch 00179 | Time(s) 0.1640 | Comm(s) 0.1061 | Reduce(s) 0.0043 | Loss 0.2251
+Epoch 00179 | Accuracy 95.35%
+Process 000 | Epoch 00189 | Time(s) 0.1640 | Comm(s) 0.1064 | Reduce(s) 0.0043 | Loss 0.2196
+Epoch 00189 | Accuracy 95.48%
+Process 000 | Epoch 00199 | Time(s) 0.1640 | Comm(s) 0.1061 | Reduce(s) 0.0043 | Loss 0.2156
+Epoch 00199 | Accuracy 95.51%
+Process 000 | Epoch 00209 | Time(s) 0.1639 | Comm(s) 0.1062 | Reduce(s) 0.0043 | Loss 0.2097
+Epoch 00209 | Accuracy 95.59%
+Process 000 | Epoch 00219 | Time(s) 0.1639 | Comm(s) 0.1063 | Reduce(s) 0.0042 | Loss 0.2018
+Epoch 00219 | Accuracy 95.64%
+Process 000 | Epoch 00229 | Time(s) 0.1639 | Comm(s) 0.1063 | Reduce(s) 0.0042 | Loss 0.1983
+Epoch 00229 | Accuracy 95.74%
+Process 000 | Epoch 00239 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.1949
+Epoch 00239 | Accuracy 95.68%
+Process 000 | Epoch 00249 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.1907
+Epoch 00249 | Accuracy 95.81%
+Process 000 | Epoch 00259 | Time(s) 0.1638 | Comm(s) 0.1056 | Reduce(s) 0.0042 | Loss 0.1850
+Epoch 00259 | Accuracy 95.82%
+Process 000 | Epoch 00269 | Time(s) 0.1638 | Comm(s) 0.1054 | Reduce(s) 0.0042 | Loss 0.1856
+Epoch 00269 | Accuracy 95.83%
+Process 000 | Epoch 00279 | Time(s) 0.1638 | Comm(s) 0.1056 | Reduce(s) 0.0042 | Loss 0.1832
+Epoch 00279 | Accuracy 95.93%
+Process 000 | Epoch 00289 | Time(s) 0.1637 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.1766
+Epoch 00289 | Accuracy 95.95%
+Process 000 | Epoch 00299 | Time(s) 0.1637 | Comm(s) 0.1055 | Reduce(s) 0.0043 | Loss 0.1756
+Epoch 00299 | Accuracy 96.01%
+Process 000 | Epoch 00309 | Time(s) 0.1637 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.1769
+Epoch 00309 | Accuracy 95.96%
+Process 000 | Epoch 00319 | Time(s) 0.1638 | Comm(s) 0.1059 | Reduce(s) 0.0042 | Loss 0.1707
+Epoch 00319 | Accuracy 96.01%
+Process 000 | Epoch 00329 | Time(s) 0.1638 | Comm(s) 0.1060 | Reduce(s) 0.0042 | Loss 0.1681
+Epoch 00329 | Accuracy 96.06%
+Process 000 | Epoch 00339 | Time(s) 0.1638 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.1684
+Epoch 00339 | Accuracy 96.06%
+Process 000 | Epoch 00349 | Time(s) 0.1638 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.1667
+Epoch 00349 | Accuracy 96.09%
+Process 000 | Epoch 00359 | Time(s) 0.1638 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.1614
+Epoch 00359 | Accuracy 96.17%
+Process 000 | Epoch 00369 | Time(s) 0.1638 | Comm(s) 0.1056 | Reduce(s) 0.0042 | Loss 0.1614
+Epoch 00369 | Accuracy 96.19%
+Process 000 | Epoch 00379 | Time(s) 0.1638 | Comm(s) 0.1055 | Reduce(s) 0.0042 | Loss 0.1602
+Epoch 00379 | Accuracy 96.20%
+Process 000 | Epoch 00389 | Time(s) 0.1638 | Comm(s) 0.1054 | Reduce(s) 0.0042 | Loss 0.1575
+Epoch 00389 | Accuracy 96.19%
+Process 000 | Epoch 00399 | Time(s) 0.1638 | Comm(s) 0.1055 | Reduce(s) 0.0042 | Loss 0.1547
+Epoch 00399 | Accuracy 96.19%
+Process 000 | Epoch 00409 | Time(s) 0.1638 | Comm(s) 0.1054 | Reduce(s) 0.0042 | Loss 0.1510
+Epoch 00409 | Accuracy 96.23%
+Process 000 | Epoch 00419 | Time(s) 0.1638 | Comm(s) 0.1055 | Reduce(s) 0.0042 | Loss 0.1529
+Epoch 00419 | Accuracy 96.21%
+Process 000 | Epoch 00429 | Time(s) 0.1638 | Comm(s) 0.1056 | Reduce(s) 0.0042 | Loss 0.1471
+Epoch 00429 | Accuracy 96.22%
+Process 000 | Epoch 00439 | Time(s) 0.1638 | Comm(s) 0.1055 | Reduce(s) 0.0042 | Loss 0.1466
+Epoch 00439 | Accuracy 96.25%
+Process 000 | Epoch 00449 | Time(s) 0.1638 | Comm(s) 0.1056 | Reduce(s) 0.0043 | Loss 0.1484
+Epoch 00449 | Accuracy 96.24%
+Process 000 | Epoch 00459 | Time(s) 0.1638 | Comm(s) 0.1055 | Reduce(s) 0.0042 | Loss 0.1457
+Epoch 00459 | Accuracy 96.24%
+Process 000 | Epoch 00469 | Time(s) 0.1638 | Comm(s) 0.1056 | Reduce(s) 0.0042 | Loss 0.1427
+Epoch 00469 | Accuracy 96.28%
+Process 000 | Epoch 00479 | Time(s) 0.1638 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.1405
+Epoch 00479 | Accuracy 96.28%
+Process 000 | Epoch 00489 | Time(s) 0.1637 | Comm(s) 0.1056 | Reduce(s) 0.0042 | Loss 0.1401
+Epoch 00489 | Accuracy 96.22%
+Process 000 | Epoch 00499 | Time(s) 0.1637 | Comm(s) 0.1054 | Reduce(s) 0.0042 | Loss 0.1386
+Epoch 00499 | Accuracy 96.25%
+Process 000 | Epoch 00509 | Time(s) 0.1637 | Comm(s) 0.1055 | Reduce(s) 0.0043 | Loss 0.1396
+Epoch 00509 | Accuracy 96.30%
+Process 000 | Epoch 00519 | Time(s) 0.1637 | Comm(s) 0.1054 | Reduce(s) 0.0043 | Loss 0.1360
+Epoch 00519 | Accuracy 96.27%
+Process 000 | Epoch 00529 | Time(s) 0.1637 | Comm(s) 0.1055 | Reduce(s) 0.0043 | Loss 0.1367
+Epoch 00529 | Accuracy 96.35%
+Process 000 | Epoch 00539 | Time(s) 0.1637 | Comm(s) 0.1054 | Reduce(s) 0.0043 | Loss 0.1321
+Epoch 00539 | Accuracy 96.31%
+Process 000 | Epoch 00549 | Time(s) 0.1637 | Comm(s) 0.1055 | Reduce(s) 0.0042 | Loss 0.1349
+Epoch 00549 | Accuracy 96.28%
+Process 000 | Epoch 00559 | Time(s) 0.1637 | Comm(s) 0.1056 | Reduce(s) 0.0042 | Loss 0.1356
+Epoch 00559 | Accuracy 96.30%
+Process 000 | Epoch 00569 | Time(s) 0.1637 | Comm(s) 0.1056 | Reduce(s) 0.0042 | Loss 0.1326
+Epoch 00569 | Accuracy 96.29%
+Process 000 | Epoch 00579 | Time(s) 0.1637 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.1301
+Epoch 00579 | Accuracy 96.33%
+Process 000 | Epoch 00589 | Time(s) 0.1636 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.1295
+Epoch 00589 | Accuracy 96.39%
+Process 000 | Epoch 00599 | Time(s) 0.1636 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.1307
+Epoch 00599 | Accuracy 96.34%
+Process 000 | Epoch 00609 | Time(s) 0.1637 | Comm(s) 0.1059 | Reduce(s) 0.0042 | Loss 0.1267
+Epoch 00609 | Accuracy 96.34%
+Process 000 | Epoch 00619 | Time(s) 0.1637 | Comm(s) 0.1059 | Reduce(s) 0.0042 | Loss 0.1300
+Epoch 00619 | Accuracy 96.36%
+Process 000 | Epoch 00629 | Time(s) 0.1637 | Comm(s) 0.1060 | Reduce(s) 0.0042 | Loss 0.1227
+Epoch 00629 | Accuracy 96.35%
+Process 000 | Epoch 00639 | Time(s) 0.1638 | Comm(s) 0.1059 | Reduce(s) 0.0042 | Loss 0.1253
+Epoch 00639 | Accuracy 96.36%
+Process 000 | Epoch 00649 | Time(s) 0.1638 | Comm(s) 0.1060 | Reduce(s) 0.0042 | Loss 0.1212
+Epoch 00649 | Accuracy 96.28%
+init_process started
+loading partitions
+init_process finished
+rank: 1 of size: 2
+Process 1 has 138841 nodes, 25883302 edges 78950 inner nodes, and 20374286 inner edges.
+Process 1 start training
+Process 001 | Epoch 00009 | Time(s) 0.1398 | Comm(s) 0.1063 | Reduce(s) 0.0053 | Loss 2.7891
+Process 001 | Epoch 00019 | Time(s) 0.1932 | Comm(s) 0.1299 | Reduce(s) 0.0040 | Loss 1.4646
+Process 001 | Epoch 00029 | Time(s) 0.1822 | Comm(s) 0.1308 | Reduce(s) 0.0036 | Loss 0.7162
+Process 001 | Epoch 00039 | Time(s) 0.1775 | Comm(s) 0.1307 | Reduce(s) 0.0039 | Loss 0.5064
+Process 001 | Epoch 00049 | Time(s) 0.1750 | Comm(s) 0.1299 | Reduce(s) 0.0040 | Loss 0.4382
+Process 001 | Epoch 00059 | Time(s) 0.1734 | Comm(s) 0.1299 | Reduce(s) 0.0040 | Loss 0.3873
+Process 001 | Epoch 00069 | Time(s) 0.1720 | Comm(s) 0.1295 | Reduce(s) 0.0039 | Loss 0.3523
+Process 001 | Epoch 00079 | Time(s) 0.1713 | Comm(s) 0.1296 | Reduce(s) 0.0039 | Loss 0.3300
+Process 001 | Epoch 00089 | Time(s) 0.1704 | Comm(s) 0.1293 | Reduce(s) 0.0039 | Loss 0.3106
+Process 001 | Epoch 00099 | Time(s) 0.1700 | Comm(s) 0.1293 | Reduce(s) 0.0039 | Loss 0.2942
+Process 001 | Epoch 00109 | Time(s) 0.1694 | Comm(s) 0.1292 | Reduce(s) 0.0038 | Loss 0.2754
+Process 001 | Epoch 00119 | Time(s) 0.1691 | Comm(s) 0.1292 | Reduce(s) 0.0038 | Loss 0.2664
+Process 001 | Epoch 00129 | Time(s) 0.1689 | Comm(s) 0.1293 | Reduce(s) 0.0038 | Loss 0.2598
+Process 001 | Epoch 00139 | Time(s) 0.1776 | Comm(s) 0.1293 | Reduce(s) 0.0039 | Loss 0.2520
+Process 001 | Epoch 00149 | Time(s) 0.1766 | Comm(s) 0.1293 | Reduce(s) 0.0040 | Loss 0.2399
+Process 001 | Epoch 00159 | Time(s) 0.1758 | Comm(s) 0.1293 | Reduce(s) 0.0040 | Loss 0.2331
+Process 001 | Epoch 00169 | Time(s) 0.1770 | Comm(s) 0.1294 | Reduce(s) 0.0040 | Loss 0.2270
+Process 001 | Epoch 00179 | Time(s) 0.1765 | Comm(s) 0.1288 | Reduce(s) 0.0040 | Loss 0.2229
+Process 001 | Epoch 00189 | Time(s) 0.1759 | Comm(s) 0.1288 | Reduce(s) 0.0040 | Loss 0.2160
+Process 001 | Epoch 00199 | Time(s) 0.1753 | Comm(s) 0.1288 | Reduce(s) 0.0040 | Loss 0.2134
+Process 001 | Epoch 00209 | Time(s) 0.1747 | Comm(s) 0.1289 | Reduce(s) 0.0041 | Loss 0.2088
+Process 001 | Epoch 00219 | Time(s) 0.1742 | Comm(s) 0.1290 | Reduce(s) 0.0040 | Loss 0.2009
+Process 001 | Epoch 00229 | Time(s) 0.1739 | Comm(s) 0.1290 | Reduce(s) 0.0040 | Loss 0.1956
+Process 001 | Epoch 00239 | Time(s) 0.1735 | Comm(s) 0.1286 | Reduce(s) 0.0040 | Loss 0.1938
+Process 001 | Epoch 00249 | Time(s) 0.1731 | Comm(s) 0.1286 | Reduce(s) 0.0040 | Loss 0.1893
+Process 001 | Epoch 00259 | Time(s) 0.1728 | Comm(s) 0.1282 | Reduce(s) 0.0040 | Loss 0.1876
+Process 001 | Epoch 00269 | Time(s) 0.1799 | Comm(s) 0.1282 | Reduce(s) 0.0040 | Loss 0.1830
+Process 001 | Epoch 00279 | Time(s) 0.1793 | Comm(s) 0.1282 | Reduce(s) 0.0040 | Loss 0.1796
+Process 001 | Epoch 00289 | Time(s) 0.1788 | Comm(s) 0.1282 | Reduce(s) 0.0040 | Loss 0.1789
+Process 001 | Epoch 00299 | Time(s) 0.1783 | Comm(s) 0.1275 | Reduce(s) 0.0039 | Loss 0.1750
+Process 001 | Epoch 00309 | Time(s) 0.1779 | Comm(s) 0.1275 | Reduce(s) 0.0039 | Loss 0.1752
+Process 001 | Epoch 00319 | Time(s) 0.1775 | Comm(s) 0.1275 | Reduce(s) 0.0039 | Loss 0.1681
+Process 001 | Epoch 00329 | Time(s) 0.1794 | Comm(s) 0.1275 | Reduce(s) 0.0039 | Loss 0.1676
+Process 001 | Epoch 00339 | Time(s) 0.1789 | Comm(s) 0.1272 | Reduce(s) 0.0039 | Loss 0.1664
+Process 001 | Epoch 00349 | Time(s) 0.1786 | Comm(s) 0.1274 | Reduce(s) 0.0039 | Loss 0.1647
+Process 001 | Epoch 00359 | Time(s) 0.1783 | Comm(s) 0.1273 | Reduce(s) 0.0039 | Loss 0.1634
+Process 001 | Epoch 00369 | Time(s) 0.1779 | Comm(s) 0.1271 | Reduce(s) 0.0039 | Loss 0.1623
+Process 001 | Epoch 00379 | Time(s) 0.1776 | Comm(s) 0.1271 | Reduce(s) 0.0039 | Loss 0.1579
+Process 001 | Epoch 00389 | Time(s) 0.1772 | Comm(s) 0.1272 | Reduce(s) 0.0039 | Loss 0.1498
+Process 001 | Epoch 00399 | Time(s) 0.1769 | Comm(s) 0.1272 | Reduce(s) 0.0039 | Loss 0.1545
+Process 001 | Epoch 00409 | Time(s) 0.1766 | Comm(s) 0.1270 | Reduce(s) 0.0039 | Loss 0.1490
+Process 001 | Epoch 00419 | Time(s) 0.1763 | Comm(s) 0.1270 | Reduce(s) 0.0039 | Loss 0.1491
+Process 001 | Epoch 00429 | Time(s) 0.1761 | Comm(s) 0.1271 | Reduce(s) 0.0039 | Loss 0.1457
+Process 001 | Epoch 00439 | Time(s) 0.1758 | Comm(s) 0.1269 | Reduce(s) 0.0039 | Loss 0.1433
+Process 001 | Epoch 00449 | Time(s) 0.1755 | Comm(s) 0.1269 | Reduce(s) 0.0039 | Loss 0.1448
+Process 001 | Epoch 00459 | Time(s) 0.1765 | Comm(s) 0.1270 | Reduce(s) 0.0039 | Loss 0.1412
+Process 001 | Epoch 00469 | Time(s) 0.1763 | Comm(s) 0.1271 | Reduce(s) 0.0039 | Loss 0.1403
+Process 001 | Epoch 00479 | Time(s) 0.1760 | Comm(s) 0.1271 | Reduce(s) 0.0039 | Loss 0.1392
+Process 001 | Epoch 00489 | Time(s) 0.1758 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.1380
+Process 001 | Epoch 00499 | Time(s) 0.1756 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.1355
+Process 001 | Epoch 00509 | Time(s) 0.1755 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.1348
+Process 001 | Epoch 00519 | Time(s) 0.1754 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.1350
+Process 001 | Epoch 00529 | Time(s) 0.1774 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.1347
+Process 001 | Epoch 00539 | Time(s) 0.1776 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.1318
+Process 001 | Epoch 00549 | Time(s) 0.1775 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.1316
+Process 001 | Epoch 00559 | Time(s) 0.1772 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.1283
+Process 001 | Epoch 00569 | Time(s) 0.1770 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.1291
+Process 001 | Epoch 00579 | Time(s) 0.1768 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.1274
+Process 001 | Epoch 00589 | Time(s) 0.1766 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.1293
+Process 001 | Epoch 00599 | Time(s) 0.1764 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.1256
+Process 001 | Epoch 00609 | Time(s) 0.1762 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.1244
+Process 001 | Epoch 00619 | Time(s) 0.1815 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.1223
+Process 001 | Epoch 00629 | Time(s) 0.1812 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.1228
+Process 001 | Epoch 00639 | Time(s) 0.1810 | Comm(s) 0.1275 | Reduce(s) 0.0040 | Loss 0.1219
+Process 001 | Epoch 00649 | Time(s) 0.1808 | Comm(s) 0.1276 | Reduce(s) 0.0040 | Loss 0.1196
+Process 001 | Epoch 00659 | Time(s) 0.1806 | Comm(s) 0.1276 | Reduce(s) 0.0040 | Loss 0.1203
+Process 001 | Epoch 00669 | Time(s) 0.1804 | Comm(s) 0.1276 | Reduce(s) 0.0040 | Loss 0.1171
+Process 001 | Epoch 00679 | Time(s) 0.1802 | Comm(s) 0.1276 | Reduce(s) 0.0040 | Loss 0.1181
+Process 001 | Epoch 00689 | Time(s) 0.1800 | Comm(s) 0.1276 | Reduce(s) 0.0040 | Loss 0.1158
+Process 001 | Epoch 00699 | Time(s) 0.1798 | Comm(s) 0.1276 | Reduce(s) 0.0040 | Loss 0.1167
+Process 001 | Epoch 00709 | Time(s) 0.1800 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.1176
+Process 001 | Epoch 00719 | Time(s) 0.1798 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.1143
+Process 001 | Epoch 00729 | Time(s) 0.1796 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.1129
+Process 001 | Epoch 00739 | Time(s) 0.1794 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.1130
+Process 001 | Epoch 00749 | Time(s) 0.1792 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.1117
+Process 001 | Epoch 00759 | Time(s) 0.1790 | Comm(s) 0.1278 | Reduce(s) 0.0040 | Loss 0.1138
+Process 001 | Epoch 00769 | Time(s) 0.1788 | Comm(s) 0.1278 | Reduce(s) 0.0040 | Loss 0.1125
+Process 001 | Epoch 00779 | Time(s) 0.1789 | Comm(s) 0.1278 | Reduce(s) 0.0040 | Loss 0.1093
+Process 001 | Epoch 00789 | Time(s) 0.1787 | Comm(s) 0.1278 | Reduce(s) 0.0040 | Loss 0.1086
+Process 001 | Epoch 00799 | Time(s) 0.1786 | Comm(s) 0.1278 | Reduce(s) 0.0040 | Loss 0.1101
+Process 001 | Epoch 00809 | Time(s) 0.1784 | Comm(s) 0.1278 | Reduce(s) 0.0040 | Loss 0.1121
+Process 001 | Epoch 00819 | Time(s) 0.1782 | Comm(s) 0.1279 | Reduce(s) 0.0040 | Loss 0.1107
+Process 001 | Epoch 00829 | Time(s) 0.1781 | Comm(s) 0.1279 | Reduce(s) 0.0040 | Loss 0.1106
+Process 001 | Epoch 00839 | Time(s) 0.1779 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.1075
+Process 001 | Epoch 00849 | Time(s) 0.1781 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.1059
+Process 001 | Epoch 00859 | Time(s) 0.1780 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.1072
+Process 000 | Epoch 00659 | Time(s) 0.1638 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.1228
+Epoch 00659 | Accuracy 96.40%
+Process 000 | Epoch 00669 | Time(s) 0.1638 | Comm(s) 0.1060 | Reduce(s) 0.0042 | Loss 0.1213
+Epoch 00669 | Accuracy 96.37%
+Process 000 | Epoch 00679 | Time(s) 0.1638 | Comm(s) 0.1060 | Reduce(s) 0.0042 | Loss 0.1236
+Epoch 00679 | Accuracy 96.40%
+Process 000 | Epoch 00689 | Time(s) 0.1638 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.1228
+Epoch 00689 | Accuracy 96.40%
+Process 000 | Epoch 00699 | Time(s) 0.1638 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.1206
+Epoch 00699 | Accuracy 96.36%
+Process 000 | Epoch 00709 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.1221
+Epoch 00709 | Accuracy 96.36%
+Process 000 | Epoch 00719 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.1212
+Epoch 00719 | Accuracy 96.36%
+Process 000 | Epoch 00729 | Time(s) 0.1638 | Comm(s) 0.1062 | Reduce(s) 0.0042 | Loss 0.1229
+Epoch 00729 | Accuracy 96.37%
+Process 000 | Epoch 00739 | Time(s) 0.1638 | Comm(s) 0.1062 | Reduce(s) 0.0042 | Loss 0.1199
+Epoch 00739 | Accuracy 96.37%
+Process 000 | Epoch 00749 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.1198
+Epoch 00749 | Accuracy 96.32%
+Process 000 | Epoch 00759 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.1157
+Epoch 00759 | Accuracy 96.45%
+Process 000 | Epoch 00769 | Time(s) 0.1638 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.1162
+Epoch 00769 | Accuracy 96.42%
+Process 000 | Epoch 00779 | Time(s) 0.1638 | Comm(s) 0.1060 | Reduce(s) 0.0042 | Loss 0.1180
+Epoch 00779 | Accuracy 96.47%
+Process 000 | Epoch 00789 | Time(s) 0.1638 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.1154
+Epoch 00789 | Accuracy 96.49%
+Process 000 | Epoch 00799 | Time(s) 0.1639 | Comm(s) 0.1062 | Reduce(s) 0.0042 | Loss 0.1134
+Epoch 00799 | Accuracy 96.44%
+Process 000 | Epoch 00809 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.1142
+Epoch 00809 | Accuracy 96.45%
+Process 000 | Epoch 00819 | Time(s) 0.1639 | Comm(s) 0.1060 | Reduce(s) 0.0042 | Loss 0.1130
+Epoch 00819 | Accuracy 96.42%
+Process 000 | Epoch 00829 | Time(s) 0.1639 | Comm(s) 0.1060 | Reduce(s) 0.0042 | Loss 0.1146
+Epoch 00829 | Accuracy 96.49%
+Process 000 | Epoch 00839 | Time(s) 0.1639 | Comm(s) 0.1059 | Reduce(s) 0.0042 | Loss 0.1122
+Epoch 00839 | Accuracy 96.42%
+Process 000 | Epoch 00849 | Time(s) 0.1639 | Comm(s) 0.1060 | Reduce(s) 0.0042 | Loss 0.1159
+Epoch 00849 | Accuracy 96.48%
+Process 000 | Epoch 00859 | Time(s) 0.1639 | Comm(s) 0.1060 | Reduce(s) 0.0042 | Loss 0.1117
+Epoch 00859 | Accuracy 96.44%
+Process 000 | Epoch 00869 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.1119
+Epoch 00869 | Accuracy 96.52%
+Process 000 | Epoch 00879 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.1084
+Epoch 00879 | Accuracy 96.43%
+Process 000 | Epoch 00889 | Time(s) 0.1639 | Comm(s) 0.1062 | Reduce(s) 0.0042 | Loss 0.1119
+Epoch 00889 | Accuracy 96.42%
+Process 000 | Epoch 00899 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.1110
+Epoch 00899 | Accuracy 96.40%
+Process 000 | Epoch 00909 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.1105
+Epoch 00909 | Accuracy 96.39%
+Process 000 | Epoch 00919 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.1110
+Epoch 00919 | Accuracy 96.46%
+Process 000 | Epoch 00929 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.1111
+Epoch 00929 | Accuracy 96.45%
+Process 000 | Epoch 00939 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.1087
+Epoch 00939 | Accuracy 96.46%
+Process 000 | Epoch 00949 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.1079
+Epoch 00949 | Accuracy 96.52%
+Process 000 | Epoch 00959 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.1109
+Epoch 00959 | Accuracy 96.45%
+Process 000 | Epoch 00969 | Time(s) 0.1639 | Comm(s) 0.1062 | Reduce(s) 0.0042 | Loss 0.1087
+Epoch 00969 | Accuracy 96.50%
+Process 000 | Epoch 00979 | Time(s) 0.1639 | Comm(s) 0.1062 | Reduce(s) 0.0042 | Loss 0.1055
+Epoch 00979 | Accuracy 96.40%
+Process 000 | Epoch 00989 | Time(s) 0.1639 | Comm(s) 0.1062 | Reduce(s) 0.0042 | Loss 0.1064
+Epoch 00989 | Accuracy 96.43%
+Process 000 | Epoch 00999 | Time(s) 0.1639 | Comm(s) 0.1063 | Reduce(s) 0.0042 | Loss 0.1085
+Epoch 00999 | Accuracy 96.55%
+Process 000 | Epoch 01009 | Time(s) 0.1639 | Comm(s) 0.1062 | Reduce(s) 0.0042 | Loss 0.1026
+Epoch 01009 | Accuracy 96.44%
+Process 000 | Epoch 01019 | Time(s) 0.1639 | Comm(s) 0.1062 | Reduce(s) 0.0042 | Loss 0.1071
+Epoch 01019 | Accuracy 96.56%
+Process 000 | Epoch 01029 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.1067
+Epoch 01029 | Accuracy 96.43%
+Process 000 | Epoch 01039 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.1055
+Epoch 01039 | Accuracy 96.48%
+Process 000 | Epoch 01049 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.1066
+Epoch 01049 | Accuracy 96.36%
+Process 000 | Epoch 01059 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.1067
+Epoch 01059 | Accuracy 96.44%
+Process 000 | Epoch 01069 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.1067
+Epoch 01069 | Accuracy 96.52%
+Process 000 | Epoch 01079 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.1057
+Epoch 01079 | Accuracy 96.40%
+Process 000 | Epoch 01089 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.1060
+Epoch 01089 | Accuracy 96.42%
+Process 000 | Epoch 01099 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.0995
+Epoch 01099 | Accuracy 96.46%
+Process 000 | Epoch 01109 | Time(s) 0.1639 | Comm(s) 0.1062 | Reduce(s) 0.0042 | Loss 0.1024
+Epoch 01109 | Accuracy 96.48%
+Process 000 | Epoch 01119 | Time(s) 0.1639 | Comm(s) 0.1062 | Reduce(s) 0.0042 | Loss 0.1031
+Epoch 01119 | Accuracy 96.52%
+Process 000 | Epoch 01129 | Time(s) 0.1639 | Comm(s) 0.1062 | Reduce(s) 0.0042 | Loss 0.1016
+Epoch 01129 | Accuracy 96.48%
+Process 000 | Epoch 01139 | Time(s) 0.1639 | Comm(s) 0.1062 | Reduce(s) 0.0042 | Loss 0.1029
+Epoch 01139 | Accuracy 96.46%
+Process 000 | Epoch 01149 | Time(s) 0.1639 | Comm(s) 0.1062 | Reduce(s) 0.0042 | Loss 0.1037
+Epoch 01149 | Accuracy 96.47%
+Process 000 | Epoch 01159 | Time(s) 0.1639 | Comm(s) 0.1062 | Reduce(s) 0.0042 | Loss 0.1007
+Epoch 01159 | Accuracy 96.44%
+Process 000 | Epoch 01169 | Time(s) 0.1639 | Comm(s) 0.1062 | Reduce(s) 0.0042 | Loss 0.1005
+Epoch 01169 | Accuracy 96.47%
+Process 000 | Epoch 01179 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.1022
+Epoch 01179 | Accuracy 96.55%
+Process 000 | Epoch 01189 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.1009
+Epoch 01189 | Accuracy 96.55%
+Process 000 | Epoch 01199 | Time(s) 0.1639 | Comm(s) 0.1062 | Reduce(s) 0.0042 | Loss 0.1000
+Epoch 01199 | Accuracy 96.47%
+Process 000 | Epoch 01209 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.0990
+Epoch 01209 | Accuracy 96.53%
+Process 000 | Epoch 01219 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.1019
+Epoch 01219 | Accuracy 96.47%
+Process 000 | Epoch 01229 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.1005
+Epoch 01229 | Accuracy 96.54%
+Process 000 | Epoch 01239 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.1020
+Epoch 01239 | Accuracy 96.50%
+Process 000 | Epoch 01249 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.0967
+Epoch 01249 | Accuracy 96.50%
+Process 000 | Epoch 01259 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.0988
+Epoch 01259 | Accuracy 96.53%
+Process 000 | Epoch 01269 | Time(s) 0.1639 | Comm(s) 0.1060 | Reduce(s) 0.0042 | Loss 0.0959
+Epoch 01269 | Accuracy 96.53%
+Process 000 | Epoch 01279 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.0978
+Epoch 01279 | Accuracy 96.48%
+Process 000 | Epoch 01289 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.0976
+Epoch 01289 | Accuracy 96.62%
+Process 000 | Epoch 01299 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.0965
+Epoch 01299 | Accuracy 96.54%
+Process 000 | Epoch 01309 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.0979
+Epoch 01309 | Accuracy 96.55%
+Process 001 | Epoch 00869 | Time(s) 0.1778 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.1073
+Process 001 | Epoch 00879 | Time(s) 0.1779 | Comm(s) 0.1278 | Reduce(s) 0.0040 | Loss 0.1067
+Process 001 | Epoch 00889 | Time(s) 0.1778 | Comm(s) 0.1278 | Reduce(s) 0.0040 | Loss 0.1041
+Process 001 | Epoch 00899 | Time(s) 0.1777 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.1027
+Process 001 | Epoch 00909 | Time(s) 0.1776 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.1064
+Process 001 | Epoch 00919 | Time(s) 0.1774 | Comm(s) 0.1276 | Reduce(s) 0.0040 | Loss 0.1056
+Process 001 | Epoch 00929 | Time(s) 0.1775 | Comm(s) 0.1276 | Reduce(s) 0.0040 | Loss 0.1024
+Process 001 | Epoch 00939 | Time(s) 0.1774 | Comm(s) 0.1275 | Reduce(s) 0.0040 | Loss 0.1024
+Process 001 | Epoch 00949 | Time(s) 0.1773 | Comm(s) 0.1275 | Reduce(s) 0.0040 | Loss 0.1044
+Process 001 | Epoch 00959 | Time(s) 0.1810 | Comm(s) 0.1275 | Reduce(s) 0.0040 | Loss 0.1041
+Process 001 | Epoch 00969 | Time(s) 0.1809 | Comm(s) 0.1276 | Reduce(s) 0.0040 | Loss 0.1021
+Process 001 | Epoch 00979 | Time(s) 0.1813 | Comm(s) 0.1276 | Reduce(s) 0.0040 | Loss 0.1010
+Process 001 | Epoch 00989 | Time(s) 0.1812 | Comm(s) 0.1276 | Reduce(s) 0.0040 | Loss 0.1013
+Process 001 | Epoch 00999 | Time(s) 0.1810 | Comm(s) 0.1276 | Reduce(s) 0.0040 | Loss 0.0993
+Process 001 | Epoch 01009 | Time(s) 0.1809 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.0989
+Process 001 | Epoch 01019 | Time(s) 0.1807 | Comm(s) 0.1276 | Reduce(s) 0.0040 | Loss 0.1031
+Process 001 | Epoch 01029 | Time(s) 0.1806 | Comm(s) 0.1275 | Reduce(s) 0.0040 | Loss 0.1011
+Process 001 | Epoch 01039 | Time(s) 0.1804 | Comm(s) 0.1275 | Reduce(s) 0.0040 | Loss 0.0977
+Process 001 | Epoch 01049 | Time(s) 0.1802 | Comm(s) 0.1275 | Reduce(s) 0.0040 | Loss 0.0959
+Process 001 | Epoch 01059 | Time(s) 0.1803 | Comm(s) 0.1276 | Reduce(s) 0.0040 | Loss 0.0962
+Process 001 | Epoch 01069 | Time(s) 0.1802 | Comm(s) 0.1276 | Reduce(s) 0.0040 | Loss 0.1005
+Process 001 | Epoch 01079 | Time(s) 0.1800 | Comm(s) 0.1276 | Reduce(s) 0.0040 | Loss 0.0976
+Process 001 | Epoch 01089 | Time(s) 0.1799 | Comm(s) 0.1276 | Reduce(s) 0.0040 | Loss 0.0983
+Process 001 | Epoch 01099 | Time(s) 0.1797 | Comm(s) 0.1276 | Reduce(s) 0.0040 | Loss 0.0964
+Process 001 | Epoch 01109 | Time(s) 0.1796 | Comm(s) 0.1276 | Reduce(s) 0.0040 | Loss 0.0962
+Process 001 | Epoch 01119 | Time(s) 0.1795 | Comm(s) 0.1276 | Reduce(s) 0.0040 | Loss 0.0964
+Process 001 | Epoch 01129 | Time(s) 0.1799 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.0966
+Process 001 | Epoch 01139 | Time(s) 0.1799 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.0943
+Process 001 | Epoch 01149 | Time(s) 0.1798 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.0967
+Process 001 | Epoch 01159 | Time(s) 0.1796 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.0974
+Process 001 | Epoch 01169 | Time(s) 0.1795 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.0965
+Process 001 | Epoch 01179 | Time(s) 0.1794 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.0953
+Process 001 | Epoch 01189 | Time(s) 0.1793 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.0990
+Process 001 | Epoch 01199 | Time(s) 0.1791 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.0945
+Process 001 | Epoch 01209 | Time(s) 0.1790 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.0948
+Process 001 | Epoch 01219 | Time(s) 0.1789 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.0961
+Process 001 | Epoch 01229 | Time(s) 0.1788 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.0908
+Process 001 | Epoch 01239 | Time(s) 0.1787 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.0916
+Process 001 | Epoch 01249 | Time(s) 0.1786 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.0933
+Process 001 | Epoch 01259 | Time(s) 0.1785 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.0922
+Process 001 | Epoch 01269 | Time(s) 0.1784 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.0926
+Process 001 | Epoch 01279 | Time(s) 0.1783 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.0931
+Process 001 | Epoch 01289 | Time(s) 0.1782 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.0943
+Process 001 | Epoch 01299 | Time(s) 0.1780 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.0940
+Process 001 | Epoch 01309 | Time(s) 0.1779 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.0918
+Process 001 | Epoch 01319 | Time(s) 0.1778 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.0899
+Process 001 | Epoch 01329 | Time(s) 0.1777 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.0911
+Process 001 | Epoch 01339 | Time(s) 0.1777 | Comm(s) 0.1278 | Reduce(s) 0.0040 | Loss 0.0887
+Process 001 | Epoch 01349 | Time(s) 0.1776 | Comm(s) 0.1278 | Reduce(s) 0.0040 | Loss 0.0931
+Process 001 | Epoch 01359 | Time(s) 0.1775 | Comm(s) 0.1278 | Reduce(s) 0.0040 | Loss 0.0892
+Process 001 | Epoch 01369 | Time(s) 0.1774 | Comm(s) 0.1278 | Reduce(s) 0.0040 | Loss 0.0917
+Process 001 | Epoch 01379 | Time(s) 0.1773 | Comm(s) 0.1278 | Reduce(s) 0.0040 | Loss 0.0904
+Process 001 | Epoch 01389 | Time(s) 0.1773 | Comm(s) 0.1278 | Reduce(s) 0.0040 | Loss 0.0877
+Process 001 | Epoch 01399 | Time(s) 0.1772 | Comm(s) 0.1278 | Reduce(s) 0.0040 | Loss 0.0883
+Process 001 | Epoch 01409 | Time(s) 0.1771 | Comm(s) 0.1278 | Reduce(s) 0.0040 | Loss 0.0903
+Process 001 | Epoch 01419 | Time(s) 0.1770 | Comm(s) 0.1279 | Reduce(s) 0.0040 | Loss 0.0878
+Process 001 | Epoch 01429 | Time(s) 0.1770 | Comm(s) 0.1279 | Reduce(s) 0.0040 | Loss 0.0905
+Process 001 | Epoch 01439 | Time(s) 0.1782 | Comm(s) 0.1279 | Reduce(s) 0.0040 | Loss 0.0914
+Process 001 | Epoch 01449 | Time(s) 0.1783 | Comm(s) 0.1279 | Reduce(s) 0.0040 | Loss 0.0921
+Process 001 | Epoch 01459 | Time(s) 0.1782 | Comm(s) 0.1279 | Reduce(s) 0.0040 | Loss 0.0893
+Process 001 | Epoch 01469 | Time(s) 0.1782 | Comm(s) 0.1279 | Reduce(s) 0.0040 | Loss 0.0881
+Process 001 | Epoch 01479 | Time(s) 0.1781 | Comm(s) 0.1279 | Reduce(s) 0.0040 | Loss 0.0881
+Process 001 | Epoch 01489 | Time(s) 0.1780 | Comm(s) 0.1279 | Reduce(s) 0.0040 | Loss 0.0887
+Process 001 | Epoch 01499 | Time(s) 0.1779 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.0867
+Process 001 | Epoch 01509 | Time(s) 0.1778 | Comm(s) 0.1276 | Reduce(s) 0.0040 | Loss 0.0893
+Process 001 | Epoch 01519 | Time(s) 0.1777 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.0871
+Process 001 | Epoch 01529 | Time(s) 0.1777 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.0879
+Process 001 | Epoch 01539 | Time(s) 0.1778 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.0864
+Process 001 | Epoch 01549 | Time(s) 0.1777 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.0892
+Process 001 | Epoch 01559 | Time(s) 0.1776 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.0880
+Process 001 | Epoch 01569 | Time(s) 0.1775 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.0864
+Process 001 | Epoch 01579 | Time(s) 0.1775 | Comm(s) 0.1277 | Reduce(s) 0.0040 | Loss 0.0884
+Process 001 | Epoch 01589 | Time(s) 0.1774 | Comm(s) 0.1276 | Reduce(s) 0.0040 | Loss 0.0891
+Process 001 | Epoch 01599 | Time(s) 0.1773 | Comm(s) 0.1275 | Reduce(s) 0.0040 | Loss 0.0846
+Process 001 | Epoch 01609 | Time(s) 0.1772 | Comm(s) 0.1275 | Reduce(s) 0.0040 | Loss 0.0855
+Process 001 | Epoch 01619 | Time(s) 0.1772 | Comm(s) 0.1275 | Reduce(s) 0.0040 | Loss 0.0854
+Process 001 | Epoch 01629 | Time(s) 0.1771 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0882
+Process 001 | Epoch 01639 | Time(s) 0.1770 | Comm(s) 0.1275 | Reduce(s) 0.0040 | Loss 0.0861
+Process 001 | Epoch 01649 | Time(s) 0.1770 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0905
+Process 001 | Epoch 01659 | Time(s) 0.1769 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0869
+Process 001 | Epoch 01669 | Time(s) 0.1769 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0863
+Process 001 | Epoch 01679 | Time(s) 0.1768 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0865
+Process 001 | Epoch 01689 | Time(s) 0.1767 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0876
+Process 001 | Epoch 01699 | Time(s) 0.1767 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0837
+Process 001 | Epoch 01709 | Time(s) 0.1766 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0846
+Process 001 | Epoch 01719 | Time(s) 0.1765 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0870
+Process 001 | Epoch 01729 | Time(s) 0.1765 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0844
+Process 001 | Epoch 01739 | Time(s) 0.1764 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0856
+Process 000 | Epoch 01319 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.0943
+Epoch 01319 | Accuracy 96.54%
+Process 000 | Epoch 01329 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.0985
+Epoch 01329 | Accuracy 96.54%
+Process 000 | Epoch 01339 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.0961
+Epoch 01339 | Accuracy 96.55%
+Process 000 | Epoch 01349 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.0947
+Epoch 01349 | Accuracy 96.58%
+Process 000 | Epoch 01359 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.0968
+Epoch 01359 | Accuracy 96.53%
+Process 000 | Epoch 01369 | Time(s) 0.1639 | Comm(s) 0.1062 | Reduce(s) 0.0042 | Loss 0.0946
+Epoch 01369 | Accuracy 96.62%
+Process 000 | Epoch 01379 | Time(s) 0.1639 | Comm(s) 0.1062 | Reduce(s) 0.0042 | Loss 0.0991
+Epoch 01379 | Accuracy 96.57%
+Process 000 | Epoch 01389 | Time(s) 0.1639 | Comm(s) 0.1062 | Reduce(s) 0.0042 | Loss 0.0972
+Epoch 01389 | Accuracy 96.58%
+Process 000 | Epoch 01399 | Time(s) 0.1639 | Comm(s) 0.1062 | Reduce(s) 0.0042 | Loss 0.0959
+Epoch 01399 | Accuracy 96.54%
+Process 000 | Epoch 01409 | Time(s) 0.1639 | Comm(s) 0.1062 | Reduce(s) 0.0042 | Loss 0.0995
+Epoch 01409 | Accuracy 96.60%
+Process 000 | Epoch 01419 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.0970
+Epoch 01419 | Accuracy 96.55%
+Process 000 | Epoch 01429 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.0971
+Epoch 01429 | Accuracy 96.61%
+Process 000 | Epoch 01439 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.0961
+Epoch 01439 | Accuracy 96.55%
+Process 000 | Epoch 01449 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.0937
+Epoch 01449 | Accuracy 96.57%
+Process 000 | Epoch 01459 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.0968
+Epoch 01459 | Accuracy 96.57%
+Process 000 | Epoch 01469 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.0980
+Epoch 01469 | Accuracy 96.55%
+Process 000 | Epoch 01479 | Time(s) 0.1639 | Comm(s) 0.1061 | Reduce(s) 0.0042 | Loss 0.0948
+Epoch 01479 | Accuracy 96.52%
+Process 000 | Epoch 01489 | Time(s) 0.1639 | Comm(s) 0.1060 | Reduce(s) 0.0042 | Loss 0.0966
+Epoch 01489 | Accuracy 96.55%
+Process 000 | Epoch 01499 | Time(s) 0.1639 | Comm(s) 0.1060 | Reduce(s) 0.0042 | Loss 0.0939
+Epoch 01499 | Accuracy 96.58%
+Process 000 | Epoch 01509 | Time(s) 0.1639 | Comm(s) 0.1060 | Reduce(s) 0.0042 | Loss 0.0935
+Epoch 01509 | Accuracy 96.55%
+Process 000 | Epoch 01519 | Time(s) 0.1639 | Comm(s) 0.1059 | Reduce(s) 0.0042 | Loss 0.0945
+Epoch 01519 | Accuracy 96.58%
+Process 000 | Epoch 01529 | Time(s) 0.1639 | Comm(s) 0.1059 | Reduce(s) 0.0042 | Loss 0.0945
+Epoch 01529 | Accuracy 96.62%
+Process 000 | Epoch 01539 | Time(s) 0.1639 | Comm(s) 0.1060 | Reduce(s) 0.0042 | Loss 0.0967
+Epoch 01539 | Accuracy 96.57%
+Process 000 | Epoch 01549 | Time(s) 0.1639 | Comm(s) 0.1060 | Reduce(s) 0.0042 | Loss 0.0946
+Epoch 01549 | Accuracy 96.51%
+Process 000 | Epoch 01559 | Time(s) 0.1639 | Comm(s) 0.1060 | Reduce(s) 0.0042 | Loss 0.0956
+Epoch 01559 | Accuracy 96.54%
+Process 000 | Epoch 01569 | Time(s) 0.1639 | Comm(s) 0.1060 | Reduce(s) 0.0042 | Loss 0.0945
+Epoch 01569 | Accuracy 96.61%
+Process 000 | Epoch 01579 | Time(s) 0.1639 | Comm(s) 0.1059 | Reduce(s) 0.0042 | Loss 0.0942
+Epoch 01579 | Accuracy 96.51%
+Process 000 | Epoch 01589 | Time(s) 0.1639 | Comm(s) 0.1059 | Reduce(s) 0.0042 | Loss 0.0954
+Epoch 01589 | Accuracy 96.58%
+Process 000 | Epoch 01599 | Time(s) 0.1639 | Comm(s) 0.1059 | Reduce(s) 0.0042 | Loss 0.0923
+Epoch 01599 | Accuracy 96.53%
+Process 000 | Epoch 01609 | Time(s) 0.1639 | Comm(s) 0.1059 | Reduce(s) 0.0042 | Loss 0.0934
+Epoch 01609 | Accuracy 96.46%
+Process 000 | Epoch 01619 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0931
+Epoch 01619 | Accuracy 96.58%
+Process 000 | Epoch 01629 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0915
+Epoch 01629 | Accuracy 96.55%
+Process 000 | Epoch 01639 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0925
+Epoch 01639 | Accuracy 96.57%
+Process 000 | Epoch 01649 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0939
+Epoch 01649 | Accuracy 96.57%
+Process 000 | Epoch 01659 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0930
+Epoch 01659 | Accuracy 96.59%
+Process 000 | Epoch 01669 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0945
+Epoch 01669 | Accuracy 96.48%
+Process 000 | Epoch 01679 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0920
+Epoch 01679 | Accuracy 96.50%
+Process 000 | Epoch 01689 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0919
+Epoch 01689 | Accuracy 96.54%
+Process 000 | Epoch 01699 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0910
+Epoch 01699 | Accuracy 96.54%
+Process 000 | Epoch 01709 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0913
+Epoch 01709 | Accuracy 96.55%
+Process 000 | Epoch 01719 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0928
+Epoch 01719 | Accuracy 96.57%
+Process 000 | Epoch 01729 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0932
+Epoch 01729 | Accuracy 96.57%
+Process 000 | Epoch 01739 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0921
+Epoch 01739 | Accuracy 96.58%
+Process 000 | Epoch 01749 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0897
+Epoch 01749 | Accuracy 96.63%
+Process 000 | Epoch 01759 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0923
+Epoch 01759 | Accuracy 96.53%
+Process 000 | Epoch 01769 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0913
+Epoch 01769 | Accuracy 96.50%
+Process 000 | Epoch 01779 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0905
+Epoch 01779 | Accuracy 96.49%
+Process 000 | Epoch 01789 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0929
+Epoch 01789 | Accuracy 96.52%
+Process 000 | Epoch 01799 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0890
+Epoch 01799 | Accuracy 96.49%
+Process 000 | Epoch 01809 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0926
+Epoch 01809 | Accuracy 96.57%
+Process 000 | Epoch 01819 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0897
+Epoch 01819 | Accuracy 96.58%
+Process 000 | Epoch 01829 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0918
+Epoch 01829 | Accuracy 96.59%
+Process 000 | Epoch 01839 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0883
+Epoch 01839 | Accuracy 96.57%
+Process 000 | Epoch 01849 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0920
+Epoch 01849 | Accuracy 96.53%
+Process 000 | Epoch 01859 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0896
+Epoch 01859 | Accuracy 96.56%
+Process 000 | Epoch 01869 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0876
+Epoch 01869 | Accuracy 96.54%
+Process 000 | Epoch 01879 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0884
+Epoch 01879 | Accuracy 96.51%
+Process 000 | Epoch 01889 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0910
+Epoch 01889 | Accuracy 96.54%
+Process 000 | Epoch 01899 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0909
+Epoch 01899 | Accuracy 96.51%
+Process 000 | Epoch 01909 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0931
+Epoch 01909 | Accuracy 96.52%
+Process 000 | Epoch 01919 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0862
+Epoch 01919 | Accuracy 96.54%
+Process 000 | Epoch 01929 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0852
+Epoch 01929 | Accuracy 96.56%
+Process 000 | Epoch 01939 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0913
+Epoch 01939 | Accuracy 96.59%
+Process 000 | Epoch 01949 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0916
+Epoch 01949 | Accuracy 96.53%
+Process 000 | Epoch 01959 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0894
+Epoch 01959 | Accuracy 96.51%
+Process 000 | Epoch 01969 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0909
+Epoch 01969 | Accuracy 96.55%
+Process 001 | Epoch 01749 | Time(s) 0.1764 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0878
+Process 001 | Epoch 01759 | Time(s) 0.1763 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0845
+Process 001 | Epoch 01769 | Time(s) 0.1763 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0851
+Process 001 | Epoch 01779 | Time(s) 0.1762 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0829
+Process 001 | Epoch 01789 | Time(s) 0.1762 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0838
+Process 001 | Epoch 01799 | Time(s) 0.1761 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0826
+Process 001 | Epoch 01809 | Time(s) 0.1761 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0829
+Process 001 | Epoch 01819 | Time(s) 0.1765 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0842
+Process 001 | Epoch 01829 | Time(s) 0.1765 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0852
+Process 001 | Epoch 01839 | Time(s) 0.1764 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0838
+Process 001 | Epoch 01849 | Time(s) 0.1764 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0837
+Process 001 | Epoch 01859 | Time(s) 0.1764 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0833
+Process 001 | Epoch 01869 | Time(s) 0.1763 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0856
+Process 001 | Epoch 01879 | Time(s) 0.1763 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0802
+Process 001 | Epoch 01889 | Time(s) 0.1763 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0826
+Process 001 | Epoch 01899 | Time(s) 0.1762 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0831
+Process 001 | Epoch 01909 | Time(s) 0.1762 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0822
+Process 001 | Epoch 01919 | Time(s) 0.1761 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0839
+Process 001 | Epoch 01929 | Time(s) 0.1761 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0830
+Process 001 | Epoch 01939 | Time(s) 0.1761 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0840
+Process 001 | Epoch 01949 | Time(s) 0.1760 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0795
+Process 001 | Epoch 01959 | Time(s) 0.1760 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0841
+Process 001 | Epoch 01969 | Time(s) 0.1759 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0830
+Process 001 | Epoch 01979 | Time(s) 0.1759 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0839
+Process 001 | Epoch 01989 | Time(s) 0.1758 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0816
+Process 001 | Epoch 01999 | Time(s) 0.1758 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0820
+Process 001 | Epoch 02009 | Time(s) 0.1757 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0821
+Process 001 | Epoch 02019 | Time(s) 0.1756 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0814
+Process 001 | Epoch 02029 | Time(s) 0.1758 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0834
+Process 001 | Epoch 02039 | Time(s) 0.1758 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0817
+Process 001 | Epoch 02049 | Time(s) 0.1757 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0797
+Process 001 | Epoch 02059 | Time(s) 0.1757 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0810
+Process 001 | Epoch 02069 | Time(s) 0.1756 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0794
+Process 001 | Epoch 02079 | Time(s) 0.1756 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0819
+Process 001 | Epoch 02089 | Time(s) 0.1755 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0808
+Process 001 | Epoch 02099 | Time(s) 0.1755 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0844
+Process 001 | Epoch 02109 | Time(s) 0.1756 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0826
+Process 001 | Epoch 02119 | Time(s) 0.1756 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0809
+Process 001 | Epoch 02129 | Time(s) 0.1755 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0806
+Process 001 | Epoch 02139 | Time(s) 0.1756 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0788
+Process 001 | Epoch 02149 | Time(s) 0.1756 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0821
+Process 001 | Epoch 02159 | Time(s) 0.1756 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0791
+Process 001 | Epoch 02169 | Time(s) 0.1755 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0806
+Process 001 | Epoch 02179 | Time(s) 0.1755 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0792
+Process 001 | Epoch 02189 | Time(s) 0.1755 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0792
+Process 001 | Epoch 02199 | Time(s) 0.1754 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0817
+Process 001 | Epoch 02209 | Time(s) 0.1754 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0788
+Process 001 | Epoch 02219 | Time(s) 0.1753 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0810
+Process 001 | Epoch 02229 | Time(s) 0.1753 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0787
+Process 001 | Epoch 02239 | Time(s) 0.1753 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0798
+Process 001 | Epoch 02249 | Time(s) 0.1752 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0796
+Process 001 | Epoch 02259 | Time(s) 0.1752 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0796
+Process 001 | Epoch 02269 | Time(s) 0.1751 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0796
+Process 001 | Epoch 02279 | Time(s) 0.1751 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0779
+Process 001 | Epoch 02289 | Time(s) 0.1752 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0787
+Process 001 | Epoch 02299 | Time(s) 0.1752 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0808
+Process 001 | Epoch 02309 | Time(s) 0.1751 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0783
+Process 001 | Epoch 02319 | Time(s) 0.1751 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0808
+Process 001 | Epoch 02329 | Time(s) 0.1750 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0779
+Process 001 | Epoch 02339 | Time(s) 0.1751 | Comm(s) 0.1271 | Reduce(s) 0.0040 | Loss 0.0789
+Process 001 | Epoch 02349 | Time(s) 0.1750 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0796
+Process 001 | Epoch 02359 | Time(s) 0.1750 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0763
+Process 001 | Epoch 02369 | Time(s) 0.1750 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0811
+Process 001 | Epoch 02379 | Time(s) 0.1750 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0777
+Process 001 | Epoch 02389 | Time(s) 0.1750 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0787
+Process 001 | Epoch 02399 | Time(s) 0.1749 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0778
+Process 001 | Epoch 02409 | Time(s) 0.1749 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0803
+Process 001 | Epoch 02419 | Time(s) 0.1748 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0772
+Process 001 | Epoch 02429 | Time(s) 0.1748 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0806
+Process 001 | Epoch 02439 | Time(s) 0.1748 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0772
+Process 001 | Epoch 02449 | Time(s) 0.1753 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0778
+Process 001 | Epoch 02459 | Time(s) 0.1752 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0792
+Process 001 | Epoch 02469 | Time(s) 0.1755 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0782
+Process 001 | Epoch 02479 | Time(s) 0.1756 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0785
+Process 001 | Epoch 02489 | Time(s) 0.1756 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0766
+Process 001 | Epoch 02499 | Time(s) 0.1755 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0782
+Process 001 | Epoch 02509 | Time(s) 0.1755 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0787
+Process 001 | Epoch 02519 | Time(s) 0.1754 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0761
+Process 001 | Epoch 02529 | Time(s) 0.1754 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0772
+Process 001 | Epoch 02539 | Time(s) 0.1754 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0781
+Process 001 | Epoch 02549 | Time(s) 0.1753 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0788
+Process 001 | Epoch 02559 | Time(s) 0.1753 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0790
+Process 001 | Epoch 02569 | Time(s) 0.1752 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0759
+Process 001 | Epoch 02579 | Time(s) 0.1752 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0769
+Process 001 | Epoch 02589 | Time(s) 0.1752 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0746
+Process 001 | Epoch 02599 | Time(s) 0.1751 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0760
+Process 001 | Epoch 02609 | Time(s) 0.1755 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0778
+Process 001 | Epoch 02619 | Time(s) 0.1755 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0770
+Process 000 | Epoch 01979 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0869
+Epoch 01979 | Accuracy 96.56%
+Process 000 | Epoch 01989 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0898
+Epoch 01989 | Accuracy 96.58%
+Process 000 | Epoch 01999 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0896
+Epoch 01999 | Accuracy 96.60%
+Process 000 | Epoch 02009 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0870
+Epoch 02009 | Accuracy 96.50%
+Process 000 | Epoch 02019 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0859
+Epoch 02019 | Accuracy 96.56%
+Process 000 | Epoch 02029 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0841
+Epoch 02029 | Accuracy 96.59%
+Process 000 | Epoch 02039 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0869
+Epoch 02039 | Accuracy 96.64%
+Process 000 | Epoch 02049 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0865
+Epoch 02049 | Accuracy 96.56%
+Process 000 | Epoch 02059 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0862
+Epoch 02059 | Accuracy 96.59%
+Process 000 | Epoch 02069 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0898
+Epoch 02069 | Accuracy 96.58%
+Process 000 | Epoch 02079 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0875
+Epoch 02079 | Accuracy 96.58%
+Process 000 | Epoch 02089 | Time(s) 0.1639 | Comm(s) 0.1056 | Reduce(s) 0.0042 | Loss 0.0884
+Epoch 02089 | Accuracy 96.61%
+Process 000 | Epoch 02099 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0860
+Epoch 02099 | Accuracy 96.61%
+Process 000 | Epoch 02109 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0888
+Epoch 02109 | Accuracy 96.55%
+Process 000 | Epoch 02119 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0860
+Epoch 02119 | Accuracy 96.56%
+Process 000 | Epoch 02129 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0911
+Epoch 02129 | Accuracy 96.63%
+Process 000 | Epoch 02139 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0901
+Epoch 02139 | Accuracy 96.61%
+Process 000 | Epoch 02149 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0854
+Epoch 02149 | Accuracy 96.56%
+Process 000 | Epoch 02159 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0863
+Epoch 02159 | Accuracy 96.58%
+Process 000 | Epoch 02169 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0885
+Epoch 02169 | Accuracy 96.55%
+Process 000 | Epoch 02179 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0875
+Epoch 02179 | Accuracy 96.62%
+Process 000 | Epoch 02189 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0862
+Epoch 02189 | Accuracy 96.61%
+Process 000 | Epoch 02199 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0864
+Epoch 02199 | Accuracy 96.57%
+Process 000 | Epoch 02209 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0878
+Epoch 02209 | Accuracy 96.52%
+Process 000 | Epoch 02219 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0876
+Epoch 02219 | Accuracy 96.54%
+Process 000 | Epoch 02229 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0888
+Epoch 02229 | Accuracy 96.60%
+Process 000 | Epoch 02239 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0861
+Epoch 02239 | Accuracy 96.57%
+Process 000 | Epoch 02249 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0864
+Epoch 02249 | Accuracy 96.61%
+Process 000 | Epoch 02259 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0873
+Epoch 02259 | Accuracy 96.63%
+Process 000 | Epoch 02269 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0867
+Epoch 02269 | Accuracy 96.64%
+Process 000 | Epoch 02279 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0828
+Epoch 02279 | Accuracy 96.61%
+Process 000 | Epoch 02289 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0849
+Epoch 02289 | Accuracy 96.58%
+Process 000 | Epoch 02299 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0858
+Epoch 02299 | Accuracy 96.62%
+Process 000 | Epoch 02309 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0867
+Epoch 02309 | Accuracy 96.60%
+Process 000 | Epoch 02319 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0874
+Epoch 02319 | Accuracy 96.67%
+Process 000 | Epoch 02329 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0842
+Epoch 02329 | Accuracy 96.66%
+Process 000 | Epoch 02339 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0877
+Epoch 02339 | Accuracy 96.60%
+Process 000 | Epoch 02349 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0850
+Epoch 02349 | Accuracy 96.58%
+Process 000 | Epoch 02359 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0871
+Epoch 02359 | Accuracy 96.58%
+Process 000 | Epoch 02369 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0869
+Epoch 02369 | Accuracy 96.55%
+Process 000 | Epoch 02379 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0862
+Epoch 02379 | Accuracy 96.57%
+Process 000 | Epoch 02389 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0845
+Epoch 02389 | Accuracy 96.57%
+Process 000 | Epoch 02399 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0873
+Epoch 02399 | Accuracy 96.61%
+Process 000 | Epoch 02409 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0844
+Epoch 02409 | Accuracy 96.61%
+Process 000 | Epoch 02419 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0879
+Epoch 02419 | Accuracy 96.63%
+Process 000 | Epoch 02429 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0863
+Epoch 02429 | Accuracy 96.59%
+Process 000 | Epoch 02439 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0841
+Epoch 02439 | Accuracy 96.61%
+Process 000 | Epoch 02449 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0865
+Epoch 02449 | Accuracy 96.63%
+Process 000 | Epoch 02459 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0853
+Epoch 02459 | Accuracy 96.66%
+Process 000 | Epoch 02469 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0869
+Epoch 02469 | Accuracy 96.54%
+Process 000 | Epoch 02479 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0850
+Epoch 02479 | Accuracy 96.63%
+Process 000 | Epoch 02489 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0842
+Epoch 02489 | Accuracy 96.55%
+Process 000 | Epoch 02499 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0829
+Epoch 02499 | Accuracy 96.63%
+Process 000 | Epoch 02509 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0844
+Epoch 02509 | Accuracy 96.62%
+Process 000 | Epoch 02519 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0879
+Epoch 02519 | Accuracy 96.64%
+Process 000 | Epoch 02529 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0868
+Epoch 02529 | Accuracy 96.63%
+Process 000 | Epoch 02539 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0838
+Epoch 02539 | Accuracy 96.59%
+Process 000 | Epoch 02549 | Time(s) 0.1639 | Comm(s) 0.1058 | Reduce(s) 0.0042 | Loss 0.0845
+Epoch 02549 | Accuracy 96.57%
+Process 000 | Epoch 02559 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0828
+Epoch 02559 | Accuracy 96.60%
+Process 000 | Epoch 02569 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0869
+Epoch 02569 | Accuracy 96.61%
+Process 000 | Epoch 02579 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0833
+Epoch 02579 | Accuracy 96.61%
+Process 000 | Epoch 02589 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0851
+Epoch 02589 | Accuracy 96.60%
+Process 000 | Epoch 02599 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0832
+Epoch 02599 | Accuracy 96.59%
+Process 000 | Epoch 02609 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0840
+Epoch 02609 | Accuracy 96.59%
+Process 000 | Epoch 02619 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0816
+Epoch 02619 | Accuracy 96.57%
+Process 000 | Epoch 02629 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0851
+Epoch 02629 | Accuracy 96.57%
+Process 001 | Epoch 02629 | Time(s) 0.1754 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0773
+Process 001 | Epoch 02639 | Time(s) 0.1754 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0766
+Process 001 | Epoch 02649 | Time(s) 0.1754 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0744
+Process 001 | Epoch 02659 | Time(s) 0.1755 | Comm(s) 0.1272 | Reduce(s) 0.0040 | Loss 0.0760
+Process 001 | Epoch 02669 | Time(s) 0.1754 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0777
+Process 001 | Epoch 02679 | Time(s) 0.1754 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0779
+Process 001 | Epoch 02689 | Time(s) 0.1753 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0752
+Process 001 | Epoch 02699 | Time(s) 0.1753 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0751
+Process 001 | Epoch 02709 | Time(s) 0.1754 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0754
+Process 001 | Epoch 02719 | Time(s) 0.1754 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0774
+Process 001 | Epoch 02729 | Time(s) 0.1755 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0731
+Process 001 | Epoch 02739 | Time(s) 0.1755 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0750
+Process 001 | Epoch 02749 | Time(s) 0.1755 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0745
+Process 001 | Epoch 02759 | Time(s) 0.1755 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0763
+Process 001 | Epoch 02769 | Time(s) 0.1754 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0741
+Process 001 | Epoch 02779 | Time(s) 0.1754 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0735
+Process 001 | Epoch 02789 | Time(s) 0.1754 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0753
+Process 001 | Epoch 02799 | Time(s) 0.1756 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0783
+Process 001 | Epoch 02809 | Time(s) 0.1759 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0773
+Process 001 | Epoch 02819 | Time(s) 0.1758 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0754
+Process 001 | Epoch 02829 | Time(s) 0.1758 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0757
+Process 001 | Epoch 02839 | Time(s) 0.1758 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0745
+Process 001 | Epoch 02849 | Time(s) 0.1757 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0756
+Process 001 | Epoch 02859 | Time(s) 0.1757 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0758
+Process 001 | Epoch 02869 | Time(s) 0.1757 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0756
+Process 001 | Epoch 02879 | Time(s) 0.1756 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0752
+Process 001 | Epoch 02889 | Time(s) 0.1756 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0723
+Process 001 | Epoch 02899 | Time(s) 0.1756 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0739
+Process 001 | Epoch 02909 | Time(s) 0.1755 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0727
+Process 001 | Epoch 02919 | Time(s) 0.1755 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0745
+Process 001 | Epoch 02929 | Time(s) 0.1755 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0746
+Process 001 | Epoch 02939 | Time(s) 0.1754 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0756
+Process 001 | Epoch 02949 | Time(s) 0.1756 | Comm(s) 0.1273 | Reduce(s) 0.0040 | Loss 0.0734
+Process 001 | Epoch 02959 | Time(s) 0.1755 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0761
+Process 001 | Epoch 02969 | Time(s) 0.1755 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0770
+Process 001 | Epoch 02979 | Time(s) 0.1755 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0730
+Process 001 | Epoch 02989 | Time(s) 0.1755 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0739
+Process 001 | Epoch 02999 | Time(s) 0.1755 | Comm(s) 0.1274 | Reduce(s) 0.0040 | Loss 0.0728
+(rank 1) memory stats: current 3417.35MB, peak 5503.71MB, reserved 6568.00MB
+/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
+  dgl_warning(
+Process 000 | Epoch 02639 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0821
+Epoch 02639 | Accuracy 96.57%
+Process 000 | Epoch 02649 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0835
+Epoch 02649 | Accuracy 96.67%
+Process 000 | Epoch 02659 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0834
+Epoch 02659 | Accuracy 96.56%
+Process 000 | Epoch 02669 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0833
+Epoch 02669 | Accuracy 96.59%
+Process 000 | Epoch 02679 | Time(s) 0.1639 | Comm(s) 0.1056 | Reduce(s) 0.0042 | Loss 0.0835
+Epoch 02679 | Accuracy 96.58%
+Process 000 | Epoch 02689 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0832
+Epoch 02689 | Accuracy 96.56%
+Process 000 | Epoch 02699 | Time(s) 0.1639 | Comm(s) 0.1056 | Reduce(s) 0.0042 | Loss 0.0823
+Epoch 02699 | Accuracy 96.63%
+Process 000 | Epoch 02709 | Time(s) 0.1639 | Comm(s) 0.1056 | Reduce(s) 0.0042 | Loss 0.0810
+Epoch 02709 | Accuracy 96.62%
+Process 000 | Epoch 02719 | Time(s) 0.1639 | Comm(s) 0.1056 | Reduce(s) 0.0042 | Loss 0.0850
+Epoch 02719 | Accuracy 96.58%
+Process 000 | Epoch 02729 | Time(s) 0.1639 | Comm(s) 0.1056 | Reduce(s) 0.0042 | Loss 0.0854
+Epoch 02729 | Accuracy 96.64%
+Process 000 | Epoch 02739 | Time(s) 0.1639 | Comm(s) 0.1056 | Reduce(s) 0.0042 | Loss 0.0829
+Epoch 02739 | Accuracy 96.64%
+Process 000 | Epoch 02749 | Time(s) 0.1639 | Comm(s) 0.1056 | Reduce(s) 0.0042 | Loss 0.0840
+Epoch 02749 | Accuracy 96.63%
+Process 000 | Epoch 02759 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0816
+Epoch 02759 | Accuracy 96.59%
+Process 000 | Epoch 02769 | Time(s) 0.1639 | Comm(s) 0.1056 | Reduce(s) 0.0042 | Loss 0.0869
+Epoch 02769 | Accuracy 96.62%
+Process 000 | Epoch 02779 | Time(s) 0.1639 | Comm(s) 0.1056 | Reduce(s) 0.0042 | Loss 0.0831
+Epoch 02779 | Accuracy 96.61%
+Process 000 | Epoch 02789 | Time(s) 0.1639 | Comm(s) 0.1056 | Reduce(s) 0.0042 | Loss 0.0831
+Epoch 02789 | Accuracy 96.64%
+Process 000 | Epoch 02799 | Time(s) 0.1639 | Comm(s) 0.1056 | Reduce(s) 0.0042 | Loss 0.0822
+Epoch 02799 | Accuracy 96.62%
+Process 000 | Epoch 02809 | Time(s) 0.1639 | Comm(s) 0.1056 | Reduce(s) 0.0042 | Loss 0.0815
+Epoch 02809 | Accuracy 96.58%
+Process 000 | Epoch 02819 | Time(s) 0.1639 | Comm(s) 0.1057 | Reduce(s) 0.0042 | Loss 0.0833
+Epoch 02819 | Accuracy 96.56%
+Process 000 | Epoch 02829 | Time(s) 0.1639 | Comm(s) 0.1056 | Reduce(s) 0.0042 | Loss 0.0818
+Epoch 02829 | Accuracy 96.64%
+Process 000 | Epoch 02839 | Time(s) 0.1639 | Comm(s) 0.1056 | Reduce(s) 0.0042 | Loss 0.0813
+Epoch 02839 | Accuracy 96.64%
+Process 000 | Epoch 02849 | Time(s) 0.1639 | Comm(s) 0.1056 | Reduce(s) 0.0042 | Loss 0.0849
+Epoch 02849 | Accuracy 96.54%
+Process 000 | Epoch 02859 | Time(s) 0.1639 | Comm(s) 0.1056 | Reduce(s) 0.0042 | Loss 0.0823
+Epoch 02859 | Accuracy 96.58%
+Process 000 | Epoch 02869 | Time(s) 0.1639 | Comm(s) 0.1056 | Reduce(s) 0.0042 | Loss 0.0851
+Epoch 02869 | Accuracy 96.67%
+Process 000 | Epoch 02879 | Time(s) 0.1639 | Comm(s) 0.1056 | Reduce(s) 0.0042 | Loss 0.0808
+Epoch 02879 | Accuracy 96.68%
+Process 000 | Epoch 02889 | Time(s) 0.1639 | Comm(s) 0.1056 | Reduce(s) 0.0042 | Loss 0.0806
+Epoch 02889 | Accuracy 96.65%
+Process 000 | Epoch 02899 | Time(s) 0.1639 | Comm(s) 0.1056 | Reduce(s) 0.0042 | Loss 0.0806
+Epoch 02899 | Accuracy 96.64%
+Process 000 | Epoch 02909 | Time(s) 0.1639 | Comm(s) 0.1056 | Reduce(s) 0.0042 | Loss 0.0799
+Epoch 02909 | Accuracy 96.63%
+Process 000 | Epoch 02919 | Time(s) 0.1639 | Comm(s) 0.1056 | Reduce(s) 0.0042 | Loss 0.0803
+Epoch 02919 | Accuracy 96.67%
+Process 000 | Epoch 02929 | Time(s) 0.1639 | Comm(s) 0.1055 | Reduce(s) 0.0042 | Loss 0.0847
+Epoch 02929 | Accuracy 96.58%
+Process 000 | Epoch 02939 | Time(s) 0.1639 | Comm(s) 0.1055 | Reduce(s) 0.0042 | Loss 0.0806
+Epoch 02939 | Accuracy 96.60%
+Process 000 | Epoch 02949 | Time(s) 0.1639 | Comm(s) 0.1055 | Reduce(s) 0.0042 | Loss 0.0853
+Epoch 02949 | Accuracy 96.60%
+Process 000 | Epoch 02959 | Time(s) 0.1639 | Comm(s) 0.1055 | Reduce(s) 0.0042 | Loss 0.0832
+Epoch 02959 | Accuracy 96.55%
+Process 000 | Epoch 02969 | Time(s) 0.1639 | Comm(s) 0.1056 | Reduce(s) 0.0042 | Loss 0.0824
+Epoch 02969 | Accuracy 96.58%
+Process 000 | Epoch 02979 | Time(s) 0.1639 | Comm(s) 0.1056 | Reduce(s) 0.0042 | Loss 0.0805
+Epoch 02979 | Accuracy 96.50%
+Process 000 | Epoch 02989 | Time(s) 0.1639 | Comm(s) 0.1055 | Reduce(s) 0.0042 | Loss 0.0815
+Epoch 02989 | Accuracy 96.52%
+Process 000 | Epoch 02999 | Time(s) 0.1639 | Comm(s) 0.1055 | Reduce(s) 0.0042 | Loss 0.0806
+(rank 0) memory stats: current 4543.96MB, peak 7244.72MB, reserved 10142.00MB
+Epoch 02999 | Accuracy 96.59%
+model saved
+Max Validation Accuracy 96.68%
+Test Result | Accuracy 97.14%
+/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
+  dgl_warning(

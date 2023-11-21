@@ -54,6 +54,8 @@ def create_parser():
     parser.add_argument("--parts-per-node", "--parts_per_node", type=int, default=10)
     parser.add_argument('--skip-partition', action='store_true',
                         help="skip graph partition")
+    parser.add_argument("--half", action='store_true', help='communicate using FP16')
+    parser.add_argument("--octal", action='store_true', help='communicate using 8-bit')
     parser.add_argument('--eval', action='store_true',
                         help="enable evaluation")
     parser.add_argument('--no-eval', action='store_false', dest='eval',

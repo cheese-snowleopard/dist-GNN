@@ -2,7 +2,7 @@ import os
 
 import scipy
 import dgl
-from dgl.data import RedditDataset, YelpDataset
+from dgl.data import RedditDataset, YelpDataset, FraudDataset
 from dgl.distributed import partition_graph
 from helper.context import *
 from ogb.nodeproppred import DglNodePropPredDataset
@@ -41,6 +41,8 @@ def load_data(args):
         g = load_ogb_dataset('ogbn-products', args.data_path)
     elif args.dataset == 'ogbn-papers100m':
         g = load_ogb_dataset('ogbn-papers100M', args.data_path)
+    elif args.dataset == 'ogbn-proteins':
+        g = load_ogb_dataset('ogbn-proteins', args.data_path)
     elif args.dataset == 'yelp':
         data = YelpDataset(raw_dir=args.data_path)
         g = data[0]
@@ -54,6 +56,14 @@ def load_data(args):
         scaler.fit(feats[g.ndata['train_mask']])
         feats = scaler.transform(feats)
         g.ndata['feat'] = torch.tensor(feats, dtype=torch.float)
+    elif args.dataset == 'fraud':
+        data = FraudDataset('amazon', raw_dir=args.data_path)
+        g = data[0]
+        g.ndata['feat'] = g.ndata['feature']
+        g.ndata['label'] = g.ndata['label'].float()
+        g.ndata['train_mask'] = g.ndata['train_mask'].bool()
+        g.ndata['val_mask'] = g.ndata['val_mask'].bool()
+        g.ndata['test_mask'] = g.ndata['test_mask'].bool()
     else:
         raise ValueError('Unknown dataset: {}'.format(args.dataset))
 
@@ -62,10 +72,11 @@ def load_data(args):
         n_class = g.ndata['label'].max().item() + 1
     else:
         n_class = g.ndata['label'].shape[1]
-
+    print(g.canonical_etypes)
     g.edata.clear()
-    g = dgl.remove_self_loop(g)
-    g = dgl.add_self_loop(g)
+    for etype in g.canonical_etypes:
+        g = dgl.remove_self_loop(g, etype=etype)
+        g = dgl.add_self_loop(g, etype=etype)
     return g, n_feat, n_class
 
 
@@ -131,8 +142,71 @@ def get_layer_size(n_feat, n_hidden, n_class, n_layers):
 
 def get_boundary(node_dict, gpb):
     rank, size = dist.get_rank(), dist.get_world_size()
-    device = 'cuda'
     boundary = [None] * size
+    num_b = [None] * size
+    belong = [(node_dict['part_id'] == i) for i in range(0, size)]
+    req = queue.Queue()
+    device = torch.device('cuda')
+    if dist.get_backend() == 'nccl':
+        device = torch.device(rank)
+
+    
+    for i in range(0, size):
+        if i == rank:
+            for j in range(0, size):
+                if j == rank:
+                    continue
+                num_j = belong[j].sum().view(-1)
+                if dist.get_backend() == 'gloo':
+                    num_j = num_j.cpu()
+                elif dist.get_backend() == 'nccl':
+                    num_j = num_j.to(device=device)
+                else:
+                    raise ValueError(f'{dist.get_backend()} backend not supported')
+                r = dist.isend(num_j, dst=j)
+                req.put(r)
+            while not req.empty():
+                r = req.get()
+                r.wait()
+        else:
+            num_recv = None
+            if dist.get_backend() == 'gloo':
+                num_recv = torch.tensor([0])
+            if dist.get_backend() == 'nccl':
+                num_recv = torch.tensor([0], device=device)
+            dist.recv(num_recv, src=i)
+            num_b[i] = num_recv
+
+    for i in range(0, size):
+        if i == rank:
+            for j in range(0, size):
+                if j == rank:
+                    continue
+                start = gpb.partid2nids(j)[0].item()
+                v = node_dict[dgl.NID][belong[j]] - start
+                if dist.get_backend() == 'gloo':
+                    v = v.cpu()
+                elif dist.get_backend() == 'nccl':
+                    v = v.to(device=device)
+                r = dist.isend(v, dst=j)
+                req.put(r)
+            while not req.empty():
+                r = req.get()
+                r.wait()
+        else:
+            u = None
+            if dist.get_backend() == 'gloo':
+                u = torch.zeros(num_b[i], dtype=torch.long)
+            elif dist.get_backend() == 'nccl':
+                u = torch.zeros(num_b[i], dtype=torch.long, device=device)
+            dist.recv(u, src=i)
+            u, _ = torch.sort(u)
+            if dist.get_backend() == 'gloo':
+                boundary[i] = u.cuda()
+            else:
+                boundary[i] = u
+
+    return boundary
 
     for i in range(1, size):
         left = (rank - i + size) % size
@@ -142,8 +216,11 @@ def get_boundary(node_dict, gpb):
         if dist.get_backend() == 'gloo':
             num_right = num_right.cpu()
             num_left = torch.tensor([0])
-        else:
+        elif dist.get_backend() == 'nccl':
+            num_right = num_right.to(device=device)
             num_left = torch.tensor([0], device=device)
+        else:
+            raise ValueError(f'{dist.get_backend()} backend not supported')
         req = dist.isend(num_right, dst=right)
         dist.recv(num_left, src=left)
         start = gpb.partid2nids(right)[0].item()
@@ -151,8 +228,11 @@ def get_boundary(node_dict, gpb):
         if dist.get_backend() == 'gloo':
             v = v.cpu()
             u = torch.zeros(num_left, dtype=torch.long)
-        else:
+        elif dist.get_backend() == 'nccl':
+            v = v.to(device)
             u = torch.zeros(num_left, dtype=torch.long, device=device)
+        else:
+            raise ValueError(f'{dist.get_backend()} backend not supported')
         req.wait()
         req = dist.isend(v, dst=right)
         dist.recv(u, src=left)
@@ -167,31 +247,58 @@ def get_boundary(node_dict, gpb):
 
 
 _send_cpu, _recv_cpu = {}, {}
+_recv_gpu = {}
 
 
 def data_transfer(data, recv_shape, tag, dtype=torch.float):
 
     rank, size = dist.get_rank(), dist.get_world_size()
     msg, res = [None] * size, [None] * size
+    device = torch.device('cuda')
+    if dist.get_backend() == 'nccl':
+        device = torch.device(rank)
 
-    for i in range(1, size):
-        idx = (rank + i) % size
-        key = 'dst%d_tag%d' % (idx, tag)
-        if key not in _recv_cpu:
-            _send_cpu[key] = torch.zeros_like(data[idx], dtype=dtype, device='cpu', pin_memory=True)
-            _recv_cpu[key] = torch.zeros(recv_shape[idx], dtype=dtype, pin_memory=True)
-        msg[idx] = _send_cpu[key]
-        res[idx] = _recv_cpu[key]
+    if dist.get_backend() == 'gloo':
+        for i in range(1, size):
+            idx = (rank + i) % size
+            key = 'dst%d_tag%d' % (idx, tag)
+            if key not in _recv_cpu:
+                _send_cpu[key] = torch.zeros_like(data[idx], dtype=dtype, device='cpu', pin_memory=True)
+                _recv_cpu[key] = torch.zeros(recv_shape[idx], dtype=dtype, pin_memory=True)
+            msg[idx] = _send_cpu[key]
+            res[idx] = _recv_cpu[key]
 
-    for i in range(1, size):
-        left = (rank - i + size) % size
-        right = (rank + i) % size
-        msg[right].copy_(data[right])
-        req = dist.isend(msg[right], dst=right, tag=tag)
-        dist.recv(res[left], src=left, tag=tag)
-        res[left] = res[left].cuda(non_blocking=True)
-        req.wait()
-
+        for i in range(1, size):
+            left = (rank - i + size) % size
+            right = (rank + i) % size
+            msg[right].copy_(data[right])
+            req = dist.isend(msg[right], dst=right, tag=tag)
+            dist.recv(res[left], src=left, tag=tag)
+            res[left] = res[left].cuda(non_blocking=True)
+            req.wait()
+    elif dist.get_backend() == 'nccl':
+        for i in range(1, size):
+            idx = (rank + i) % size
+            key = 'dst%d_tag%d' % (idx, tag)
+            if key not in _recv_gpu:
+                _recv_gpu[key] = torch.zeros(recv_shape[idx], dtype=dtype, device=device)
+            res[idx] = _recv_gpu[key]
+        
+        for i in range(0, size):
+            if i == rank:
+                reqs = []
+                for j in range(0, size):
+                    if j == rank:
+                        continue
+                    req = dist.isend(data[j], dst=j, tag=tag)
+                    reqs.append(req)
+                for r in reqs:
+                    r.wait()
+            else:
+                dist.recv(res[i], src=i, tag=tag)
+    else:
+        raise ValueError(f"{dist.get_backend()} not supported")
+    dist.barrier()
     return res
 
 

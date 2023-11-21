@@ -71,5 +71,22 @@ if __name__ == '__main__':
         command = ['mpirun'] + mpi_arg + ['python', 'train.py'] + gcn_arg
         print(' '.join(command))
         subprocess.run(command, stderr=sys.stderr, stdout=sys.stdout)
+    elif args.backend == 'nccl':
+        processes = []
+        if 'CUDA_VISIBLE_DEVICES' in os.environ:
+            devices = os.environ['CUDA_VISIBLE_DEVICES'].split(',')
+        else:
+            n = torch.cuda.device_count()
+            devices = [f'{i}' for i in range(n)]
+        mp.set_start_method('spawn', force=True)
+        start_id = args.node_rank * args.parts_per_node
+        for i in range(start_id, min(start_id + args.parts_per_node, args.n_partitions)):
+            # os.environ['CUDA_VISIBLE_DEVICES'] = devices[i % len(devices)]
+            print(f"cuda visible devices: {os.environ['CUDA_VISIBLE_DEVICES']}")
+            p = mp.Process(target=train.init_processes, args=(i, args.n_partitions, args))
+            p.start()
+            processes.append(p)
+        for p in processes:
+            p.join()
     else:
         raise ValueError

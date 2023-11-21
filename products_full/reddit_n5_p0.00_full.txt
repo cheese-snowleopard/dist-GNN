@@ -1,0 +1,349 @@
+Namespace(backend='gloo', data_path='./dataset/', dataset='ogbn-products', dropout=0.3, dtype='float32', eval=True, fix_seed=False, graph_name='ogbn-products-5-metis-vol-induc', half=False, heads=1, inductive=True, log_every=10, lr=0.003, master_addr='127.0.0.1', model='graphsage', n_class=47, n_epochs=500, n_feat=100, n_hidden=128, n_layers=4, n_linear=0, n_partitions=5, n_train=196615, node_rank=0, norm='layer', octal=False, partition_method='metis', partition_obj='vol', parts_per_node=10, port=13007, sampling_rate=0.0, seed=423538140, skip_partition=False, use_pp=True, weight_decay=0)
+init_process started
+loading partitions
+init_process finished
+rank: 4 of size: 5
+Process 4 has 83010 nodes, 2695631 edges 40483 inner nodes, and 2032259 inner edges.
+Process 4 start training
+Process 004 | Epoch 00009 | Time(s) 0.0239 | Comm(s) 0.0040 | Reduce(s) 0.0021 | Loss 2.5248
+Process 004 | Epoch 00019 | Time(s) 0.0287 | Comm(s) 0.0062 | Reduce(s) 0.0049 | Loss 1.6365
+Process 004 | Epoch 00029 | Time(s) 0.0287 | Comm(s) 0.0078 | Reduce(s) 0.0035 | Loss 1.0983
+Process 004 | Epoch 00039 | Time(s) 0.0285 | Comm(s) 0.0082 | Reduce(s) 0.0029 | Loss 0.9364
+Process 004 | Epoch 00049 | Time(s) 0.0284 | Comm(s) 0.0085 | Reduce(s) 0.0026 | Loss 0.8476
+Process 004 | Epoch 00059 | Time(s) 0.0283 | Comm(s) 0.0086 | Reduce(s) 0.0023 | Loss 0.7983
+Process 004 | Epoch 00069 | Time(s) 0.0283 | Comm(s) 0.0087 | Reduce(s) 0.0022 | Loss 0.7563
+Process 004 | Epoch 00079 | Time(s) 0.0282 | Comm(s) 0.0087 | Reduce(s) 0.0021 | Loss 0.7242
+Process 004 | Epoch 00089 | Time(s) 0.0282 | Comm(s) 0.0088 | Reduce(s) 0.0020 | Loss 0.6995
+Process 004 | Epoch 00099 | Time(s) 0.0282 | Comm(s) 0.0088 | Reduce(s) 0.0019 | Loss 0.6822
+Process 004 | Epoch 00109 | Time(s) 0.0282 | Comm(s) 0.0088 | Reduce(s) 0.0019 | Loss 0.6665
+Process 004 | Epoch 00119 | Time(s) 0.0282 | Comm(s) 0.0088 | Reduce(s) 0.0018 | Loss 0.6492
+Process 004 | Epoch 00129 | Time(s) 0.0282 | Comm(s) 0.0089 | Reduce(s) 0.0018 | Loss 0.6334
+Process 004 | Epoch 00139 | Time(s) 0.0282 | Comm(s) 0.0089 | Reduce(s) 0.0018 | Loss 0.6314
+Process 004 | Epoch 00149 | Time(s) 0.0282 | Comm(s) 0.0089 | Reduce(s) 0.0017 | Loss 0.6155
+Process 004 | Epoch 00159 | Time(s) 0.0282 | Comm(s) 0.0089 | Reduce(s) 0.0017 | Loss 0.6120
+Process 004 | Epoch 00169 | Time(s) 0.0282 | Comm(s) 0.0090 | Reduce(s) 0.0017 | Loss 0.6062
+Process 004 | Epoch 00179 | Time(s) 0.0282 | Comm(s) 0.0090 | Reduce(s) 0.0017 | Loss 0.5946
+Process 004 | Epoch 00189 | Time(s) 0.0282 | Comm(s) 0.0090 | Reduce(s) 0.0017 | Loss 0.5862
+Process 004 | Epoch 00199 | Time(s) 0.0282 | Comm(s) 0.0090 | Reduce(s) 0.0016 | Loss 0.5849
+Process 004 | Epoch 00209 | Time(s) 0.0282 | Comm(s) 0.0090 | Reduce(s) 0.0016 | Loss 0.5756
+Process 004 | Epoch 00219 | Time(s) 0.0282 | Comm(s) 0.0090 | Reduce(s) 0.0016 | Loss 0.5746
+Process 004 | Epoch 00229 | Time(s) 0.0282 | Comm(s) 0.0090 | Reduce(s) 0.0016 | Loss 0.5701
+Process 004 | Epoch 00239 | Time(s) 0.0282 | Comm(s) 0.0090 | Reduce(s) 0.0017 | Loss 0.5669
+Process 004 | Epoch 00249 | Time(s) 0.0282 | Comm(s) 0.0090 | Reduce(s) 0.0017 | Loss 0.5619
+Process 004 | Epoch 00259 | Time(s) 0.0283 | Comm(s) 0.0091 | Reduce(s) 0.0017 | Loss 0.5582
+Process 004 | Epoch 00269 | Time(s) 0.0283 | Comm(s) 0.0091 | Reduce(s) 0.0017 | Loss 0.5515
+Process 004 | Epoch 00279 | Time(s) 0.0282 | Comm(s) 0.0091 | Reduce(s) 0.0017 | Loss 0.5484
+Process 004 | Epoch 00289 | Time(s) 0.0283 | Comm(s) 0.0091 | Reduce(s) 0.0016 | Loss 0.5518
+Process 004 | Epoch 00299 | Time(s) 0.0282 | Comm(s) 0.0091 | Reduce(s) 0.0016 | Loss 0.5428
+Process 004 | Epoch 00309 | Time(s) 0.0282 | Comm(s) 0.0091 | Reduce(s) 0.0016 | Loss 0.5375
+Process 004 | Epoch 00319 | Time(s) 0.0282 | Comm(s) 0.0091 | Reduce(s) 0.0016 | Loss 0.5352
+Process 004 | Epoch 00329 | Time(s) 0.0283 | Comm(s) 0.0091 | Reduce(s) 0.0016 | Loss 0.5481
+Process 004 | Epoch 00339 | Time(s) 0.0283 | Comm(s) 0.0091 | Reduce(s) 0.0016 | Loss 0.5364
+Process 004 | Epoch 00349 | Time(s) 0.0283 | Comm(s) 0.0092 | Reduce(s) 0.0016 | Loss 0.5329
+Process 004 | Epoch 00359 | Time(s) 0.0283 | Comm(s) 0.0092 | Reduce(s) 0.0016 | Loss 0.5261
+Process 004 | Epoch 00369 | Time(s) 0.0284 | Comm(s) 0.0092 | Reduce(s) 0.0016 | Loss 0.5327
+Process 004 | Epoch 00379 | Time(s) 0.0283 | Comm(s) 0.0092 | Reduce(s) 0.0016 | Loss 0.5296
+Process 004 | Epoch 00389 | Time(s) 0.0283 | Comm(s) 0.0092 | Reduce(s) 0.0016 | Loss 0.5181
+Process 004 | Epoch 00399 | Time(s) 0.0284 | Comm(s) 0.0092 | Reduce(s) 0.0016 | Loss 0.5146
+Process 004 | Epoch 00409 | Time(s) 0.0284 | Comm(s) 0.0093 | Reduce(s) 0.0016 | Loss 0.5122
+Process 004 | Epoch 00419 | Time(s) 0.0284 | Comm(s) 0.0093 | Reduce(s) 0.0016 | Loss 0.5181
+Process 004 | Epoch 00429 | Time(s) 0.0284 | Comm(s) 0.0093 | Reduce(s) 0.0016 | Loss 0.5150
+Process 004 | Epoch 00439 | Time(s) 0.0284 | Comm(s) 0.0093 | Reduce(s) 0.0016 | Loss 0.5124
+Process 004 | Epoch 00449 | Time(s) 0.0284 | Comm(s) 0.0093 | Reduce(s) 0.0016 | Loss 0.5206
+Process 004 | Epoch 00459 | Time(s) 0.0284 | Comm(s) 0.0093 | Reduce(s) 0.0016 | Loss 0.5222
+Process 004 | Epoch 00469 | Time(s) 0.0284 | Comm(s) 0.0093 | Reduce(s) 0.0016 | Loss 0.5054
+Process 004 | Epoch 00479 | Time(s) 0.0284 | Comm(s) 0.0093 | Reduce(s) 0.0016 | Loss 0.5069
+Process 004 | Epoch 00489 | Time(s) 0.0284 | Comm(s) 0.0093 | Reduce(s) 0.0016 | Loss 0.5038
+Process 004 | Epoch 00499 | Time(s) 0.0284 | Comm(s) 0.0093 | Reduce(s) 0.0016 | Loss 0.5034
+(rank 4) memory stats: current 2161.19MB, peak 2532.38MB, reserved 2676.00MB
+/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
+  dgl_warning(
+init_process started
+loading partitions
+init_process finished
+rank: 3 of size: 5
+Process 3 has 74590 nodes, 2454956 edges 39748 inner nodes, and 1977126 inner edges.
+Process 3 start training
+Process 003 | Epoch 00009 | Time(s) 0.0239 | Comm(s) 0.0055 | Reduce(s) 0.0023 | Loss 2.0518
+Process 003 | Epoch 00019 | Time(s) 0.0287 | Comm(s) 0.0067 | Reduce(s) 0.0050 | Loss 1.2163
+Process 003 | Epoch 00029 | Time(s) 0.0287 | Comm(s) 0.0083 | Reduce(s) 0.0035 | Loss 0.8858
+Process 003 | Epoch 00039 | Time(s) 0.0285 | Comm(s) 0.0086 | Reduce(s) 0.0029 | Loss 0.7470
+Process 003 | Epoch 00049 | Time(s) 0.0284 | Comm(s) 0.0088 | Reduce(s) 0.0026 | Loss 0.6768
+Process 003 | Epoch 00059 | Time(s) 0.0283 | Comm(s) 0.0089 | Reduce(s) 0.0023 | Loss 0.6380
+Process 003 | Epoch 00069 | Time(s) 0.0283 | Comm(s) 0.0090 | Reduce(s) 0.0022 | Loss 0.6019
+Process 003 | Epoch 00079 | Time(s) 0.0282 | Comm(s) 0.0091 | Reduce(s) 0.0021 | Loss 0.5795
+Process 003 | Epoch 00089 | Time(s) 0.0282 | Comm(s) 0.0091 | Reduce(s) 0.0020 | Loss 0.5645
+Process 003 | Epoch 00099 | Time(s) 0.0282 | Comm(s) 0.0091 | Reduce(s) 0.0019 | Loss 0.5486
+Process 003 | Epoch 00109 | Time(s) 0.0282 | Comm(s) 0.0092 | Reduce(s) 0.0019 | Loss 0.5337
+Process 003 | Epoch 00119 | Time(s) 0.0282 | Comm(s) 0.0092 | Reduce(s) 0.0019 | Loss 0.5228
+Process 003 | Epoch 00129 | Time(s) 0.0282 | Comm(s) 0.0092 | Reduce(s) 0.0018 | Loss 0.5136
+Process 003 | Epoch 00139 | Time(s) 0.0282 | Comm(s) 0.0093 | Reduce(s) 0.0018 | Loss 0.5027
+Process 003 | Epoch 00149 | Time(s) 0.0282 | Comm(s) 0.0093 | Reduce(s) 0.0018 | Loss 0.4975
+Process 003 | Epoch 00159 | Time(s) 0.0282 | Comm(s) 0.0093 | Reduce(s) 0.0017 | Loss 0.4872
+Process 003 | Epoch 00169 | Time(s) 0.0282 | Comm(s) 0.0093 | Reduce(s) 0.0017 | Loss 0.4803
+Process 003 | Epoch 00179 | Time(s) 0.0282 | Comm(s) 0.0093 | Reduce(s) 0.0017 | Loss 0.4715
+Process 003 | Epoch 00189 | Time(s) 0.0282 | Comm(s) 0.0093 | Reduce(s) 0.0017 | Loss 0.4684
+Process 003 | Epoch 00199 | Time(s) 0.0282 | Comm(s) 0.0094 | Reduce(s) 0.0017 | Loss 0.4607
+Process 003 | Epoch 00209 | Time(s) 0.0282 | Comm(s) 0.0094 | Reduce(s) 0.0017 | Loss 0.4549
+Process 003 | Epoch 00219 | Time(s) 0.0282 | Comm(s) 0.0094 | Reduce(s) 0.0017 | Loss 0.4529
+Process 003 | Epoch 00229 | Time(s) 0.0282 | Comm(s) 0.0094 | Reduce(s) 0.0016 | Loss 0.4480
+Process 003 | Epoch 00239 | Time(s) 0.0282 | Comm(s) 0.0094 | Reduce(s) 0.0017 | Loss 0.4475
+Process 003 | Epoch 00249 | Time(s) 0.0282 | Comm(s) 0.0094 | Reduce(s) 0.0017 | Loss 0.4429
+Process 003 | Epoch 00259 | Time(s) 0.0283 | Comm(s) 0.0094 | Reduce(s) 0.0017 | Loss 0.4413
+Process 003 | Epoch 00269 | Time(s) 0.0283 | Comm(s) 0.0094 | Reduce(s) 0.0017 | Loss 0.4312
+Process 003 | Epoch 00279 | Time(s) 0.0282 | Comm(s) 0.0094 | Reduce(s) 0.0017 | Loss 0.4309
+Process 003 | Epoch 00289 | Time(s) 0.0283 | Comm(s) 0.0094 | Reduce(s) 0.0017 | Loss 0.4331
+Process 003 | Epoch 00299 | Time(s) 0.0282 | Comm(s) 0.0094 | Reduce(s) 0.0016 | Loss 0.4214
+Process 003 | Epoch 00309 | Time(s) 0.0282 | Comm(s) 0.0094 | Reduce(s) 0.0017 | Loss 0.4208
+Process 003 | Epoch 00319 | Time(s) 0.0282 | Comm(s) 0.0094 | Reduce(s) 0.0016 | Loss 0.4230
+Process 003 | Epoch 00329 | Time(s) 0.0283 | Comm(s) 0.0094 | Reduce(s) 0.0017 | Loss 0.4218
+Process 003 | Epoch 00339 | Time(s) 0.0283 | Comm(s) 0.0094 | Reduce(s) 0.0017 | Loss 0.4181
+Process 003 | Epoch 00349 | Time(s) 0.0283 | Comm(s) 0.0094 | Reduce(s) 0.0017 | Loss 0.4151
+Process 003 | Epoch 00359 | Time(s) 0.0283 | Comm(s) 0.0095 | Reduce(s) 0.0016 | Loss 0.4132
+Process 003 | Epoch 00369 | Time(s) 0.0284 | Comm(s) 0.0095 | Reduce(s) 0.0016 | Loss 0.4071
+Process 003 | Epoch 00379 | Time(s) 0.0283 | Comm(s) 0.0095 | Reduce(s) 0.0016 | Loss 0.4092
+Process 003 | Epoch 00389 | Time(s) 0.0283 | Comm(s) 0.0095 | Reduce(s) 0.0016 | Loss 0.4048
+Process 003 | Epoch 00399 | Time(s) 0.0284 | Comm(s) 0.0095 | Reduce(s) 0.0016 | Loss 0.3968
+Process 003 | Epoch 00409 | Time(s) 0.0284 | Comm(s) 0.0095 | Reduce(s) 0.0016 | Loss 0.4014
+Process 003 | Epoch 00419 | Time(s) 0.0284 | Comm(s) 0.0095 | Reduce(s) 0.0016 | Loss 0.4026
+Process 003 | Epoch 00429 | Time(s) 0.0284 | Comm(s) 0.0095 | Reduce(s) 0.0016 | Loss 0.4061
+Process 003 | Epoch 00439 | Time(s) 0.0284 | Comm(s) 0.0095 | Reduce(s) 0.0016 | Loss 0.3993
+Process 003 | Epoch 00449 | Time(s) 0.0284 | Comm(s) 0.0095 | Reduce(s) 0.0016 | Loss 0.3961
+Process 003 | Epoch 00459 | Time(s) 0.0284 | Comm(s) 0.0095 | Reduce(s) 0.0016 | Loss 0.3996
+Process 003 | Epoch 00469 | Time(s) 0.0284 | Comm(s) 0.0095 | Reduce(s) 0.0016 | Loss 0.4009
+Process 003 | Epoch 00479 | Time(s) 0.0284 | Comm(s) 0.0095 | Reduce(s) 0.0016 | Loss 0.3944
+Process 003 | Epoch 00489 | Time(s) 0.0284 | Comm(s) 0.0095 | Reduce(s) 0.0016 | Loss 0.3926
+Process 003 | Epoch 00499 | Time(s) 0.0284 | Comm(s) 0.0095 | Reduce(s) 0.0016 | Loss 0.3990
+(rank 3) memory stats: current 2157.31MB, peak 2524.89MB, reserved 2624.00MB
+/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
+  dgl_warning(
+init_process started
+loading partitions
+init_process finished
+rank: 1 of size: 5
+Process 1 has 76875 nodes, 2251703 edges 38175 inner nodes, and 1764909 inner edges.
+Process 1 start training
+Process 001 | Epoch 00009 | Time(s) 0.0239 | Comm(s) 0.0056 | Reduce(s) 0.0023 | Loss 0.8731
+Process 001 | Epoch 00019 | Time(s) 0.0287 | Comm(s) 0.0068 | Reduce(s) 0.0049 | Loss 0.3899
+Process 001 | Epoch 00029 | Time(s) 0.0287 | Comm(s) 0.0083 | Reduce(s) 0.0035 | Loss 0.3032
+Process 001 | Epoch 00039 | Time(s) 0.0285 | Comm(s) 0.0088 | Reduce(s) 0.0029 | Loss 0.2676
+Process 001 | Epoch 00049 | Time(s) 0.0284 | Comm(s) 0.0091 | Reduce(s) 0.0026 | Loss 0.2341
+Process 001 | Epoch 00059 | Time(s) 0.0283 | Comm(s) 0.0092 | Reduce(s) 0.0023 | Loss 0.2149
+Process 001 | Epoch 00069 | Time(s) 0.0283 | Comm(s) 0.0093 | Reduce(s) 0.0022 | Loss 0.2020
+Process 001 | Epoch 00079 | Time(s) 0.0282 | Comm(s) 0.0093 | Reduce(s) 0.0021 | Loss 0.1893
+Process 001 | Epoch 00089 | Time(s) 0.0282 | Comm(s) 0.0093 | Reduce(s) 0.0020 | Loss 0.1766
+Process 001 | Epoch 00099 | Time(s) 0.0282 | Comm(s) 0.0094 | Reduce(s) 0.0019 | Loss 0.1699
+Process 001 | Epoch 00109 | Time(s) 0.0282 | Comm(s) 0.0095 | Reduce(s) 0.0019 | Loss 0.1611
+Process 001 | Epoch 00119 | Time(s) 0.0282 | Comm(s) 0.0095 | Reduce(s) 0.0018 | Loss 0.1533
+Process 001 | Epoch 00129 | Time(s) 0.0282 | Comm(s) 0.0094 | Reduce(s) 0.0018 | Loss 0.1488
+Process 001 | Epoch 00139 | Time(s) 0.0282 | Comm(s) 0.0095 | Reduce(s) 0.0018 | Loss 0.1445
+Process 001 | Epoch 00149 | Time(s) 0.0282 | Comm(s) 0.0095 | Reduce(s) 0.0017 | Loss 0.1418
+Process 001 | Epoch 00159 | Time(s) 0.0282 | Comm(s) 0.0095 | Reduce(s) 0.0017 | Loss 0.1390
+Process 001 | Epoch 00169 | Time(s) 0.0282 | Comm(s) 0.0095 | Reduce(s) 0.0017 | Loss 0.1356
+Process 001 | Epoch 00179 | Time(s) 0.0282 | Comm(s) 0.0096 | Reduce(s) 0.0017 | Loss 0.1345
+Process 001 | Epoch 00189 | Time(s) 0.0282 | Comm(s) 0.0096 | Reduce(s) 0.0017 | Loss 0.1312
+Process 001 | Epoch 00199 | Time(s) 0.0282 | Comm(s) 0.0096 | Reduce(s) 0.0017 | Loss 0.1279
+Process 001 | Epoch 00209 | Time(s) 0.0282 | Comm(s) 0.0096 | Reduce(s) 0.0017 | Loss 0.1282
+Process 001 | Epoch 00219 | Time(s) 0.0282 | Comm(s) 0.0096 | Reduce(s) 0.0017 | Loss 0.1253
+Process 001 | Epoch 00229 | Time(s) 0.0282 | Comm(s) 0.0096 | Reduce(s) 0.0016 | Loss 0.1246
+Process 001 | Epoch 00239 | Time(s) 0.0282 | Comm(s) 0.0096 | Reduce(s) 0.0017 | Loss 0.1264
+Process 001 | Epoch 00249 | Time(s) 0.0282 | Comm(s) 0.0097 | Reduce(s) 0.0017 | Loss 0.1254
+Process 001 | Epoch 00259 | Time(s) 0.0283 | Comm(s) 0.0097 | Reduce(s) 0.0017 | Loss 0.1189
+Process 001 | Epoch 00269 | Time(s) 0.0283 | Comm(s) 0.0097 | Reduce(s) 0.0017 | Loss 0.1171
+Process 001 | Epoch 00279 | Time(s) 0.0282 | Comm(s) 0.0097 | Reduce(s) 0.0017 | Loss 0.1152
+Process 001 | Epoch 00289 | Time(s) 0.0283 | Comm(s) 0.0097 | Reduce(s) 0.0017 | Loss 0.1193
+Process 001 | Epoch 00299 | Time(s) 0.0282 | Comm(s) 0.0097 | Reduce(s) 0.0017 | Loss 0.1132
+Process 001 | Epoch 00309 | Time(s) 0.0282 | Comm(s) 0.0097 | Reduce(s) 0.0017 | Loss 0.1121
+Process 001 | Epoch 00319 | Time(s) 0.0282 | Comm(s) 0.0097 | Reduce(s) 0.0017 | Loss 0.1131
+Process 001 | Epoch 00329 | Time(s) 0.0283 | Comm(s) 0.0097 | Reduce(s) 0.0017 | Loss 0.1155
+Process 001 | Epoch 00339 | Time(s) 0.0283 | Comm(s) 0.0097 | Reduce(s) 0.0017 | Loss 0.1116
+Process 001 | Epoch 00349 | Time(s) 0.0283 | Comm(s) 0.0098 | Reduce(s) 0.0017 | Loss 0.1146
+Process 001 | Epoch 00359 | Time(s) 0.0283 | Comm(s) 0.0098 | Reduce(s) 0.0017 | Loss 0.1091
+Process 001 | Epoch 00369 | Time(s) 0.0284 | Comm(s) 0.0098 | Reduce(s) 0.0017 | Loss 0.1106
+Process 001 | Epoch 00379 | Time(s) 0.0283 | Comm(s) 0.0098 | Reduce(s) 0.0016 | Loss 0.1078
+Process 001 | Epoch 00389 | Time(s) 0.0283 | Comm(s) 0.0098 | Reduce(s) 0.0016 | Loss 0.1106
+Process 001 | Epoch 00399 | Time(s) 0.0284 | Comm(s) 0.0099 | Reduce(s) 0.0016 | Loss 0.1062
+Process 001 | Epoch 00409 | Time(s) 0.0284 | Comm(s) 0.0099 | Reduce(s) 0.0016 | Loss 0.1086
+Process 001 | Epoch 00419 | Time(s) 0.0284 | Comm(s) 0.0099 | Reduce(s) 0.0016 | Loss 0.1070
+Process 001 | Epoch 00429 | Time(s) 0.0284 | Comm(s) 0.0099 | Reduce(s) 0.0016 | Loss 0.1038
+Process 001 | Epoch 00439 | Time(s) 0.0284 | Comm(s) 0.0099 | Reduce(s) 0.0016 | Loss 0.1050
+Process 001 | Epoch 00449 | Time(s) 0.0284 | Comm(s) 0.0099 | Reduce(s) 0.0016 | Loss 0.1060
+Process 001 | Epoch 00459 | Time(s) 0.0284 | Comm(s) 0.0099 | Reduce(s) 0.0016 | Loss 0.1046
+Process 001 | Epoch 00469 | Time(s) 0.0284 | Comm(s) 0.0099 | Reduce(s) 0.0016 | Loss 0.1045
+Process 001 | Epoch 00479 | Time(s) 0.0284 | Comm(s) 0.0099 | Reduce(s) 0.0016 | Loss 0.1003
+Process 001 | Epoch 00489 | Time(s) 0.0284 | Comm(s) 0.0099 | Reduce(s) 0.0016 | Loss 0.1020
+Process 001 | Epoch 00499 | Time(s) 0.0284 | Comm(s) 0.0099 | Reduce(s) 0.0016 | Loss 0.1021
+(rank 1) memory stats: current 2148.48MB, peak 2490.68MB, reserved 2584.00MB
+/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
+  dgl_warning(
+init_process started
+loading partitions
+init_process finished
+rank: 2 of size: 5
+Process 2 has 68406 nodes, 2401453 edges 38351 inner nodes, and 2034563 inner edges.
+Process 2 start training
+Process 002 | Epoch 00009 | Time(s) 0.0239 | Comm(s) 0.0051 | Reduce(s) 0.0022 | Loss 1.9533
+Process 002 | Epoch 00019 | Time(s) 0.0287 | Comm(s) 0.0065 | Reduce(s) 0.0049 | Loss 0.9718
+Process 002 | Epoch 00029 | Time(s) 0.0287 | Comm(s) 0.0081 | Reduce(s) 0.0034 | Loss 0.7831
+Process 002 | Epoch 00039 | Time(s) 0.0285 | Comm(s) 0.0086 | Reduce(s) 0.0029 | Loss 0.6827
+Process 002 | Epoch 00049 | Time(s) 0.0284 | Comm(s) 0.0087 | Reduce(s) 0.0025 | Loss 0.6236
+Process 002 | Epoch 00059 | Time(s) 0.0283 | Comm(s) 0.0089 | Reduce(s) 0.0023 | Loss 0.5878
+Process 002 | Epoch 00069 | Time(s) 0.0283 | Comm(s) 0.0090 | Reduce(s) 0.0022 | Loss 0.5610
+Process 002 | Epoch 00079 | Time(s) 0.0282 | Comm(s) 0.0090 | Reduce(s) 0.0021 | Loss 0.5403
+Process 002 | Epoch 00089 | Time(s) 0.0282 | Comm(s) 0.0091 | Reduce(s) 0.0020 | Loss 0.5190
+Process 002 | Epoch 00099 | Time(s) 0.0282 | Comm(s) 0.0092 | Reduce(s) 0.0019 | Loss 0.5079
+Process 002 | Epoch 00109 | Time(s) 0.0282 | Comm(s) 0.0093 | Reduce(s) 0.0019 | Loss 0.4984
+Process 002 | Epoch 00119 | Time(s) 0.0282 | Comm(s) 0.0093 | Reduce(s) 0.0018 | Loss 0.4836
+Process 002 | Epoch 00129 | Time(s) 0.0282 | Comm(s) 0.0093 | Reduce(s) 0.0018 | Loss 0.4730
+Process 002 | Epoch 00139 | Time(s) 0.0282 | Comm(s) 0.0094 | Reduce(s) 0.0018 | Loss 0.4665
+Process 002 | Epoch 00149 | Time(s) 0.0282 | Comm(s) 0.0094 | Reduce(s) 0.0018 | Loss 0.4572
+Process 002 | Epoch 00159 | Time(s) 0.0282 | Comm(s) 0.0094 | Reduce(s) 0.0017 | Loss 0.4523
+Process 002 | Epoch 00169 | Time(s) 0.0282 | Comm(s) 0.0094 | Reduce(s) 0.0017 | Loss 0.4449
+Process 002 | Epoch 00179 | Time(s) 0.0282 | Comm(s) 0.0094 | Reduce(s) 0.0017 | Loss 0.4390
+Process 002 | Epoch 00189 | Time(s) 0.0282 | Comm(s) 0.0094 | Reduce(s) 0.0017 | Loss 0.4363
+Process 002 | Epoch 00199 | Time(s) 0.0282 | Comm(s) 0.0095 | Reduce(s) 0.0017 | Loss 0.4312
+Process 002 | Epoch 00209 | Time(s) 0.0282 | Comm(s) 0.0095 | Reduce(s) 0.0017 | Loss 0.4288
+Process 002 | Epoch 00219 | Time(s) 0.0282 | Comm(s) 0.0095 | Reduce(s) 0.0017 | Loss 0.4263
+Process 002 | Epoch 00229 | Time(s) 0.0282 | Comm(s) 0.0095 | Reduce(s) 0.0016 | Loss 0.4251
+Process 002 | Epoch 00239 | Time(s) 0.0282 | Comm(s) 0.0095 | Reduce(s) 0.0017 | Loss 0.4236
+Process 002 | Epoch 00249 | Time(s) 0.0282 | Comm(s) 0.0095 | Reduce(s) 0.0017 | Loss 0.4212
+Process 002 | Epoch 00259 | Time(s) 0.0283 | Comm(s) 0.0095 | Reduce(s) 0.0017 | Loss 0.4139
+Process 002 | Epoch 00269 | Time(s) 0.0283 | Comm(s) 0.0095 | Reduce(s) 0.0017 | Loss 0.4105
+Process 002 | Epoch 00279 | Time(s) 0.0282 | Comm(s) 0.0095 | Reduce(s) 0.0017 | Loss 0.4081
+Process 002 | Epoch 00289 | Time(s) 0.0283 | Comm(s) 0.0095 | Reduce(s) 0.0017 | Loss 0.4088
+Process 002 | Epoch 00299 | Time(s) 0.0282 | Comm(s) 0.0095 | Reduce(s) 0.0017 | Loss 0.4005
+Process 002 | Epoch 00309 | Time(s) 0.0282 | Comm(s) 0.0095 | Reduce(s) 0.0017 | Loss 0.4002
+Process 002 | Epoch 00319 | Time(s) 0.0282 | Comm(s) 0.0095 | Reduce(s) 0.0016 | Loss 0.4001
+Process 002 | Epoch 00329 | Time(s) 0.0283 | Comm(s) 0.0096 | Reduce(s) 0.0017 | Loss 0.4013
+Process 002 | Epoch 00339 | Time(s) 0.0283 | Comm(s) 0.0096 | Reduce(s) 0.0017 | Loss 0.3989
+Process 002 | Epoch 00349 | Time(s) 0.0283 | Comm(s) 0.0096 | Reduce(s) 0.0017 | Loss 0.3930
+Process 002 | Epoch 00359 | Time(s) 0.0283 | Comm(s) 0.0096 | Reduce(s) 0.0016 | Loss 0.3967
+Process 002 | Epoch 00369 | Time(s) 0.0284 | Comm(s) 0.0096 | Reduce(s) 0.0016 | Loss 0.3926
+Process 002 | Epoch 00379 | Time(s) 0.0283 | Comm(s) 0.0096 | Reduce(s) 0.0016 | Loss 0.3912
+Process 002 | Epoch 00389 | Time(s) 0.0283 | Comm(s) 0.0096 | Reduce(s) 0.0016 | Loss 0.3892
+Process 002 | Epoch 00399 | Time(s) 0.0284 | Comm(s) 0.0096 | Reduce(s) 0.0016 | Loss 0.3863
+Process 002 | Epoch 00409 | Time(s) 0.0284 | Comm(s) 0.0096 | Reduce(s) 0.0016 | Loss 0.3820
+Process 002 | Epoch 00419 | Time(s) 0.0284 | Comm(s) 0.0096 | Reduce(s) 0.0016 | Loss 0.3880
+Process 002 | Epoch 00429 | Time(s) 0.0284 | Comm(s) 0.0096 | Reduce(s) 0.0016 | Loss 0.3857
+Process 002 | Epoch 00439 | Time(s) 0.0284 | Comm(s) 0.0096 | Reduce(s) 0.0016 | Loss 0.3817
+Process 002 | Epoch 00449 | Time(s) 0.0284 | Comm(s) 0.0096 | Reduce(s) 0.0016 | Loss 0.3834
+Process 002 | Epoch 00459 | Time(s) 0.0284 | Comm(s) 0.0096 | Reduce(s) 0.0016 | Loss 0.3840
+Process 002 | Epoch 00469 | Time(s) 0.0284 | Comm(s) 0.0096 | Reduce(s) 0.0016 | Loss 0.3781
+Process 002 | Epoch 00479 | Time(s) 0.0284 | Comm(s) 0.0096 | Reduce(s) 0.0016 | Loss 0.3809
+Process 002 | Epoch 00489 | Time(s) 0.0284 | Comm(s) 0.0096 | Reduce(s) 0.0016 | Loss 0.3749
+Process 002 | Epoch 00499 | Time(s) 0.0284 | Comm(s) 0.0096 | Reduce(s) 0.0016 | Loss 0.3736
+(rank 2) memory stats: current 2157.93MB, peak 2509.13MB, reserved 2636.00MB
+/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
+  dgl_warning(
+init_process started
+loading partitions
+init_process finished
+rank: 0 of size: 5
+Process 0 has 60272 nodes, 2438212 edges 39858 inner nodes, and 2148870 inner edges.
+Process 0 start training
+Process 000 | Epoch 00009 | Time(s) 0.0238 | Comm(s) 0.0043 | Reduce(s) 0.0023 | Loss 0.5011
+Epoch 00009 | Accuracy 65.98%
+Process 000 | Epoch 00019 | Time(s) 0.0282 | Comm(s) 0.0043 | Reduce(s) 0.0018 | Loss 0.1887
+Epoch 00019 | Accuracy 79.66%
+Process 000 | Epoch 00029 | Time(s) 0.0282 | Comm(s) 0.0046 | Reduce(s) 0.0016 | Loss 0.1543
+Epoch 00029 | Accuracy 84.37%
+Process 000 | Epoch 00039 | Time(s) 0.0280 | Comm(s) 0.0046 | Reduce(s) 0.0015 | Loss 0.1357
+Epoch 00039 | Accuracy 86.18%
+Process 000 | Epoch 00049 | Time(s) 0.0279 | Comm(s) 0.0045 | Reduce(s) 0.0015 | Loss 0.1251
+Epoch 00049 | Accuracy 87.00%
+Process 000 | Epoch 00059 | Time(s) 0.0278 | Comm(s) 0.0045 | Reduce(s) 0.0015 | Loss 0.1181
+Epoch 00059 | Accuracy 87.66%
+Process 000 | Epoch 00069 | Time(s) 0.0277 | Comm(s) 0.0044 | Reduce(s) 0.0015 | Loss 0.1105
+Epoch 00069 | Accuracy 88.12%
+Process 000 | Epoch 00079 | Time(s) 0.0277 | Comm(s) 0.0044 | Reduce(s) 0.0014 | Loss 0.1018
+Epoch 00079 | Accuracy 88.59%
+Process 000 | Epoch 00089 | Time(s) 0.0277 | Comm(s) 0.0044 | Reduce(s) 0.0014 | Loss 0.0994
+Epoch 00089 | Accuracy 88.94%
+Process 000 | Epoch 00099 | Time(s) 0.0277 | Comm(s) 0.0044 | Reduce(s) 0.0014 | Loss 0.0969
+Epoch 00099 | Accuracy 89.23%
+Process 000 | Epoch 00109 | Time(s) 0.0277 | Comm(s) 0.0045 | Reduce(s) 0.0014 | Loss 0.0932
+Epoch 00109 | Accuracy 89.44%
+Process 000 | Epoch 00119 | Time(s) 0.0277 | Comm(s) 0.0045 | Reduce(s) 0.0014 | Loss 0.0927
+Epoch 00119 | Accuracy 89.61%
+Process 000 | Epoch 00129 | Time(s) 0.0276 | Comm(s) 0.0045 | Reduce(s) 0.0014 | Loss 0.0890
+Epoch 00129 | Accuracy 89.89%
+Process 000 | Epoch 00139 | Time(s) 0.0276 | Comm(s) 0.0046 | Reduce(s) 0.0014 | Loss 0.0857
+Epoch 00139 | Accuracy 89.96%
+Process 000 | Epoch 00149 | Time(s) 0.0276 | Comm(s) 0.0046 | Reduce(s) 0.0014 | Loss 0.0845
+Epoch 00149 | Accuracy 90.06%
+Process 000 | Epoch 00159 | Time(s) 0.0276 | Comm(s) 0.0046 | Reduce(s) 0.0014 | Loss 0.0841
+Epoch 00159 | Accuracy 90.11%
+Process 000 | Epoch 00169 | Time(s) 0.0276 | Comm(s) 0.0046 | Reduce(s) 0.0014 | Loss 0.0833
+Epoch 00169 | Accuracy 90.28%
+Process 000 | Epoch 00179 | Time(s) 0.0276 | Comm(s) 0.0046 | Reduce(s) 0.0014 | Loss 0.0800
+Epoch 00179 | Accuracy 90.23%
+Process 000 | Epoch 00189 | Time(s) 0.0276 | Comm(s) 0.0046 | Reduce(s) 0.0014 | Loss 0.0789
+Epoch 00189 | Accuracy 90.39%
+Process 000 | Epoch 00199 | Time(s) 0.0276 | Comm(s) 0.0046 | Reduce(s) 0.0014 | Loss 0.0809
+Epoch 00199 | Accuracy 90.48%
+Process 000 | Epoch 00209 | Time(s) 0.0276 | Comm(s) 0.0047 | Reduce(s) 0.0014 | Loss 0.0764
+Epoch 00209 | Accuracy 90.58%
+Process 000 | Epoch 00219 | Time(s) 0.0276 | Comm(s) 0.0047 | Reduce(s) 0.0014 | Loss 0.0761
+Epoch 00219 | Accuracy 90.50%
+Process 000 | Epoch 00229 | Time(s) 0.0276 | Comm(s) 0.0047 | Reduce(s) 0.0014 | Loss 0.0764
+Epoch 00229 | Accuracy 90.60%
+Process 000 | Epoch 00239 | Time(s) 0.0277 | Comm(s) 0.0046 | Reduce(s) 0.0015 | Loss 0.0736
+Epoch 00239 | Accuracy 90.58%
+Process 000 | Epoch 00249 | Time(s) 0.0277 | Comm(s) 0.0047 | Reduce(s) 0.0015 | Loss 0.0765
+Epoch 00249 | Accuracy 90.68%
+Process 000 | Epoch 00259 | Time(s) 0.0277 | Comm(s) 0.0046 | Reduce(s) 0.0015 | Loss 0.0747
+Epoch 00259 | Accuracy 90.66%
+Process 000 | Epoch 00269 | Time(s) 0.0277 | Comm(s) 0.0047 | Reduce(s) 0.0015 | Loss 0.0742
+Epoch 00269 | Accuracy 90.69%
+Process 000 | Epoch 00279 | Time(s) 0.0277 | Comm(s) 0.0047 | Reduce(s) 0.0015 | Loss 0.0730
+Epoch 00279 | Accuracy 90.59%
+Process 000 | Epoch 00289 | Time(s) 0.0277 | Comm(s) 0.0047 | Reduce(s) 0.0015 | Loss 0.0743
+Epoch 00289 | Accuracy 90.73%
+Process 000 | Epoch 00299 | Time(s) 0.0277 | Comm(s) 0.0047 | Reduce(s) 0.0015 | Loss 0.0717
+Epoch 00299 | Accuracy 90.71%
+Process 000 | Epoch 00309 | Time(s) 0.0277 | Comm(s) 0.0047 | Reduce(s) 0.0015 | Loss 0.0722
+Epoch 00309 | Accuracy 90.83%
+Process 000 | Epoch 00319 | Time(s) 0.0277 | Comm(s) 0.0047 | Reduce(s) 0.0015 | Loss 0.0699
+Epoch 00319 | Accuracy 90.80%
+Process 000 | Epoch 00329 | Time(s) 0.0277 | Comm(s) 0.0047 | Reduce(s) 0.0015 | Loss 0.0721
+Epoch 00329 | Accuracy 90.70%
+Process 000 | Epoch 00339 | Time(s) 0.0277 | Comm(s) 0.0047 | Reduce(s) 0.0015 | Loss 0.0699
+Epoch 00339 | Accuracy 90.85%
+Process 000 | Epoch 00349 | Time(s) 0.0277 | Comm(s) 0.0047 | Reduce(s) 0.0015 | Loss 0.0694
+Epoch 00349 | Accuracy 90.81%
+Process 000 | Epoch 00359 | Time(s) 0.0277 | Comm(s) 0.0047 | Reduce(s) 0.0015 | Loss 0.0724
+Epoch 00359 | Accuracy 90.88%
+Process 000 | Epoch 00369 | Time(s) 0.0277 | Comm(s) 0.0047 | Reduce(s) 0.0015 | Loss 0.0694
+Epoch 00369 | Accuracy 90.86%
+Process 000 | Epoch 00379 | Time(s) 0.0277 | Comm(s) 0.0047 | Reduce(s) 0.0015 | Loss 0.0676
+Epoch 00379 | Accuracy 90.95%
+Process 000 | Epoch 00389 | Time(s) 0.0277 | Comm(s) 0.0048 | Reduce(s) 0.0015 | Loss 0.0689
+Epoch 00389 | Accuracy 90.88%
+Process 000 | Epoch 00399 | Time(s) 0.0277 | Comm(s) 0.0048 | Reduce(s) 0.0015 | Loss 0.0689
+Epoch 00399 | Accuracy 90.81%
+Process 000 | Epoch 00409 | Time(s) 0.0278 | Comm(s) 0.0048 | Reduce(s) 0.0015 | Loss 0.0656
+Epoch 00409 | Accuracy 90.94%
+Process 000 | Epoch 00419 | Time(s) 0.0277 | Comm(s) 0.0048 | Reduce(s) 0.0015 | Loss 0.0664
+Epoch 00419 | Accuracy 90.85%
+Process 000 | Epoch 00429 | Time(s) 0.0277 | Comm(s) 0.0047 | Reduce(s) 0.0015 | Loss 0.0676
+Epoch 00429 | Accuracy 91.02%
+Process 000 | Epoch 00439 | Time(s) 0.0278 | Comm(s) 0.0048 | Reduce(s) 0.0015 | Loss 0.0688
+Epoch 00439 | Accuracy 90.85%
+Process 000 | Epoch 00449 | Time(s) 0.0278 | Comm(s) 0.0048 | Reduce(s) 0.0015 | Loss 0.0652
+Epoch 00449 | Accuracy 90.85%
+Process 000 | Epoch 00459 | Time(s) 0.0278 | Comm(s) 0.0048 | Reduce(s) 0.0015 | Loss 0.0658
+Epoch 00459 | Accuracy 91.00%
+Process 000 | Epoch 00469 | Time(s) 0.0278 | Comm(s) 0.0048 | Reduce(s) 0.0015 | Loss 0.0659
+Epoch 00469 | Accuracy 90.90%
+Process 000 | Epoch 00479 | Time(s) 0.0278 | Comm(s) 0.0048 | Reduce(s) 0.0015 | Loss 0.0659
+Epoch 00479 | Accuracy 91.00%
+Process 000 | Epoch 00489 | Time(s) 0.0278 | Comm(s) 0.0048 | Reduce(s) 0.0015 | Loss 0.0674
+Epoch 00489 | Accuracy 90.97%
+Process 000 | Epoch 00499 | Time(s) 0.0278 | Comm(s) 0.0048 | Reduce(s) 0.0015 | Loss 0.0636
+(rank 0) memory stats: current 2358.75MB, peak 3113.04MB, reserved 3656.00MB
+Epoch 00499 | Accuracy 90.97%
+model saved
+Max Validation Accuracy 91.02%
+Test Result | Accuracy 77.96%
+/ocean/projects/asc200010p/hliul/miniconda3/envs/BNS-GCN/lib/python3.8/site-packages/dgl/distributed/graph_partition_book.py:732: DGLWarning: Etype with 'str' format is deprecated. Please use '(str, str, str)'.
+  dgl_warning(

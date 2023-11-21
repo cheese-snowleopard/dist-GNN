@@ -60,7 +60,7 @@ class GCN(GNNBase):
 
 class GraphSAGE(GNNBase):
 
-    def __init__(self, layer_size, activation, use_pp, dropout=0.5, norm='layer', train_size=None, n_linear=0):
+    def __init__(self, layer_size, activation, use_pp, dropout=0.5, norm='layer', train_size=None, n_linear=0, half=False):
         super(GraphSAGE, self).__init__(layer_size, activation, use_pp, dropout, norm, n_linear)
         for i in range(self.n_layers):
             if i < self.n_layers - self.n_linear:
@@ -73,6 +73,7 @@ class GraphSAGE(GNNBase):
                 elif norm == 'batch':
                     self.norm.append(SyncBatchNorm(layer_size[i + 1], train_size))
             use_pp = False
+        self.half = half
 
     def forward(self, g, feat, in_norm=None):
         h = feat
